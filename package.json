@@ -1,0 +1,29 @@
+{
+  "name": "chatspeed-docs",
+  "version": "1.0.0",
+  "description": "Technical documentation for Chatspeed - AI proxy and MCP management platform",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs && node scripts/clean-comments.js",
+    "docs:build-only": "vuepress build docs",
+    "docs:clean-dev": "vuepress dev docs --clean-cache",
+    "docs:clean-comments": "node scripts/clean-comments.js"
+  },
+  "devDependencies": {
+    "@vuepress/bundler-vite": "^2.0.0-rc.15",
+    "@vuepress/theme-default": "^2.0.0-rc.15",
+    "glob": "^10.3.10",
+    "markdown-it-mermaid": "^0.2.0",
+    "sass": "^1.90.0",
+    "vue": "^3.5.0",
+    "vuepress": "^2.0.0-rc.15"
+  },
+  "packageManager": "yarn@1.22.22",
+  "dependencies": {
+    "@vuepress/plugin-markdown-chart": "^2.0.0-rc.112",
+    "mermaid": "^11.9.0",
+    "vuepress-plugin-md-enhance": "^2.0.0-rc.94"
+  }
+}
