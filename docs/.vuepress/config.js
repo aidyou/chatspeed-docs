@@ -50,7 +50,7 @@ export default defineUserConfig({
           { text: 'Guide', link: '/en/guide/' },
           { text: 'ccproxy', link: '/en/ccproxy/' },
           { text: 'MCP Proxy', link: '/en/mcp/' },
-          { text: 'API', link: '/en/api/' }
+          { text: 'Proxy API', link: '/en/api/' }
         ],
         sidebar: {
           '/en/guide/': [
