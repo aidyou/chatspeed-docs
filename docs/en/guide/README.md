@@ -1,72 +1,101 @@
-# Getting Started
+# User Guide
 
-Welcome to Chatspeed! This guide will help you get up and running with the most powerful AI proxy and MCP management platform.
+Welcome to the Chatspeed User Guide! This guide will help you get started quickly and make the most of all of Chatspeed's features.
 
-## What is Chatspeed?
+## Guide Overview
 
-Chatspeed is a revolutionary platform that solves the fundamental problem of AI model integration across different development environments. With our **ccproxy** module, you can:
+This guide contains the following main sections:
 
-- Connect any AI model to any development environment
-- Reduce AI development costs by over 80%
-- Manage MCP tools across multiple IDEs from a single configuration
-- Switch between models seamlessly without changing your workflow
+### 🚀 Getting Started
 
-## Quick Overview
+- **[Features Overview](./features/overview.md)** - Learn about the main features of Chatspeed.
+- **[Installation Guide](./installation.md)** - Detailed instructions on how to install Chatspeed on different operating systems.
+- **[Quick Start](./quickStart.md)** - A 5-minute tutorial to help you run your first AI proxy.
 
-### The Problem We Solve
+### 🔄 Core Features
 
-As a developer, you've probably faced these challenges:
-
-1. **High AI Development Costs**: Premium models like GPT-4 and Claude are expensive for daily development
-2. **IDE Tool Fragmentation**: Setting up MCP tools separately in VS Code, Cursor, Claude Code, etc.
-3. **Model Lock-in**: Being stuck with one model/provider for your entire workflow
-4. **Protocol Incompatibility**: Different AI services use different APIs and protocols
-
-### The Chatspeed Solution
-
-Chatspeed's **ccproxy** module acts as a universal translator and proxy:
-
-```mermaid
-graph LR
-    A[Your IDE] --> B[ccproxy]
-    B --> C[OpenAI]
-    B --> D[Claude]
-    B --> E[Gemini]
-    B --> F[Ollama]
-    B --> G[OpenRouter]
-```
+- **[ccproxy Module](../ccproxy/)** - Understand the AI protocol proxy and its clever uses in Chatspeed.
+- **[MCP Module](../mcp/)** - Learn about the usage and proxy configuration of MCP tools.
 
 ## Core Concepts
 
-### 1. Protocol Conversion
-ccproxy can convert between different AI protocols:
-- OpenAI-compatible APIs
-- Claude Messages API
-- Google Gemini API
-- Ollama API
+Before you start using Chatspeed, understanding the following core concepts will be very helpful:
+
+### 1. AI Proxies
+
+An AI proxy is the basic management unit in Chatspeed. Each proxy represents a specific AI model configuration, including:
+
+- Model provider and specific model
+- API key and access endpoint
+- Parameter configuration (temperature, max tokens, etc.)
 
 ### 2. Model Groups
-Organize your AI models into logical groups:
-- `kimi` group: Cost-effective models for general tasks
-- `qwen` group: Specialized coding models
-- `claude` group: Premium models for complex reasoning
 
-### 3. Unified MCP Proxy
-All your MCP (Model Context Protocol) tools in one place:
-- Configure once, use everywhere
-- Automatic tool synchronization across IDEs
-- Centralized tool management
+Model groups allow you to organize multiple AI proxies together, making it easy to:
 
-## Next Steps
+- Categorize by use case (e.g., programming, translation, writing)
+- Quickly switch models for different scenarios
+- Centrally manage parameter settings for similar tasks
 
-1. **[Installation](./installation.md)** - Install Chatspeed and ccproxy
-2. **[Quick Start](./quickStart.md)** - Get your first proxy running in 5 minutes
-3. **[Configuration](./configuration.md)** - Detailed configuration options
-4. **[ccproxy Module](../ccproxy/)** - Deep dive into the proxy system
+### 3. ccproxy Proxy
 
-## Need Help?
+`ccproxy` is Chatspeed's core proxy engine, responsible for:
 
-- 📚 Check our [FAQ](./faq.md)
-- 🐛 [Report issues](https://github.com/aidyou/chatspeed/issues)
-- 💬 [Join discussions](https://github.com/aidyou/chatspeed/discussions)
-- 📧 [Contact support](mailto:support@chatspeed.ai)
+- Converting between different AI protocols (OpenAI, Claude, Gemini, Ollama, etc.)
+- Providing a unified API access point
+- Enabling "Any Claude Code, Any Gemini CLI" capabilities
+
+### 4. MCP Tools
+
+MCP (Model Context Protocol) tools extend the capabilities of AI, including:
+
+- File system access
+- Database queries
+- Web searches
+- Git operations, and more.
+
+## Common Use Cases
+
+### Scenario 1: Daily Office Assistant
+
+Use Chatspeed as your desktop-resident AI assistant to handle daily tasks such as:
+
+- Document writing and polishing
+- Language translation
+- Information retrieval
+- Creative generation
+
+### Scenario 2: Enhanced Development Tools
+
+Integrate cost-effective models into your development environment via `ccproxy`:
+
+- Use free models within Claude Code
+- Reduce development costs by over 80%
+- Maintain your existing workflow without changes
+
+### Scenario 3: Knowledge Management
+
+Build your personal knowledge base with the Smart Notes feature:
+
+- Save valuable AI conversation content
+- Organize information with tags
+- Quickly retrieve historical information
+
+## Getting Started
+
+To start using Chatspeed, follow these steps:
+
+1. **[Install Chatspeed](./installation.md)** - Install the software on your system.
+2. **[Complete Initial Setup](./quickStart.md)** - Configure your first AI model.
+3. **[Explore Core Features](./features/overview.md)** - Learn about the main features of Chatspeed.
+
+## Getting Help
+
+If you encounter any issues during use, you can:
+
+- 📚 Check the [FAQ](./faq.md)
+- 🐛 [Report an issue](https://github.com/aidyou/chatspeed/issues)
+- 💬 [Join the discussion](https://github.com/aidyou/chatspeed/discussions)
+- 📧 [Contact support](mailto:chatspeed@aidyou.ai)
+
+Ready to start your AI assistant journey? Let's begin with the [Installation Guide](./installation.md)!

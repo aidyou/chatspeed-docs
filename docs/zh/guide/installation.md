@@ -39,9 +39,9 @@
 2. 打开“终端”应用 (Terminal)。
 3. 执行以下命令 (可能需要输入您的系统密码):
 
-    ```sh
-    sudo xattr -cr /Applications/Chatspeed.app
-    ```
+   ```sh
+   sudo xattr -cr /Applications/Chatspeed.app
+   ```
 
 4. 命令执行成功后，您就可以正常打开应用了。
 
@@ -85,7 +85,6 @@ yarn tauri build
 
 如果在安装过程中遇到问题：
 
-- 📚 查看 [故障排除指南](./troubleshooting.md)
 - 🐛 [报告安装问题](https://github.com/aidyou/chatspeed/issues)
 - 💬 [社区讨论](https://github.com/aidyou/chatspeed/discussions)
 - 📧 [联系技术支持](mailto:support@chatspeed.ai)

@@ -49,7 +49,7 @@ export default defineUserConfig({
         navbar: [
           { text: 'Guide', link: '/en/guide/' },
           { text: 'ccproxy', link: '/en/ccproxy/' },
-          { text: 'MCP', link: '/en/mcp/' },
+          { text: 'MCP Proxy', link: '/en/mcp/' },
           { text: 'API', link: '/en/api/' }
         ],
         sidebar: {
@@ -77,15 +77,6 @@ export default defineUserConfig({
               text: 'ccproxy Module',
               children: [
                 '/en/ccproxy/README.md',
-              ]
-            },
-            {
-              text: 'Integration',
-              children: [
-                '/en/ccproxy/claude-code.md',
-                '/en/ccproxy/gemini-cli.md',
-                '/en/ccproxy/openrouter.md',
-                '/en/ccproxy/troubleshooting.md'
               ]
             }
           ],
@@ -115,8 +106,8 @@ export default defineUserConfig({
         navbar: [
           { text: '指南', link: '/zh/guide/' },
           { text: 'ccproxy', link: '/zh/ccproxy/' },
-          { text: 'MCP', link: '/zh/mcp/' },
-          { text: 'API', link: '/zh/api/' }
+          { text: 'MCP代理', link: '/zh/mcp/' },
+          { text: '代理API', link: '/zh/api/' }
         ],
         sidebar: {
           '/zh/guide/': [
@@ -144,16 +135,7 @@ export default defineUserConfig({
               children: [
                 '/zh/ccproxy/README.md',
               ]
-            },
-            // {
-            //   text: '集成指南',
-            //   children: [
-            //     '/zh/ccproxy/claude-code.md',
-            //     '/zh/ccproxy/gemini-cli.md',
-            //     '/zh/ccproxy/openrouter.md',
-            //     '/zh/ccproxy/troubleshooting.md'
-            //   ]
-            // }
+            }
           ],
           '/zh/mcp/': [
             {
@@ -168,9 +150,6 @@ export default defineUserConfig({
               text: 'API 参考',
               children: [
                 '/zh/api/README.md',
-                // '/zh/api/ccproxy-api.md',
-                // '/zh/api/mcp-api.md',
-                // '/zh/api/webhooks.md'
               ]
             }
           ]

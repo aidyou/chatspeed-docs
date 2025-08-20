@@ -1,14 +1,14 @@
-# MCP Agent
+# MCP Proxy
 
-> Aggregates all available MCP (Large Model Context Protocol) tools in the Chatspeed system into a unified agent entry point, completely solving the pain point of repeatedly configuring tools across different IDEs.
+> Aggregates all available MCP (Model Context Protocol) tools in the Chatspeed system into a unified proxy entry point, completely solving the pain point of repeatedly configuring tools across different IDEs.
 
-The **MCP Agent**, provided by Chatspeed's ccproxy module, is the solution for the fragmented MCP management mentioned above. It converts all MCP tools installed on Chatspeed into a flattened structure and provides a unified access entry point via the SSE protocol. This means you only need to install the MCP tools in Chatspeed, disable the ones you don't need, and then you can access all your MCP tools via `http://localhost:11434/sse`.
+The **MCP Proxy**, a core feature of Chatspeed's ccproxy module, solves the problem of fragmented MCP management. It aggregates all MCP tools installed in Chatspeed into a flattened structure and provides a unified access entry point via the SSE protocol. This means you only need to install your MCP tools once in Chatspeed, and then you can access all of them from any IDE via `http://localhost:11434/sse`.
 
-## 🔧 Why You Need an MCP Agent
+## 🔧 Why You Need an MCP Proxy
 
 Developers often use multiple AI IDEs or plugins, and each typically requires the installation of common MCPs to extend the AI's capabilities. Certain MCPs, like context7 or search MCPs, are installed in almost every IDE. Reinstalling these necessary MCPs every time you switch IDEs becomes tedious.
 
-### Before Using the ccproxy Module's MCP Agent
+### Before Using the ccproxy Module's MCP Proxy
 
 - Individually install MCP tools in VS Code ❌
 - Repeatedly configure the same tools in Cursor ❌
@@ -16,18 +16,18 @@ Developers often use multiple AI IDEs or plugins, and each typically requires th
 - Duplicate setup for Gemini CLI ❌
 - Repeatedly install the same MCP tools for Trae, Cline, Roo Code, etc. ❌
 
-### After Using the ccproxy Module's MCP Agent
+### After Using the ccproxy Module's MCP Proxy
 
 - Simply install all necessary MCP tools on Chatspeed ✅
 - The ccproxy module provides all aggregated MCP tools via `http://localhost:11434/sse` ✅
 - Configuring MCPs in any IDE or plugin is simple: just select the SSE protocol and set the URL to `http://localhost:11434/sse` ✅
 - Adding, removing, or modifying tools is managed centrally in the Chatspeed client ✅
 
-## 🌐 Chatspeed's MCP Agent Architecture
+## 🌐 Chatspeed's MCP Proxy Architecture
 
 ```mermaid
 graph TB
-    F[Filesystem MCP] --> D[ccproxy MCP Agent]
+    F[Filesystem MCP] --> D[ccproxy MCP Proxy]
     G[Git MCP] --> D
     DB[Database MCP] --> D
     S[Web Search MCP] --> D
@@ -46,7 +46,7 @@ graph TB
 
 Please download and install the latest version of Chatspeed from the [official Chatspeed website](https://github.com/aidyou/chatspeed/releases).
 
-### MCP Agent Configuration
+### MCP Proxy Configuration
 
 1.  Open the MCP configuration options from the "MCP" menu in the top-right corner of the Chatspeed main interface. Click in the numerical order indicated in the image:
 
