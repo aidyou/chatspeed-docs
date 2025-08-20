@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs && node scripts/clean-comments.js",
+    "docs:build": "vuepress build docs && node scripts/clean-comments.cjs",
     "docs:build-only": "vuepress build docs",
     "docs:clean-dev": "vuepress dev docs --clean-cache",
     "docs:clean-comments": "node scripts/clean-comments.js"
