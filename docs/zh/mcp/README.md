@@ -26,18 +26,30 @@ Chatspeed 的 ccproxy 模块提供的 **MCP 代理** 是 Chatspeed 针对上述�
 ## 🌐 Chatspeed 的 MCP 代理架构
 
 ```mermaid
-graph TB
-    F[文件系统 MCP] --> D[ccproxy MCP 代理]
-    G[Git MCP] --> D
-    DB[数据库 MCP] --> D
-    S[网络搜索 MCP] --> D
-    C[自定义 MCP] --> D
+graph TD
+    subgraph "可用的 MCP 工具集 (Toolsets)"
+        A[Tavily Tools]
+        B[Puppeteer Tools]
+        C[...]
+    end
 
-    D --> V[VS Code]
-    D --> CU[Cursor]
-    D --> CL[Cline]
-    D --> CC[Claude Code]
-    D --> O[其他 IDE]
+    P(Chatspeed ccproxy)
+
+    subgraph "通过统一 SSE 代理提供给客户端"
+        D[tavily-search]
+        E[tavily-extract]
+        F[puppeteer-navigate]
+        G[...]
+    end
+
+    A -- "接入" --> P
+    B -- "接入" --> P
+    C -- "接入" --> P
+
+    P -- "提供" --> D
+    P -- "提供" --> E
+    P -- "提供" --> F
+    P -- "提供" --> G
 ```
 
 ## 🛠️ 服务端安装与配置
@@ -76,6 +88,8 @@ graph TB
   }
 }
 ```
+
+> 请注意，本章节 MCP URL 中使用的端口是 `ccproxy` 的默认端口。若您修改了默认端口，请同步更新配置文件中的端口配置。
 
 ### Claude Code
 
@@ -198,3 +212,53 @@ code --add-mcp '{"name":"ccproxy","url":"http://localhost:11434/sse"}'
       "url": "http://localhost:11434/sse"
     }
 ```
+
+### Cline
+
+1. 请点击**数字1**标注的按钮进入 MCP 设置界面，然后点击**数字2**标注的按钮切换到“已安装”界面，最后点击**数字3**标注的按钮进入 MCP 的代码配置界面，将下面代码复制到代码编辑器中并保存：
+
+```json
+{
+  "mcpServers": {
+    "ccproxy": {
+      "serverUrl": "http://localhost:11434/sse"
+    }
+  }
+}
+```
+
+![cline mcp setup 1](/images/common/cline-mcp-1.png)
+
+2. 保存代码后就可以看到 `Cline` 的 MCP 服务器列表已经有 `ccproxy` 的 MCP 工具了
+
+![cline mcp setup 2](/images/common/cline-mcp-2.png)
+
+### Roo Code
+
+1. 点击**数字1**标注的按钮
+
+![Roo Code mcp setup 1](/images/common/roo-mcp-1.png)
+
+2. 从下拉菜单选择“MCP Servers”
+
+![Roo Code mcp setup 1](/images/common/roo-mcp-2.png)
+
+3. 您可以点击**数字1**标注的按钮添加全局 MCP 或者点击**数字2**标注的按钮添加项目 MCP
+
+![Roo Code mcp setup 1](/images/common/roo-mcp-3.png)
+
+4. 在打开的代码编辑器中添加以下内容并保存：
+
+```json
+{
+  "mcpServers": {
+    "ccproxy": {
+      "serverUrl": "http://localhost:11434/sse"
+    }
+  }
+}
+```
+
+5. 现在你可以在 `Roo Code` 的 MCP 服务器列表中看到 `ccproxy` 的 MCP 工具了
+
+![Roo Code mcp setup 4](/images/common/roo-mcp-4.png)

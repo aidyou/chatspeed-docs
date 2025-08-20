@@ -26,18 +26,30 @@ Developers often use multiple AI IDEs or plugins, and each typically requires th
 ## 🌐 Chatspeed's MCP Proxy Architecture
 
 ```mermaid
-graph TB
-    F[Filesystem MCP] --> D[ccproxy MCP Proxy]
-    G[Git MCP] --> D
-    DB[Database MCP] --> D
-    S[Web Search MCP] --> D
-    C[Custom MCP] --> D
+graph TD
+    subgraph "Available Toolsets"
+        A[Tavily Tools]
+        B[Puppeteer Tools]
+        C[...]
+    end
 
-    D --> V[VS Code]
-    D --> CU[Cursor]
-    D --> CL[Cline]
-    D --> CC[Claude Code]
-    D --> O[Other IDEs]
+    P(Chatspeed ccproxy)
+
+    subgraph "Exposed via Unified SSE Proxy"
+        D[tavily-search]
+        E[tavily-extract]
+        F[puppeteer-navigate]
+        G[...]
+    end
+
+    A -- "Managed by" --> P
+    B -- "Managed by" --> P
+    C -- "Managed by" --> P
+
+    P -- "Exposes" --> D
+    P -- "Exposes" --> E
+    P -- "Exposes" --> F
+    P -- "Exposes" --> G
 ```
 
 ## 🛠️ Server-side Installation and Configuration
@@ -76,6 +88,8 @@ The configuration format for different MCP clients may vary slightly, but it gen
   }
 }
 ```
+
+> Please note that this chapter's MCP URL examples use the default port of `ccproxy`. If you've modified the default port, please update the port configuration in your settings file accordingly.
 
 ### Claude Code
 
@@ -198,3 +212,53 @@ You can open `~/.codeium/windsurf/mcp_config.json` and add the following content
       "url": "http://localhost:11434/sse"
     }
 ```
+
+### Cline
+
+1.  Click the button marked with **number 1** to enter the MCP setting interface, then click the button marked with **number 2** to switch to the "Installed" interface. Finally, click the button marked with **number 3** to enter the MCP code configuration interface. Copy the code below into the code editor and save:
+
+```json
+{
+  "mcpServers": {
+    "ccproxy": {
+      "serverUrl": "http://localhost:11434/sse"
+    }
+  }
+}
+```
+
+![cline mcp setup 1](/images/common/cline-mcp-1.png)
+
+2.  After saving the code, you will see the `ccproxy` MCP tools in Cline's MCP server list.
+
+![cline mcp setup 2](/images/common/cline-mcp-2.png)
+
+### Roo Code
+
+1.  Click the button marked with **number 1**.
+
+![Roo Code mcp setup 1](/images/common/roo-mcp-1.png)
+
+2.  Select "MCP Servers" from the drop-down menu.
+
+![Roo Code mcp setup 2](/images/common/roo-mcp-2.png)
+
+3.  You can click the button marked with **number 1** to add a global MCP or click the button marked with **number 2** to add a project-level MCP.
+
+![Roo Code mcp setup 3](/images/common/roo-mcp-3.png)
+
+4.  Add the following content to the code editor that opens and save:
+
+```json
+{
+  "mcpServers": {
+    "ccproxy": {
+      "serverUrl": "http://localhost:11434/sse"
+    }
+  }
+}
+```
+
+5.  Now you can see the `ccproxy` MCP tools in the `Roo Code` MCP server list.
+
+![Roo Code mcp setup 4](/images/common/roo-mcp-4.png)

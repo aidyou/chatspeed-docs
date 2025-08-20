@@ -60,6 +60,7 @@ export default defineUserConfig({
                 '/en/guide/README.md',
                 '/en/guide/installation.md',
                 '/en/guide/quickStart.md',
+                '/en/guide/development.md',
               ]
             },
             // {
@@ -117,6 +118,7 @@ export default defineUserConfig({
                 '/zh/guide/README.md',
                 '/zh/guide/installation.md',
                 '/zh/guide/quickStart.md',
+                '/zh/guide/development.md',
               ]
             },
             // {
