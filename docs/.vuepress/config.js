@@ -1,7 +1,7 @@
 import { hopeTheme } from 'vuepress-theme-hope'
 import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
-import { cleanCommentsPlugin } from './plugins/clean-comments.js'
+
 
 export default defineUserConfig({
   lang: 'en-US',
@@ -47,7 +47,13 @@ export default defineUserConfig({
           { text: 'API', link: '/en/api/' },
           // { text: 'Blog', link: '/en/article/' }
         ],
-        sidebar: 'structure',
+        sidebar: [
+          { text: 'Guide', prefix: '/en/guide/', children: 'structure' },
+          { text: 'ccproxy', prefix: '/en/ccproxy/', children: 'structure' },
+          { text: 'MCP Proxy', prefix: '/en/mcp/', children: 'structure' },
+          { text: 'API', prefix: '/en/api/', children: 'structure' },
+          // { text: 'Posts', prefix: '/en/posts/', children: 'structure' },
+        ],
         lastUpdated: 'Last Updated',
         editLinkText: 'Edit this page on GitHub',
         contributorsText: 'Contributors',
@@ -66,37 +72,13 @@ export default defineUserConfig({
           { text: '代理API', link: '/zh/api/' },
           // { text: '博客', link: '/zh/article/' }
         ],
-        sidebar: {
-          '/zh/guide/': [
-            {
-              text: '用户指南',
-              children: [
-                '/zh/guide/README.md',
-                '/zh/guide/installation.md',
-                '/zh/guide/quickStart.md',
-                '/zh/guide/development.md'
-              ]
-            }
-          ],
-          '/zh/ccproxy/': [
-            {
-              text: 'ccproxy 模块',
-              children: ['/zh/ccproxy/README.md']
-            }
-          ],
-          '/zh/mcp/': [
-            {
-              text: 'MCP 代理',
-              children: ['/zh/mcp/README.md']
-            }
-          ],
-          '/zh/api/': [
-            {
-              text: 'API 参考',
-              children: ['/zh/api/README.md']
-            }
-          ]
-        },
+        sidebar: [
+          { text: '用户指南', prefix: '/zh/guide/', children: 'structure' },
+          { text: 'ccproxy 模块', prefix: '/zh/ccproxy/', children: 'structure' },
+          { text: 'MCP 代理', prefix: '/zh/mcp/', children: 'structure' },
+          { text: 'API 参考', prefix: '/zh/api/', children: 'structure' },
+          // { text: '文章', prefix: '/zh/posts/', children: 'structure' },
+        ],
         lastUpdated: '最后更新',
         editLinkText: '在 GitHub 上编辑此页',
         contributorsText: '贡献者',
@@ -141,6 +123,5 @@ export default defineUserConfig({
   }),
 
   plugins: [
-    cleanCommentsPlugin()
   ]
 })
