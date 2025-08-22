@@ -6,14 +6,13 @@
   "type": "module",
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs && node scripts/clean-comments.cjs",
+    "docs:build": "vuepress build docs",
     "docs:build-only": "vuepress build docs",
     "docs:clean-dev": "vuepress dev docs --clean-cache",
     "docs:clean-comments": "node scripts/clean-comments.js"
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "^2.0.0-rc.15",
-    "glob": "^10.3.10",
     "markdown-it-mermaid": "^0.2.0",
     "sass": "^1.90.0",
     "vue": "^3.5.0",

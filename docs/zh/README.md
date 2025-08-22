@@ -29,6 +29,7 @@ footer: MIT 协议 | 版权所有 © 2025 Chatspeed 团队
 `ccproxy` (`Chat Completion Proxy`) 是 Chatspeed 的核心代理引擎，一个为 AI 开发设计的万能适配器。它主要解决两大痛点：
 
 ### 1. 协议转换，降本增效
+
 它能在 OpenAI 兼容格式、Gemini、Claude、Ollama 等协议间任意转换。这意味着，你可以将任何本地或云端的免费、开源、高性价比模型，无缝接入 `Claude Code`、`Gemini CLI` 等任何需要特定协议的流行开发环境中。
 
 **✨ 特别功能：工具调用兼容模式**
@@ -36,6 +37,7 @@ footer: MIT 协议 | 版权所有 © 2025 Chatspeed 团队
 对于本身不支持工具调用（Function Calling）的模型，`ccproxy` 提供了兼容模式，使其也能理解并执行工具调用指令，极大地扩展了这些模型的能力边界。
 
 ### 2. 统一入口，简化工作流
+
 它能将所有安装在 Chatspeed 上的 MCP 工具（如网页浏览、文件操作等）聚合成一个统一的代理入口对外服务。一次配置，所有应用和终端都能调用，彻底告别重复设置。
 
 ![MCP proxy](/images/zh/mcp-proxy.png)
@@ -194,6 +196,7 @@ Chatspeed 不仅仅是 **AI 代理和 MCP 管理平台**，更是一个 **全面
 下面是两张示例图
 
 ![assistant](/images/zh/assistant.png)
+
 ![chat](/images/zh/chat.png)
 
 ## 📖 文档结构
