@@ -2768,7 +2768,6 @@ __metadata:
   dependencies:
     "@vuepress/bundler-vite": "npm:^2.0.0-rc.15"
     "@vuepress/plugin-markdown-chart": "npm:^2.0.0-rc.112"
-    glob: "npm:^10.3.10"
     markdown-it-mermaid: "npm:^0.2.0"
     mermaid: "npm:^11.9.0"
     sass: "npm:^1.90.0"
@@ -3955,7 +3954,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^10.2.2, glob@npm:^10.3.10":
+"glob@npm:^10.2.2":
   version: 10.4.5
   resolution: "glob@npm:10.4.5"
   dependencies:
