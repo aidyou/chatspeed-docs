@@ -77,9 +77,9 @@ yarn tauri build
 
 安装完成后，您可以：
 
-1. **[快速开始](./quickStart.md)** - 运行您的第一个 AI 代理
-2. **[配置指南](./configuration.md)** - 详细配置您的模型和分组
-3. **[ccproxy 模块](../ccproxy/)** - 了解核心代理功能
+1. **[快速开始](./quickStart.md)** - 5分钟内熟悉 Chatspeed
+2. **[ccproxy 模块](../ccproxy/)** - 了解核心代理功能
+3. **[MCP 模块](../mcp/)** - 了解核心代理功能
 
 ## 获取帮助
 

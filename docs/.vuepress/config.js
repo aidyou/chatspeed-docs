@@ -1,21 +1,17 @@
-import { defaultTheme } from '@vuepress/theme-default'
+import { hopeTheme } from 'vuepress-theme-hope'
 import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { cleanCommentsPlugin } from './plugins/clean-comments.js'
-import { markdownChartPlugin } from '@vuepress/plugin-markdown-chart'
 
 export default defineUserConfig({
   lang: 'en-US',
   title: 'Chatspeed',
   description: 'AI Proxy and MCP Management Platform - Any Claude Code, Any Gemini CLI',
 
-  // Set default locale to redirect to English
   base: '/',
 
-
-
   head: [
-    ['link', { rel: 'icon', href: '/images/logo.png' }],
+    ['link', { rel: 'icon', href: '/images/logo-round.png' }],
     ['meta', { name: 'theme-color', content: '#00d4ff' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
@@ -34,14 +30,12 @@ export default defineUserConfig({
     }
   },
 
-
-
-  theme: defaultTheme({
+  theme: hopeTheme({
     logo: '/images/logo.png',
     repo: 'aidyou/chatspeed',
     docsDir: 'docs',
     docsBranch: 'main',
-    editLinkPattern: ':repo/edit/:branch/:path',
+    editLink: true,
 
     locales: {
       '/': {
@@ -50,57 +44,18 @@ export default defineUserConfig({
           { text: 'Guide', link: '/en/guide/' },
           { text: 'ccproxy', link: '/en/ccproxy/' },
           { text: 'MCP Proxy', link: '/en/mcp/' },
-          { text: 'Proxy API', link: '/en/api/' }
+          { text: 'API', link: '/en/api/' },
+          // { text: 'Blog', link: '/en/article/' }
         ],
-        sidebar: {
-          '/en/guide/': [
-            {
-              text: 'Getting Started',
-              children: [
-                '/en/guide/README.md',
-                '/en/guide/installation.md',
-                '/en/guide/quickStart.md',
-                '/en/guide/development.md',
-              ]
-            },
-            // {
-            //   text: 'Core Features',
-            //   children: [
-            //     '/en/guide/features/overview.md',
-            //     '/en/guide/features/ai-agents.md',
-            //     '/en/guide/features/model-switching.md',
-            //     '/en/guide/features/prompt-engineering.md'
-            //   ]
-            // }
-          ],
-          '/en/ccproxy/': [
-            {
-              text: 'ccproxy Module',
-              children: [
-                '/en/ccproxy/README.md',
-              ]
-            }
-          ],
-          '/en/mcp/': [
-            {
-              text: 'MCP Proxy',
-              children: [
-                '/en/mcp/README.md',
-              ]
-            }
-          ],
-          '/en/api/': [
-            {
-              text: 'API Reference',
-              children: [
-                '/en/api/README.md',
-              ]
-            }
-          ]
-        },
+        sidebar: 'structure',
         lastUpdated: 'Last Updated',
         editLinkText: 'Edit this page on GitHub',
-        contributorsText: 'Contributors'
+        contributorsText: 'Contributors',
+        // blog: {
+        //   name: 'Blog',
+        //   path: '/en/article/',
+        //   description: 'Chatspeed Blog'
+        // }
       },
       '/zh/': {
         selectLanguageName: '简体中文',
@@ -108,57 +63,67 @@ export default defineUserConfig({
           { text: '指南', link: '/zh/guide/' },
           { text: 'ccproxy', link: '/zh/ccproxy/' },
           { text: 'MCP代理', link: '/zh/mcp/' },
-          { text: '代理API', link: '/zh/api/' }
+          { text: '代理API', link: '/zh/api/' },
+          // { text: '博客', link: '/zh/article/' }
         ],
         sidebar: {
           '/zh/guide/': [
             {
-              text: '快速开始',
+              text: '用户指南',
               children: [
                 '/zh/guide/README.md',
                 '/zh/guide/installation.md',
                 '/zh/guide/quickStart.md',
-                '/zh/guide/development.md',
+                '/zh/guide/development.md'
               ]
-            },
-            // {
-            //   text: '核心功能',
-            //   children: [
-            //     '/zh/guide/features/overview.md',
-            //     '/zh/guide/features/ai-agents.md',
-            //     '/zh/guide/features/model-switching.md',
-            //     '/zh/guide/features/prompt-engineering.md'
-            //   ]
-            // }
+            }
           ],
           '/zh/ccproxy/': [
             {
               text: 'ccproxy 模块',
-              children: [
-                '/zh/ccproxy/README.md',
-              ]
+              children: ['/zh/ccproxy/README.md']
             }
           ],
           '/zh/mcp/': [
             {
               text: 'MCP 代理',
-              children: [
-                '/zh/mcp/README.md',
-              ]
+              children: ['/zh/mcp/README.md']
             }
           ],
           '/zh/api/': [
             {
               text: 'API 参考',
-              children: [
-                '/zh/api/README.md',
-              ]
+              children: ['/zh/api/README.md']
             }
           ]
         },
         lastUpdated: '最后更新',
         editLinkText: '在 GitHub 上编辑此页',
-        contributorsText: '贡献者'
+        contributorsText: '贡献者',
+        // blog: {
+        //   name: '博客',
+        //   path: '/zh/article/',
+        //   description: 'Chatspeed 博客'
+        // }
+      }
+    },
+
+    markdown: {
+      mermaid: true
+    },
+
+    plugins: {
+      blog: {
+        filter: ({ filePathRelative }) =>
+          filePathRelative &&
+          (filePathRelative.startsWith('en/posts/') || filePathRelative.startsWith('zh/posts/'))
+      },
+      sitemap: {
+        hostname: 'https://docs.chatspeed.aidyou.ai',
+        excludePaths: ['/404.html'],
+        changefreq: 'daily',
+        priority: 0.8,
+        lastmod: new Date()
       }
     }
   }),
@@ -176,9 +141,6 @@ export default defineUserConfig({
   }),
 
   plugins: [
-    cleanCommentsPlugin(),
-    markdownChartPlugin({
-      mermaid: true
-    })
+    cleanCommentsPlugin()
   ]
 })

@@ -1,11 +1,13 @@
 ---
 home: true
-title: Chatspeed
+icon: home
 heroImage: /images/claude.gif
 heroText: Chatspeed
 tagline: Any Claude Code, Any Gemini CLI | 万物皆可 Claude，万物皆可 Gemini
-actionText: 开始使用 →
-actionLink: /zh/guide/
+actions:
+  - text: 开始使用 →
+    link: /zh/guide/
+    type: primary
 features:
   - title: 🔄 多协议代理转换
     details: 在 OpenAI、Claude、Gemini、Ollama 等协议间无缝转换，让任何 AI 模型都能快速集成到Claude Code、Gemini Cli、Cursor、Cline、Roo Code 等开发环境中。

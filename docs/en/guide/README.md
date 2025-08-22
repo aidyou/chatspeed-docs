@@ -93,7 +93,6 @@ To start using Chatspeed, follow these steps:
 
 If you encounter any issues during use, you can:
 
-- 📚 Check the [FAQ](./faq.md)
 - 🐛 [Report an issue](https://github.com/aidyou/chatspeed/issues)
 - 💬 [Join the discussion](https://github.com/aidyou/chatspeed/discussions)
 - 📧 [Contact support](mailto:chatspeed@aidyou.ai)

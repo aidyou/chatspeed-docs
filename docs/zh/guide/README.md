@@ -93,7 +93,6 @@ MCP（Model Context Protocol）工具扩展了 AI 的能力，包括：
 
 如果在使用过程中遇到问题，您可以：
 
-- 📚 查看 [常见问题](./faq.md)
 - 🐛 [报告问题](https://github.com/aidyou/chatspeed/issues)
 - 💬 [参与讨论](https://github.com/aidyou/chatspeed/discussions)
 - 📧 [联系支持](mailto:chatspeed@aidyou.ai)

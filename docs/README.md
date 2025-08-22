@@ -1,11 +1,13 @@
 ---
 home: true
-title: Chatspeed
+icon: home
 heroImage: /images/claude.gif
 heroText: Chatspeed
 tagline: Any Claude Code, Any Gemini CLI
-actionText: Get Started →
-actionLink: /guide/
+actions:
+  - text: Get Started →
+    link: /guide/
+    type: primary
 features:
   - title: 🔄 Multi-Protocol Conversion
     details: Seamlessly convert between OpenAI, Claude, Gemini, Ollama, and more. Integrate any AI model into your preferred development environment.

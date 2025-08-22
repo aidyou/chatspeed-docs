@@ -77,9 +77,9 @@ yarn tauri build
 
 After installation, you can:
 
-1. **[Quick Start](./quickStart.md)** - Run your first AI proxy.
-2. **[Configuration Guide](./configuration.md)** - Configure your models and groups in detail.
-3. **[ccproxy Module](../ccproxy/)** - Learn about the core proxy features.
+1. **[Quick Start](./quickStart.md)** - Get started quickly.
+2. **[ccproxy Module](../ccproxy/)** - Learn about the core proxy features.
+3. **[MCP Module](../mcp/)** - Learn about the core proxy features.
 
 ## Getting Help
 
