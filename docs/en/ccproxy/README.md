@@ -185,7 +185,7 @@ It is certain that the `Claude` model used in `Claude Code` is specially adapted
 
 To use an external, non-specially trained model for `Claude Code`, the model must at least have good tool-calling capabilities and instruction-following ability. On this basis, we can use prompt enhancement to optimize its performance in `Claude Code`.
 
-The following prompt enhancement is appended to the `Claude Code` system prompt. It attempts to guide the model better in its tasks through examples and guidance. As the prompt is quite long, you can refer to it here: [Prompt Enhancement](../../prompt.md).
+The following prompt enhancement is appended to the `Claude Code` system prompt. It attempts to guide the model better in its tasks through examples and guidance. As the prompt is quite long, you can refer to it here: [Prompt Enhancement](../prompt/).
 
 ### 🎛️ Parameter Tuning
 

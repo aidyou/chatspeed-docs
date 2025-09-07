@@ -2,7 +2,6 @@ import { hopeTheme } from 'vuepress-theme-hope'
 import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
 
-
 export default defineUserConfig({
   lang: 'en-US',
   title: 'Chatspeed',
@@ -45,23 +44,25 @@ export default defineUserConfig({
           { text: 'ccproxy', link: '/en/ccproxy/' },
           { text: 'MCP Proxy', link: '/en/mcp/' },
           { text: 'API', link: '/en/api/' },
-          // { text: 'Blog', link: '/en/article/' }
+          { text: 'Prompts', link: '/en/prompt/' },
+          { text: 'Blog', link: '/en/posts/' }
         ],
         sidebar: [
           { text: 'Guide', prefix: '/en/guide/', children: 'structure' },
           { text: 'ccproxy', prefix: '/en/ccproxy/', children: 'structure' },
           { text: 'MCP Proxy', prefix: '/en/mcp/', children: 'structure' },
           { text: 'API', prefix: '/en/api/', children: 'structure' },
-          // { text: 'Posts', prefix: '/en/posts/', children: 'structure' },
+          { text: 'Prompts', prefix: '/en/prompt/', children: 'structure' },
+          { text: 'Posts', prefix: '/en/posts/', children: 'structure' }
         ],
         lastUpdated: 'Last Updated',
         editLinkText: 'Edit this page on GitHub',
         contributorsText: 'Contributors',
-        // blog: {
-        //   name: 'Blog',
-        //   path: '/en/article/',
-        //   description: 'Chatspeed Blog'
-        // }
+        blog: {
+          name: 'Blog',
+          path: '/en/posts/',
+          description: 'Chatspeed Blog'
+        }
       },
       '/zh/': {
         selectLanguageName: '简体中文',
@@ -70,23 +71,33 @@ export default defineUserConfig({
           { text: 'ccproxy', link: '/zh/ccproxy/' },
           { text: 'MCP代理', link: '/zh/mcp/' },
           { text: '代理API', link: '/zh/api/' },
-          // { text: '博客', link: '/zh/article/' }
+          { text: '提示词', link: '/zh/prompt/' },
+          { text: '博客', link: '/zh/posts/' }
         ],
         sidebar: [
           { text: '用户指南', prefix: '/zh/guide/', children: 'structure' },
           { text: 'ccproxy 模块', prefix: '/zh/ccproxy/', children: 'structure' },
           { text: 'MCP 代理', prefix: '/zh/mcp/', children: 'structure' },
           { text: 'API 参考', prefix: '/zh/api/', children: 'structure' },
-          // { text: '文章', prefix: '/zh/posts/', children: 'structure' },
+          {
+            text: '提示词',
+            prefix: '/zh/prompt/',
+            children: [
+              '',
+              { text: 'Claude Code 提示词增强', link: 'claude-code-prompt-enhance.md' },
+              { text: '通用提示词', link: 'common.md' }
+            ]
+          },
+          { text: '博客', prefix: '/zh/posts/', children: 'structure' }
         ],
         lastUpdated: '最后更新',
         editLinkText: '在 GitHub 上编辑此页',
         contributorsText: '贡献者',
-        // blog: {
-        //   name: '博客',
-        //   path: '/zh/article/',
-        //   description: 'Chatspeed 博客'
-        // }
+        blog: {
+          name: '博客',
+          path: '/zh/post/',
+          description: 'Chatspeed 博客'
+        }
       }
     },
 
@@ -122,6 +133,5 @@ export default defineUserConfig({
     }
   }),
 
-  plugins: [
-  ]
+  plugins: []
 })

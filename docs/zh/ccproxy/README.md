@@ -187,7 +187,7 @@ You should always maintain the user's question in the language they are using, u
 
 而要将外部未经特别训练的模型用于`Claude Code`，该模型至少**需具备**良好的工具调用能力和指令遵循能力。在此基础上，我们可以通过提示词增强来优化其在 `Claude Code` 中的表现。
 
-下面的提示词增强是在`Claude Code`系统提示词的基础上追加的，它试图通过用法示例和引导来让模型更好地执行任务。由于提示词内容较多，您可以从这里参考[提示词增强](../../prompt.md)。
+下面的提示词增强是在`Claude Code`系统提示词的基础上追加的，它试图通过用法示例和引导来让模型更好地执行任务。由于提示词内容较多，您可以从这里参考[提示词](../prompt/)。
 
 ### 🎛️ 参数调优
 
