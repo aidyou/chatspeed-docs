@@ -1,5 +1,5 @@
 ---
-title: Claude Code Prompt Enhancement
+title: Claude Code Prompt Enhancement For Tool Compatibility Mode
 date: 2025-09-06
 category:
   - Prompt

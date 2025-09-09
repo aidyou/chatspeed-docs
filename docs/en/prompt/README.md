@@ -1,37 +1,40 @@
-# Prompt Collection
+# Prompt Library
 
-Welcome to the Prompt Library! This section contains carefully crafted prompts to enhance your AI development experience with ChatSpeed.
+Welcome to the Chatspeed Prompt Library!
+
+This library collects a series of meticulously designed prompt templates aimed at optimizing the interaction between Chatspeed's `ccproxy` module and various Large Language Models (LLMs), thereby maximizing AI's potential in your workflow.
 
 ## Available Prompts
 
-### Claude Code Enhancement
-- **File**: `claude-code-prompt-enhance.md`
-- **Description**: A comprehensive prompt template for optimizing Claude Code interactions, focusing on tool usage, file operations, and best practices.
+### Claude Code Tool Compatibility Mode Prompt Enhancement
 
-### Common Prompt Templates
-- **File**: `common.md`
-- **Description**: General purpose prompts for various AI development scenarios.
+- **File**: [claude-code-prompt-enhance.md](claude-code-prompt-enhance.md)
+- **Description**: Applicable for **Tool Compatibility Mode** under `ccproxy`, enabling **non-Claude models** to utilize Claude Code capabilities. Optimizes code generation and instruction adherence. Recommended for model groups configured for Claude Code in `ccproxy`.
 
-## How to Use These Prompts
+### Claude Code Native Tool Call Prompt Enhancement
 
-1. **Copy and Paste**: Simply copy the prompt content and paste it into your AI assistant
-2. **Customize**: Modify the prompts to suit your specific use case
-3. **Combine**: Mix and match different prompt sections as needed
+- **File**: [claude-code-prompt-enhance-native-tool-call.md](claude-code-prompt-enhance-native-tool-call.md)
+- **Description**: Applicable for scenarios where `ccproxy` **directly calls Claude Code** and leverages the **model's own tool-calling capabilities**. Optimizes code generation and instruction adherence. Recommended for model groups configured for Claude Code in `ccproxy`.
 
-## Contributing
+### General Prompt Template
 
-Have a great prompt template? Feel free to contribute by:
-1. Adding new prompt files
-2. Improving existing prompts
-3. Sharing your use cases
+- **File**: [common.md](common.md)
+- **Description**: A set of general basic instructions suitable for any AI IDE or code plugin integrated via `ccproxy`. It establishes a fundamental interaction framework and behavioral guidelines for the AI, recommended as the base prompt for default groups.
 
-## Categories
+## How to Use
 
-- **Code Enhancement**: Prompts focused on improving code quality and performance
-- **Tool Usage**: Prompts for effective tool utilization
-- **File Operations**: Prompts for file management and manipulation
-- **Best Practices**: Prompts following industry standards and conventions
+1.  **Copy and Apply**: Simply copy the prompt content and paste it into the corresponding `ccproxy` group settings in the Chatspeed client.
+2.  **Customize and Optimize**: Freely modify and adjust the prompts according to your specific needs and preferences.
+3.  **Combine and Innovate**: Experiment by combining snippets from different templates to create powerful prompts that better suit your personal workflow.
+
+## Contribution Guide
+
+We warmly welcome you to share your insights! If you have excellent prompt templates, you can contribute by:
+
+1.  **Adding New Templates**: Submit your original prompt files.
+2.  **Improving Existing Templates**: Suggest optimizations for prompts already in this library.
+3.  **Sharing Use Cases**: Showcase how you leveraged these prompts to accomplish outstanding work.
 
 ---
 
-*Note: These prompts are designed to work with ChatSpeed's AI proxy and MCP management features.*
+_Please note: All prompts in this library are specifically designed for scenarios where AI models are connected via Chatspeed's proxy module (`ccproxy`) to complete programming tasks, and are primarily tailored for tool compatibility mode scenarios._

@@ -1,6 +1,6 @@
-import { hopeTheme } from 'vuepress-theme-hope'
-import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
+import { defineUserConfig } from 'vuepress/cli'
+import { hopeTheme } from 'vuepress-theme-hope'
 
 export default defineUserConfig({
   lang: 'en-US',
@@ -82,11 +82,7 @@ export default defineUserConfig({
           {
             text: '提示词',
             prefix: '/zh/prompt/',
-            children: [
-              '',
-              { text: 'Claude Code 提示词增强', link: 'claude-code-prompt-enhance.md' },
-              { text: '通用提示词', link: 'common.md' }
-            ]
+            children: 'structure'
           },
           { text: '博客', prefix: '/zh/posts/', children: 'structure' }
         ],

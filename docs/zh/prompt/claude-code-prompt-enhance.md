@@ -1,5 +1,5 @@
 ---
-title: 免费使用Claude Code
+title: 工具兼容模式下的 Claude Code 提示词增强
 date: 2025-09-06
 category:
   - 提示词

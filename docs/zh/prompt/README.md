@@ -6,10 +6,15 @@
 
 ## 可用提示词
 
-### Claude Code 增强提示
+### Claude Code 工具兼容模式提示增强
 
 - **文件**: [claude-code-prompt-enhance.md](claude-code-prompt-enhance.md)
-- **描述**: 当您通过 `ccproxy` 使用非 Claude 模型调用 Claude Code 的能力时，此提示词可以显著提升其代码生成质量和遵循指令的准确性。建议在 `ccproxy` 中配置了 Claude Code 的模型分组中使用。
+- **描述**: 适用于 `ccproxy` **工具兼容模式**下，使**非 Claude 模型**调用 Claude Code 能力。优化代码生成与指令遵循，推荐用于 `ccproxy` 中配置为 Claude Code 的模型分组。
+
+### Claude Code 原生工具调用提示增强
+
+- **文件**: [claude-code-prompt-enhance-native-tool-call.md](claude-code-prompt-enhance-native-tool-call.md)
+- **描述**: 适用于 `ccproxy` **直接调用 Claude Code**，并利用**模型自身工具调用能力**的场景。优化代码生成与指令遵循，推荐用于 `ccproxy` 中配置为 Claude Code 的模型分组。
 
 ### 通用提示词模板
 
