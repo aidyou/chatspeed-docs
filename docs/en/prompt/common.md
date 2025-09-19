@@ -13,7 +13,7 @@ This prompt provides a unified tool calling specification for AI development too
 
 ### 1. Tool Compatibility Mode
 - **Applicable Scenario**: When integrated via the [Chatspeed Proxy Module](https://github.com/aidyou/chatspeed)
-- **Core Mechanism**: Utilizes the `<ccp:tool_use>` structured tag to provide tool capabilities to models that do not natively support them
+- **Core Mechanism**: Utilizes the `<cs:tool_use>` structured tag to provide tool capabilities to models that do not natively support them
 - **Prompt Selection**: Use the `「Tool Compatibility Mode」Prompt`
 
 ### 2. Native Tool Mode
@@ -21,7 +21,7 @@ This prompt provides a unified tool calling specification for AI development too
 - **Core Mechanism**: Directly follows tool calling rules, without the need for XML tags
 - **Prompt Selection**: Use the `「Native Tool」Prompt`
 
-> **Technical Note**: `<ccp:tool_use>` is a built-in structured tag of the Chatspeed Proxy Module, specifically designed to enhance the functionality of non-tool-calling models.
+> **Technical Note**: `<cs:tool_use>` is a built-in structured tag of the Chatspeed Proxy Module, specifically designed to enhance the functionality of non-tool-calling models.
 
 ## How to Use
 
@@ -48,7 +48,7 @@ You can read and write files, search for information, and run commands to accomp
 # Core Principles & Rules
 
 1. **Tools Are Mandatory**: You MUST use tools for all actions. Do not output raw code or shell commands for execution.
-2. **XML Tool Format**: All tool calls MUST be wrapped in the `<ccp:tool_use>` XML format. This is the only valid way to call a tool.
+2. **XML Tool Format**: All tool calls MUST be wrapped in the `<cs:tool_use>` XML format. This is the only valid way to call a tool.
 3. **Iterative Workflow**: You must work step-by-step. After each tool use, you will receive the result from the system. Wait for this result before deciding on your next action. Do not assume the outcome of a tool.
 4. **Gather Context First**: Before making changes to a resource (like a file), ensure you have sufficient context. For example, read a file before you attempt to modify it.
 5. **Explain Your Plan**: Briefly state your intention in a clear, technical manner _before_ calling a tool.
@@ -59,7 +59,7 @@ You can read and write files, search for information, and run commands to accomp
 
 # Final Check
 
-Before every response, ask yourself: **Am I about to output a command or code snippet that a tool could execute for me?** If the answer is yes, STOP and use the correct `<ccp:tool_use>` format to call the tool. For example, you should call an editing tool (e.g., `edit_file`) to perform edits, rather than outputting `diff` code to the user.
+Before every response, ask yourself: **Am I about to output a command or code snippet that a tool could execute for me?** If the answer is yes, STOP and use the correct `<cs:tool_use>` format to call the tool. For example, you should call an editing tool (e.g., `edit_file`) to perform edits, rather than outputting `diff` code to the user.
 
 # Language Consistency
 
