@@ -1,5 +1,5 @@
 ---
-title: 免费使用Claude Code
+title: CCProxy 通用提示词
 date: 2025-09-06
 category:
   - 提示词

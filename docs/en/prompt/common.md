@@ -1,5 +1,5 @@
 ---
-title: Free Use of Claude Code
+title: CCProxy Common Prompts
 date: 2025-09-06
 category:
   - Prompt
