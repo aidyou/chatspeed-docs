@@ -78,7 +78,7 @@ yarn tauri build
 After installation, you can:
 
 1. **[Quick Start](./quickStart.md)** - Get started quickly.
-2. **[ccproxy Module](../ccproxy/)** - Learn about the core proxy features.
+2. **[CCProxy Module](../ccproxy/)** - Learn about the core proxy features.
 3. **[MCP Module](../mcp/)** - Learn about the core proxy features.
 
 ## Getting Help

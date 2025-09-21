@@ -12,7 +12,7 @@ tag:
 
 This is the first post in the "Using Claude Code for Free" blog series. It will show you how to use Claude Code for free by connecting to ModelScope''s `qwen3-coder` model.
 
-Before you begin, you must install [Chatspeed](https://github.com/aidyou/chatspeed/releases). Chatspeed''s proxy module (`ccproxy`) enables arbitrary conversion between OpenAI-compatible formats and the native protocols of Claude, Gemini, and Ollama, making it a key tool for achieving the goal of this article. For Chatspeed installation, please refer to the [Installation Guide](../../guide/installation.md).
+Before you begin, you must install [Chatspeed](https://github.com/aidyou/chatspeed/releases). Chatspeed''s proxy module (`CCProxy`) enables arbitrary conversion between OpenAI-compatible formats and the native protocols of Claude, Gemini, and Ollama, making it a key tool for achieving the goal of this article. For Chatspeed installation, please refer to the [Installation Guide](../../guide/installation.md).
 
 ## Using Claude Code for Free
 
@@ -96,7 +96,7 @@ Claude Code currently uses 3 models, with the following roles:
 
 ![Add Proxy for Opus](/images/blog/en/qwen3-code-add-5.png)
 
-> In the figure, we have additionally checked the `qwen3-coder` model from `openrouter` for the proxy target. When you select multiple models for the same target, the `ccproxy` module will perform load balancing rotation among them for each request.
+> In the figure, we have additionally checked the `qwen3-coder` model from `openrouter` for the proxy target. When you select multiple models for the same target, the `CCProxy` module will perform load balancing rotation among them for each request.
 
 ##### 3.2 Follow the steps above to add the settings for `claude-sonnet-4-20250514` to complete the setup.
 
@@ -118,7 +118,7 @@ Two methods are provided below to connect to Claude Code:
     export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/qwen"
     export ANTHROPIC_AUTH_TOKEN="{You-Proxy-Token}"
 
-    # Now, running claude will connect to the models we set up above via the ccproxy module
+    # Now, running claude will connect to the models we set up above via the CCProxy module
     claude
     ```
 
@@ -130,13 +130,13 @@ Two methods are provided below to connect to Claude Code:
 
     If you have selected the same (or different) models from multiple providers, and some models do not support native tool calls, you can enable tool compatibility mode to ensure that all models can use tool calls. Enabling it is simple: just add `/compat_mode` to the end of the URL.
 
-    Use the following commands to enable `ccproxy`''s tool compatibility mode to connect to Claude Code:
+    Use the following commands to enable `CCProxy`''s tool compatibility mode to connect to Claude Code:
 
     ```sh
     export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/qwen/compat_mode"
     export ANTHROPIC_AUTH_TOKEN="{You-Proxy-Token}"
 
-    # Now, running claude will connect to the models we set up above via the ccproxy module
+    # Now, running claude will connect to the models we set up above via the CCProxy module
     claude
     ```
 

@@ -1,6 +1,6 @@
 # 功能概览
 
-Chatspeed 是一个功能丰富的 AI 助手应用，帮助您更好地与 AI 进行交互。除了基本的聊天功能外，Chatspeed 还集成了强大的 ccproxy 模块，提供 AI 代理能力和 MCP 代理功能，让您能够灵活地将各种 AI 模型接入 Claude Code 或者 Gemini CLI，集中管理各种 MCP 工具。
+Chatspeed 是一个功能丰富的 AI 助手应用，帮助您更好地与 AI 进行交互。除了基本的聊天功能外，Chatspeed 还集成了强大的 CCProxy 模块，提供 AI 代理能力和 MCP 代理功能，让您能够灵活地将各种 AI 模型接入 Claude Code 或者 Gemini CLI，集中管理各种 MCP 工具。
 
 ## 🤖 核心功能
 
@@ -33,20 +33,20 @@ Chatspeed 提供统一平台来管理各种 AI 聊天代理和多模态内容代
 - **参数配置**：完整支持温度、top_p、max_tokens 等参数配置
 - **代理支持**：支持 HTTP 网络代理设置
 
-## 🌐 ccproxy - 核心代理模块
+## 🌐 CCProxy - 核心代理模块
 
-ccproxy 是 Chatspeed 的核心模块，提供强大的 AI 模型代理能力。
+CCProxy 是 Chatspeed 的核心模块，提供强大的 AI 模型代理能力。
 
 ### 协议转换能力
 
-ccproxy 支持主流对话协议之间的转换：
+CCProxy 支持主流对话协议之间的转换：
 
 - **OpenAI 兼容格式**
 - **Claude API**
 - **Gemini API**
 - **Ollama 本地模型**
 
-通过协议转换，ccproxy 实现了"Any Claude Code"——将任何 AI 模型接入 Claude Code 环境，以及"Any Gemini CLI"——将任何 AI 模型接入 Gemini CLI 环境。
+通过协议转换，CCProxy 实现了"Any Claude Code"——将任何 AI 模型接入 Claude Code 环境，以及"Any Gemini CLI"——将任何 AI 模型接入 Gemini CLI 环境。
 
 ### 分组管理
 
@@ -54,7 +54,7 @@ ccproxy 支持主流对话协议之间的转换：
 
 ### 负载均衡
 
-Chatspeed 支持在同一个供应商中设置多个密钥，在每次调用时自动轮换使用。而 ccproxy 模块的代理，同一个模型支持配置多个不同的供应商，其轮换规则是全局轮换。
+Chatspeed 支持在同一个供应商中设置多个密钥，在每次调用时自动轮换使用。而 CCProxy 模块的代理，同一个模型支持配置多个不同的供应商，其轮换规则是全局轮换。
 
 **Chatspeed 密钥轮换 (同一供应商)**
 
@@ -96,7 +96,7 @@ graph TD
 ### 使用 MCP 代理的优势
 
 - **统一配置**：只需将所有必要的 MCP 工具安装到 Chatspeed 上
-- **统一访问**：ccproxy 模块通过 `http://localhost:11434/sse` 提供聚合后的所有 MCP 工具
+- **统一访问**：CCProxy 模块通过 `http://localhost:11434/sse` 提供聚合后的所有 MCP 工具
 - **简化配置**：所有 IDE 或插件配置 MCP 都变得简单
 - **集中管理**：工具的增删改查都可以在 Chatspeed 客户端中统一完成
 
@@ -167,5 +167,5 @@ AI 知识管理：
 了解了 Chatspeed 的功能概览后，您可以：
 
 1. **[快速开始](../../guide/quickStart.md)** - 学习如何快速上手使用 Chatspeed
-2. **[ccproxy 模块](../../ccproxy/)** - 探索核心代理功能
+2. **[CCProxy 模块](../../ccproxy/)** - 探索核心代理功能
 3. **[MCP 代理](../../mcp/)** - 了解 MCP 代理集成

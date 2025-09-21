@@ -1,22 +1,22 @@
 # API Introduction
 
-The Chatspeed `ccproxy` module provides flexible and powerful API access rules for easy invocation by various clients. This section details these rules, helping you understand how to access and combine various AI models and tools via `ccproxy`.
+The Chatspeed `CCProxy` module provides flexible and powerful API access rules for easy invocation by various clients. This section details these rules, helping you understand how to access and combine various AI models and tools via `CCProxy`.
 
 ### Core Concepts
 
-API access in `ccproxy` is primarily based on the following two core concepts:
+API access in `CCProxy` is primarily based on the following two core concepts:
 
 1.  **Grouping (Group)**
     You can set up independent model groups for different clients or use cases. By including the group name in the API path, you can easily isolate different clients' access capabilities to models and quickly switch models as needed.
     *   **Example**: If your group name is `gemini`, to access the Claude protocol chat interface, you can use `/gemini/v1/messages`.
 
 2.  **Tool Compatibility Mode**
-    For models that do not natively support tool calling (Function Calling), `ccproxy` provides a tool compatibility mode, allowing them to gain and execute tool calling capabilities. To enable tool compatibility mode, simply add `compat_mode` to the API entry endpoint.
+    For models that do not natively support tool calling (Function Calling), `CCProxy` provides a tool compatibility mode, allowing them to gain and execute tool calling capabilities. To enable tool compatibility mode, simply add `compat_mode` to the API entry endpoint.
     *   **Example**: `/gemini/compat_mode/v1/messages`
 
 ### API Access Endpoints
 
-Below are the basic API entry points provided by `ccproxy`:
+Below are the basic API entry points provided by `CCProxy`:
 
 *   `/sse`: MCP Proxy Entry (Server-Sent Events)
 *   `/v1/models`: OpenAI compatible interface and Claude format model list interface

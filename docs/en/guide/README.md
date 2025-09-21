@@ -14,7 +14,7 @@ This guide contains the following main sections:
 
 ### 🔄 Core Features
 
-- **[ccproxy Module](../ccproxy/)** - Understand the AI protocol proxy and its clever uses in Chatspeed.
+- **[CCProxy Module](../ccproxy/)** - Understand the AI protocol proxy and its clever uses in Chatspeed.
 - **[MCP Module](../mcp/)** - Learn about the usage and proxy configuration of MCP tools.
 
 ## Core Concepts
@@ -37,9 +37,9 @@ Model groups allow you to organize multiple AI proxies together, making it easy 
 - Quickly switch models for different scenarios
 - Centrally manage parameter settings for similar tasks
 
-### 3. ccproxy Proxy
+### 3. CCProxy Proxy
 
-`ccproxy` is Chatspeed's core proxy engine, responsible for:
+`CCProxy` is Chatspeed's core proxy engine, responsible for:
 
 - Converting between different AI protocols (OpenAI, Claude, Gemini, Ollama, etc.)
 - Providing a unified API access point
@@ -67,7 +67,7 @@ Use Chatspeed as your desktop-resident AI assistant to handle daily tasks such a
 
 ### Scenario 2: Enhanced Development Tools
 
-Integrate cost-effective models into your development environment via `ccproxy`:
+Integrate cost-effective models into your development environment via `CCProxy`:
 
 - Use free models within Claude Code
 - Reduce development costs by over 80%

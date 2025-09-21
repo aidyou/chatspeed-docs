@@ -12,7 +12,7 @@ tag:
 
 `Claude Code` 工作流在与它的原生模型（如 `claude-4-opus`）协同工作时表现最佳，因为这些模型经过了深度优化，能够精准地遵循多步骤的工具调用指令。
 
-然而，当我们通过 Chatspeed 的 `ccproxy` 模块，将其他通用模型（如 qwen3-code、Kimi-k2 等）接入到 `Claude Code` 工作流时，由于它们往往缺乏针对性的微调，可能会表现出以下问题：
+然而，当我们通过 Chatspeed 的 `CCProxy` 模块，将其他通用模型（如 qwen3-code、Kimi-k2 等）接入到 `Claude Code` 工作流时，由于它们往往缺乏针对性的微调，可能会表现出以下问题：
 
 - **行为模式错位**：倾向于进行一问一答式的对话，而不是主动地、连续地使用工具来解决问题。
 - **任务中断**: 在没有明确指令的情况下，执行一步操作后便会停止，等待用户给出下一步指令，无法自主完成整个任务。
@@ -31,7 +31,7 @@ tag:
 
 ### 适用场景
 
-当您希望将任何**非 Claude 原生模型**通过 `ccproxy` 接入 `Claude Code` 工作流时，强烈建议使用此增强提示词。
+当您希望将任何**非 Claude 原生模型**通过 `CCProxy` 接入 `Claude Code` 工作流时，强烈建议使用此增强提示词。
 
 ### 案例研究：改造 Kimi-k2 模型
 
@@ -43,7 +43,7 @@ tag:
 
 ![Kimi-k2 模型改造前](/images/zh/kimi-k2-claude-code-enhance.png)
 
-- **补充说明**: 对于本身不支持工具调用（Function Calling）的开源模型，Chatspeed 的 `ccproxy` 模块内置的**工具兼容模式**可以为其补齐这一能力，再结合本提示词，即可让它们在 `Claude Code` 中发挥作用。
+- **补充说明**: 对于本身不支持工具调用（Function Calling）的开源模型，Chatspeed 的 `CCProxy` 模块内置的**工具兼容模式**可以为其补齐这一能力，再结合本提示词，即可让它们在 `Claude Code` 中发挥作用。
 
 ### 确保语言一致性
 

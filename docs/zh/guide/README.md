@@ -14,7 +14,7 @@
 
 ### 🔄 核心功能
 
-- **[ccproxy 模块](../ccproxy/)** - 了解Chatspeed的AI协议代理及妙用
+- **[CCProxy 模块](../ccproxy/)** - 了解Chatspeed的AI协议代理及妙用
 - **[MCP 模块](../mcp/)** - MCP工具的使用及代理配置
 
 ## 核心概念
@@ -37,9 +37,9 @@ AI 代理是 Chatspeed 管理的基本单元，每个代理代表一个特定的
 - 快速切换不同场景下的模型
 - 统一管理相似任务的参数设置
 
-### 3. ccproxy 代理
+### 3. CCProxy 代理
 
-ccproxy 是 Chatspeed 的核心代理引擎，负责：
+CCProxy 是 Chatspeed 的核心代理引擎，负责：
 
 - 在不同 AI 协议间进行转换（OpenAI、Claude、Gemini、Ollama等）
 - 提供统一的 API 接入点
@@ -67,7 +67,7 @@ MCP（Model Context Protocol）工具扩展了 AI 的能力，包括：
 
 ### 场景 2：开发工具增强
 
-通过 ccproxy 将高性价比模型集成到开发环境中：
+通过 CCProxy 将高性价比模型集成到开发环境中：
 
 - 在 Claude Code 中使用免费模型
 - 降低开发成本 80% 以上

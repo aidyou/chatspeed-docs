@@ -9,9 +9,9 @@ tag:
 ---
 
 ## 使用背景
-这份提示词主要用于通过 ccproxy 将其他通用模型接入 Claude Code，并且该模型具有较强的工具调用能力时，增强其在编程工作流中的表现。
+这份提示词主要用于通过 CCProxy 将其他通用模型接入 Claude Code，并且该模型具有较强的工具调用能力时，增强其在编程工作流中的表现。
 
-如果 ccproxy 开启了工具兼容模式，务必使用[claude-code-prompt-enhance.md](claude-code-prompt-enhance.md)
+如果 CCProxy 开启了工具兼容模式，务必使用[claude-code-prompt-enhance.md](claude-code-prompt-enhance.md)
 
 更多背景信息你可以参考 [claude-code-prompt-enhance.md](claude-code-prompt-enhance.md)
 

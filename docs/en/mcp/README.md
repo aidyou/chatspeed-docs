@@ -2,13 +2,13 @@
 
 > Aggregates all available MCP (Model Context Protocol) tools in the Chatspeed system into a unified proxy entry point, completely solving the pain point of repeatedly configuring tools across different IDEs.
 
-The **MCP Proxy**, a core feature of Chatspeed's ccproxy module, solves the problem of fragmented MCP management. It aggregates all MCP tools installed in Chatspeed into a flattened structure and provides a unified access entry point via the SSE protocol. This means you only need to install your MCP tools once in Chatspeed, and then you can access all of them from any IDE via `http://localhost:11434/sse`.
+The **MCP Proxy**, a core feature of Chatspeed's CCProxy module, solves the problem of fragmented MCP management. It aggregates all MCP tools installed in Chatspeed into a flattened structure and provides a unified access entry point via the SSE protocol. This means you only need to install your MCP tools once in Chatspeed, and then you can access all of them from any IDE via `http://localhost:11434/sse`.
 
 ## 🔧 Why You Need an MCP Proxy
 
 Developers often use multiple AI IDEs or plugins, and each typically requires the installation of common MCPs to extend the AI's capabilities. Certain MCPs, like context7 or search MCPs, are installed in almost every IDE. Reinstalling these necessary MCPs every time you switch IDEs becomes tedious.
 
-### Before Using the ccproxy Module's MCP Proxy
+### Before Using the CCProxy Module's MCP Proxy
 
 - Individually install MCP tools in VS Code ❌
 - Repeatedly configure the same tools in Cursor ❌
@@ -16,10 +16,10 @@ Developers often use multiple AI IDEs or plugins, and each typically requires th
 - Duplicate setup for Gemini CLI ❌
 - Repeatedly install the same MCP tools for Trae, Cline, Roo Code, etc. ❌
 
-### After Using the ccproxy Module's MCP Proxy
+### After Using the CCProxy Module's MCP Proxy
 
 - Simply install all necessary MCP tools on Chatspeed ✅
-- The ccproxy module provides all aggregated MCP tools via `http://localhost:11434/sse` ✅
+- The CCProxy module provides all aggregated MCP tools via `http://localhost:11434/sse` ✅
 - Configuring MCPs in any IDE or plugin is simple: just select the SSE protocol and set the URL to `http://localhost:11434/sse` ✅
 - Adding, removing, or modifying tools is managed centrally in the Chatspeed client ✅
 
@@ -33,7 +33,7 @@ graph TD
         C[...]
     end
 
-    P(Chatspeed ccproxy)
+    P(Chatspeed CCProxy)
 
     subgraph "Exposed via Unified SSE Proxy"
         D[tavily-search]
@@ -89,7 +89,7 @@ The configuration format for different MCP clients may vary slightly, but it gen
 }
 ```
 
-> Please note that this chapter's MCP URL examples use the default port of `ccproxy`. If you've modified the default port, please update the port configuration in your settings file accordingly.
+> Please note that this chapter's MCP URL examples use the default port of `CCProxy`. If you've modified the default port, please update the port configuration in your settings file accordingly.
 
 ### Claude Code
 
@@ -155,7 +155,7 @@ For more configuration information, you can follow this [guide](https://github.c
 
 ### VS Code
 
-You can follow the MCP installation [guide](https://code.visualstudio.com/docs/copilot/chat/mcp-servers#_add-an-mcp-server) using the standard configuration above. Alternatively, you can use the VS Code CLI to install the ccproxy MCP tool:
+You can follow the MCP installation [guide](https://code.visualstudio.com/docs/copilot/chat/mcp-servers#_add-an-mcp-server) using the standard configuration above. Alternatively, you can use the VS Code CLI to install the CCProxy MCP tool:
 
 ```sh
 code --add-mcp '{"name":"ccproxy","url":"http://localhost:11434/sse"}'
@@ -205,7 +205,7 @@ You can open `~/.codeium/windsurf/mcp_config.json` and add the following content
 }
 ```
 
-> Note, if you have multiple MCP tools, just add the `ccproxy` section, like so:
+> Note, if you have multiple MCP tools, just add the `CCProxy` section, like so:
 
 ```json
     "ccproxy":{
@@ -229,7 +229,7 @@ You can open `~/.codeium/windsurf/mcp_config.json` and add the following content
 
 ![cline mcp setup 1](/images/common/cline-mcp-1.png)
 
-2.  After saving the code, you will see the `ccproxy` MCP tools in Cline's MCP server list.
+2.  After saving the code, you will see the `CCProxy` MCP tools in Cline's MCP server list.
 
 ![cline mcp setup 2](/images/common/cline-mcp-2.png)
 
@@ -259,6 +259,6 @@ You can open `~/.codeium/windsurf/mcp_config.json` and add the following content
 }
 ```
 
-5.  Now you can see the `ccproxy` MCP tools in the `Roo Code` MCP server list.
+5.  Now you can see the `CCProxy` MCP tools in the `Roo Code` MCP server list.
 
 ![Roo Code mcp setup 4](/images/common/roo-mcp-4.png)

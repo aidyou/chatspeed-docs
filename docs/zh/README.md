@@ -3,30 +3,41 @@ home: true
 icon: home
 heroImage: /images/claude.gif
 heroText: Chatspeed
-tagline: Any Claude Code, Any Gemini CLI | 万物皆可 Claude，万物皆可 Gemini
+tagline: 由 Rust 精心打造，一款开源、高性能的 AI 助手，是您强大的编程伴侣与智能桌面中枢
 actions:
   - text: 开始使用 →
     link: /zh/guide/
     type: primary
 features:
   - title: 🔄 多协议代理转换
-    details: 在 OpenAI、Claude、Gemini、Ollama 等协议间无缝转换，让任何 AI 模型都能快速集成到Claude Code、Gemini Cli、Cursor、Cline、Roo Code 等开发环境中。
+    details: 在 OpenAI 兼容格式、Claude、Gemini、Ollama 等协议间无缝转换，让绝大多数 AI 模型都能快速集成到Claude Code、Gemini Cli、Cursor、Cline、Roo Code 等开发环境中。
+  - title: 🔀 密钥全局轮换
+    details: CCProxy 模块可以对代理模型的多个供应商及其单个供应商上的多个密钥进行全局均衡轮换，通过代理池降低每个供应商的调用频率限制。
   - title: 🎯 万物皆可 Claude Code
-    details: 将 OpenRouter、Nvidia、魔塔等免费模型，Qwen3-code，k2，GLM4.5等高性价比模型接入 Claude Code，开发成本降低 80% 以上。
-  - title: 🌐 万物皆可 Gemini CLI
-    details: 不仅是 Claude Code，Gemini CLI 同样能接入任何模型。无论是 Claude、ChatGPT，还是各类免费、开源模型，均可接入 Gemini CLI。
+    details: 将 OpenRouter、Nvidia、魔塔等免费模型，Qwen3-code，k2，GLM4.5 等高性价比模型接入 Claude Code，开发成本降低 80% 以上。
+  - title: 💻 万物皆可 Gemini CLI
+    details: 不仅是 Claude Code，Gemini CLI 同样能接入绝大多数模型。无论是 Claude、ChatGPT，还是各类免费、开源模型，均可接入 Gemini CLI。
   - title: 🔗 统一 MCP 代理
     details: 将所有 MCP（模型上下文协议）聚合为统一代理入口，解决在不同 IDE 间重复配置工具的痛点。
   - title: 🎛️ 智能分组管理
     details: 创建不同的 AI 代理分组，通过 /kimi、/qwen 等端点一键切换模型，灵活高效。
   - title: ⚙️ 高级提示词工程
     details: 每个代理分组支持独立的提示词注入、修改、替换，并可调节温度比例，用于适配开发环境，提高模型性能。
+  - title: 📚 不止是编程利器
+    details: ALT+Z 快速呼叫助手，翻译、脑图、流程图、思考样样精通，通过“技能”扩展 AI 能力边界
 footer: MIT 协议 | 版权所有 © 2025 Chatspeed 团队
 ---
 
-## 🚀 万能 AI 代理 `ccproxy`
+## 🌟 Chatspeed 能做啥
 
-`ccproxy` (`Chat Completion Proxy`) 是 Chatspeed 的核心代理引擎，一个为 AI 开发设计的万能适配器。它主要解决两大痛点：
+- **💼 多功能桌面助手**：你可以用它翻译、制作脑图、制作流程图、日常对话等，通过快捷键 ALT+Z 快速呼叫
+- **🔌 连接任何开发工具**：不仅是 [Claude Code](./ccproxy/claude-code.md)，你还可以将模型接入 [Gemini CLI](./ccproxy/gemini.md)、[Cline](./ccproxy/cline.md)、[Roo Code](./ccproxy/roo-code.md)、[Zed](./ccproxy/zed.md) 等几乎所有主流 AI 开发工具。
+- **💰 免费使用 Claude Code**：作为最佳实践，我们提供了详细的[免费使用 Claude Code](./posts/claude-code-free/)教程。
+- **🚀 MCP Hub**：Chatspeed 的 MCP 代理可以将自身的`WebSearch`和`WebFetch`工具连同您安装的 `MCP` 工具通过 `SSE` 协议提供给外部其他客户端使用，了解如何[集中管理 MCP](./mcp/)
+
+## 🚀 万能 AI 代理 `CCProxy`
+
+`CCProxy` (`Chat Completion Proxy`) 是 Chatspeed 的核心代理引擎，一个为 AI 开发设计的万能适配器。它主要解决两大痛点：
 
 ### 1. 协议转换，降本增效
 
@@ -34,7 +45,7 @@ footer: MIT 协议 | 版权所有 © 2025 Chatspeed 团队
 
 **✨ 特别功能：工具调用兼容模式**
 
-对于本身不支持工具调用（Function Calling）的模型，`ccproxy` 提供了兼容模式，使其也能理解并执行工具调用指令，极大地扩展了这些模型的能力边界。
+对于本身不支持工具调用（Function Calling）的模型，`CCProxy` 提供了兼容模式，使其也能理解并执行工具调用指令，极大地扩展了这些模型的能力边界。
 
 ### 2. 统一 MCP 入口，简化工作流
 
@@ -42,7 +53,7 @@ footer: MIT 协议 | 版权所有 © 2025 Chatspeed 团队
 
 ![MCP proxy](/images/zh/mcp-proxy.png)
 
-> 你可以通过 `http://localhost:11434/sse` 访问 `ccproxy` 的 SSE 协议的 MCP
+> 你可以通过 `http://localhost:11434/sse` 访问 `CCProxy` 的 SSE 协议的 MCP
 
 ### 核心优势
 
@@ -50,7 +61,7 @@ footer: MIT 协议 | 版权所有 © 2025 Chatspeed 团队
 - **💰 极致成本控制**: 使用免费和高性价比模型，开发成本降低 80% 以上，让免费使用 Claude Code 成为可能
 - **🔄 一次配置，处处可用**: 消除在多个 IDE 中重复配置 MCP 工具的繁琐
 - **🎯 灵活的分组切换**: 通过不同的模型分组可以高效的在不同场景下使用 claude code
-- **🔑 安全**: ccproxy 提供的代理密钥可以有效隔离客户端接触真实的密钥，确保你AI的账户安全
+- **🔑 安全**: CCProxy 提供的代理密钥可以有效隔离客户端接触真实的密钥，确保你AI的账户安全
 - **🚀 高效性能**: rust 实现的高效适配器
 
 ### 快速示例
@@ -202,7 +213,7 @@ Chatspeed 不仅仅是 **AI 代理和 MCP 管理平台**，更是一个 **全面
 ## 📖 文档结构
 
 - **[快速开始](/zh/guide/)** - 安装、配置和快速入门
-- **[ccproxy 模块](/zh/ccproxy/)** - 详细的 ccproxy 设置和使用
+- **[CCProxy 模块](/zh/ccproxy/)** - 详细的 CCProxy 设置和使用
 - **[MCP 集成](/zh/mcp/)** - 模型上下文协议代理配置
 - **[API 参考](/zh/api/)** - 完整的 API 文档
 
@@ -210,7 +221,6 @@ Chatspeed 不仅仅是 **AI 代理和 MCP 管理平台**，更是一个 **全面
 
 - 🐛 [报告问题](https://github.com/aidyou/chatspeed/issues)
 - 💬 [参与讨论](https://github.com/aidyou/chatspeed/discussions)
-- 📚 [贡献指南](/zh/guide/contributing)
 - 🌟 [GitHub 点星](https://github.com/aidyou/chatspeed)
 
 ---

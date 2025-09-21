@@ -43,13 +43,13 @@ docs/
 
 ### English Documentation
 - **[Getting Started](./docs/guide/)** - Installation and quick start
-- **[ccproxy Module](./docs/ccproxy/)** - Core proxy functionality
+- **[CCProxy Module](./docs/ccproxy/)** - Core proxy functionality
 - **[MCP Integration](./docs/mcp/)** - Model Context Protocol
 - **[API Reference](./docs/api/)** - Complete API documentation
 
 ### Chinese Documentation (中文文档)
 - **[快速开始](./docs/zh/guide/)** - 安装和快速入门
-- **[ccproxy 模块](./docs/zh/ccproxy/)** - 核心代理功能
+- **[CCProxy 模块](./docs/zh/ccproxy/)** - 核心代理功能
 - **[MCP 集成](./docs/zh/mcp/)** - 模型上下文协议
 - **[API 参考](./docs/zh/api/)** - 完整的 API 文档
 

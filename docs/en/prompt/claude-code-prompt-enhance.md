@@ -12,7 +12,7 @@ tag:
 
 The `Claude Code` workflow performs optimally with its native models (e.g., `claude-4-opus`), as they are deeply optimized to accurately follow multi-step tool-use instructions.
 
-However, when other general-purpose models (like qwen3-code, Kimi-k2, etc.) are integrated into the `Claude Code` workflow via ChatSpeed's `ccproxy` module, they may exhibit the following issues due to a lack of specific fine-tuning:
+However, when other general-purpose models (like qwen3-code, Kimi-k2, etc.) are integrated into the `Claude Code` workflow via ChatSpeed's `CCProxy` module, they may exhibit the following issues due to a lack of specific fine-tuning:
 
 - **Behavioral Mismatch**: A tendency towards conversational, question-and-answer interactions rather than proactively and continuously using tools to solve a problem.
 - **Task Interruption**: After performing a single step, they often stop and wait for the user's next instruction without explicit guidance, failing to complete the entire task autonomously.
@@ -31,7 +31,7 @@ This instruction is the cornerstone of the entire prompt. It forces the model to
 
 ### Applicable Scenarios
 
-It is highly recommended to use this enhancement prompt whenever you connect any **non-native Claude model** to the `Claude Code` workflow via `ccproxy`.
+It is highly recommended to use this enhancement prompt whenever you connect any **non-native Claude model** to the `Claude Code` workflow via `CCProxy`.
 
 ### Case Study: Transforming the Kimi-k2 Model
 
@@ -43,7 +43,7 @@ It is highly recommended to use this enhancement prompt whenever you connect any
 
 ![Kimi-k2 model after transformation](/images/en/kimi-k2-claude-code-enhance.png)
 
-- **Additional Note**: For open-source models that do not natively support Function Calling, ChatSpeed's `ccproxy` module includes a **Tool Compatibility Mode** that can provide this capability. Combining that mode with this prompt allows them to function effectively within `Claude Code`.
+- **Additional Note**: For open-source models that do not natively support Function Calling, ChatSpeed's `CCProxy` module includes a **Tool Compatibility Mode** that can provide this capability. Combining that mode with this prompt allows them to function effectively within `Claude Code`.
 
 ### Ensuring Language Consistency
 

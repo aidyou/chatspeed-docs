@@ -3,44 +3,54 @@ home: true
 icon: home
 heroImage: /images/claude.gif
 heroText: Chatspeed
-tagline: Any Claude Code, Any Gemini CLI
+tagline: Forged in Rust, this open-source, high-performance AI assistant is your powerful programming companion and smart desktop hub
 actions:
   - text: Get Started →
     link: /guide/
     type: primary
 features:
   - title: 🔄 Multi-Protocol Conversion
-    details: Seamlessly convert between OpenAI, Claude, Gemini, Ollama, and more. Integrate any AI model into your preferred development environment.
+    details: Seamlessly convert between OpenAI, Claude, Gemini, Ollama, and more. Integrate most AI models into your preferred development environment.
+  - title: 🔀 Global Key Rotation
+    details: Enable global, load-balanced rotation of multiple keys across multiple providers, creating a proxy pool to mitigate rate limits.
   - title: 🎯 Any Claude Code
     details: Integrate free or cost-effective models (e.g., OpenRouter, Kimi, Qwen, GLM) into Claude Code, slashing development costs by over 80%.
-  - title: 🌐 Any Gemini CLI
-    details: Not just Claude, Gemini CLI can also integrate any model. Whether it's Claude 3 or various free/open-source models, they can all become part of your CLI workflow.
+  - title: 💻 Any Gemini CLI
+    details: Not just Claude, Gemini CLI can also integrate most models. Whether it's Claude 3 or various free/open-source models, they can all become part of your CLI workflow.
   - title: 🔗 Unified MCP Entry
     details: Aggregate all MCP (Model Context Protocol) tools into a unified proxy entry, eliminating the pain of repeatedly configuring tools across IDEs like VS Code and Cursor.
   - title: 🎛️ Smart Grouping & Routing
     details: Create different AI proxy groups and quickly switch models via endpoints (e.g., /kimi, /qwen) for flexible, efficient multi-scenario needs.
   - title: ⚙️ Advanced Prompt Engineering
     details: Each proxy group supports independent prompt injection and modification, with fine-tuned model parameters (e.g., temperature) to optimize performance in specific development environments.
+  - title: 📚 More Than a Programming Tool
+    details: Instantly summon the AI assistant (ALT+Z) for translation, mind maps, flowcharts, and brainstorming. Extend its capabilities limitlessly with custom "Skills".
 footer: MIT Licensed | Copyright © 2025 Chatspeed Team
 ---
 
-## 🚀 Universal AI Proxy `ccproxy`
+## 🌟 What can Chatspeed do?
+- **💼 Multi-functional Desktop Assistant**: Use it for translation, creating mind maps, flowcharts, daily conversations, and more. Quickly summon it with the shortcut ALT+Z.
+- **🔌 Connect Any Dev Tool**: Beyond just [Claude Code](./en/ccproxy/claude-code.md), you can connect your models to almost any major AI development tool, including [Gemini CLI](./en/ccproxy/gemini.md), [Cline](./en/ccproxy/cline.md), [Roo Code](./en/ccproxy/roo-code.md), and [Zed](./en/ccproxy/zed.md).
+- **💰 Use Claude Code for Free**: As a best practice, we provide a detailed tutorial on how to [use Claude Code for free](./posts/claude-code-free/).
+- **🚀 MCP Hub**: Chatspeed's MCP proxy can provide its own `WebSearch` and `WebFetch` tools, along with any `MCP` tools you've installed, to external clients via the `SSE` protocol. Learn how to [centrally manage MCP](./en/mcp/).
 
-`ccproxy` (`Chat Completion Proxy`) is Chatspeed's core proxy engine, a universal adapter designed for AI development. It primarily solves two major pain points:
+## 🚀 Universal AI Proxy `CCProxy`
+
+`CCProxy` (`Chat Completion Proxy`) is Chatspeed's core proxy engine, a universal adapter designed for AI development. It primarily solves two major pain points:
 
 ### 1. Protocol Conversion for Cost-Efficiency
 It enables arbitrary protocol conversion between OpenAI-compatible formats, Gemini, Claude, Ollama, and more. This means you can seamlessly integrate any local or cloud-based free, open-source, or cost-effective model into popular development environments like `Claude Code` and `Gemini CLI` that require specific protocols.
 
 **✨ Special Feature: Tool Calling Compatibility Mode**
 
-For models that do not natively support tool calling (Function Calling), `ccproxy` provides a compatibility mode, allowing them to understand and execute tool calling instructions, greatly expanding their capabilities.
+For models that do not natively support tool calling (Function Calling), `CCProxy` provides a compatibility mode, allowing them to understand and execute tool calling instructions, greatly expanding their capabilities.
 
 ### 2. Unified Entry Point for Streamlined Workflow
 It aggregates all MCP tools (e.g., web browsing, file operations) installed on Chatspeed into a single, unified proxy entry point for external service. Configure once, and all applications and terminals can call them, completely eliminating repetitive setup.
 
 ![MCP proxy](/images/en/mcp-proxy.png)
 
-> You can access `ccproxy`'s SSE protocol MCP via `http://localhost:11434/sse`
+> You can access `CCProxy`'s SSE protocol MCP via `http://localhost:11434/sse`
 
 ### Key Benefits
 
@@ -48,7 +58,7 @@ It aggregates all MCP tools (e.g., web browsing, file operations) installed on C
 - **💰 Ultimate Cost Control**: Flexibly use free and cost-effective models, making "using Claude Code for free" a reality.
 - **🔄 Configure Once, Use Everywhere**: Eliminate the tedious, repetitive configuration of MCP tools across multiple IDEs, boosting development efficiency.
 - **🎯 Flexible Group Switching**: Efficiently use AI-assisted programming in different scenarios through various model groups.
-- **🔑 Enhanced Security**: Use `ccproxy`'s proxy key to effectively isolate clients from real keys, ensuring your AI account security.
+- **🔑 Enhanced Security**: Use `CCProxy`'s proxy key to effectively isolate clients from real keys, ensuring your AI account security.
 - **🚀 High Performance**: A high-performance adapter implemented in Rust, ensuring stability and reliability.
 
 ### Quick Examples
@@ -178,7 +188,7 @@ curl http://localhost:11434/compat_mode/v1beta/models/gemma3-12b:streamGenerateC
   ]
 }'
 ```
-> For more `curl` examples, please refer to the [ccproxy Module](/ccproxy/) documentation.
+> For more `curl` examples, please refer to the [CCProxy Module](./en/ccproxy/) documentation.
 
 ## 🌟 More Than Just a Proxy: An All-in-One AI Assistant
 
@@ -198,18 +208,17 @@ Here are two example images:
 
 ## 📖 Documentation Structure
 
-- **[Getting Started](/guide/)** - Installation, configuration, and quick start
-- **[ccproxy Module](/ccproxy/)** - Detailed ccproxy setup and usage
-- **[MCP Integration](/mcp/)** - Model Context Protocol proxy configuration
-- **[API Reference](/api/)** - Complete API documentation
+- **[Getting Started](/en/guide/)** - Installation, configuration, and quick start
+- **[CCProxy Module](/en/ccproxy/)** - Detailed CCProxy setup and usage
+- **[MCP Integration](/en/mcp/)** - Model Context Protocol proxy configuration
+- **[API Reference](/en/api/)** - Complete API documentation
 
 ## 🤝 Community & Support
 
 - 🐛 [Report Issues](https://github.com/aidyou/chatspeed/issues)
 - 💬 [Join Discussions](https://github.com/aidyou/chatspeed/discussions)
-- 📚 [Contributing Guide](/guide/contributing)
 - 🌟 [Star on GitHub](https://github.com/aidyou/chatspeed)
 
 ---
 
-**Ready to revolutionize your AI development workflow?** [Get started now](/guide/) and experience the power of unified AI proxy management!
+**Ready to revolutionize your AI development workflow?** [Get started now](/en/guide/) and experience the power of unified AI proxy management!

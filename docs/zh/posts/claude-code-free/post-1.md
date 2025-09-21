@@ -12,7 +12,7 @@ tag:
 
 本篇是“免费使用 Claude Code”系列博客的第一篇，将向你展示如何通过接入魔塔的 `qwen3-coder` 模型，实现免费使用 Claude Code。
 
-在开始之前，你必须先安装 [Chatspeed](https://github.com/aidyou/chatspeed/releases)。Chatspeed 的代理模块 (`ccproxy`) 实现了在 OpenAI 兼容格式、Claude、Gemini、Ollama 原生协议之间的任意转换，是实现本文目标的关键工具。关于 Chatspeed 的安装，请参考[安装指南](../../guide/installation.md)。
+在开始之前，你必须先安装 [Chatspeed](https://github.com/aidyou/chatspeed/releases)。Chatspeed 的代理模块 (`CCProxy`) 实现了在 OpenAI 兼容格式、Claude、Gemini、Ollama 原生协议之间的任意转换，是实现本文目标的关键工具。关于 Chatspeed 的安装，请参考[安装指南](../../guide/installation.md)。
 
 ## 免费使用 Claude Code
 
@@ -96,7 +96,7 @@ Claude Code 目前使用3个模型，作用如下：
 
 ![代理分组菜单](/images/blog/zh/qwen3-code-add-5.png)
 
-> 图中我们为代理目标额外勾选了 `openrouter` 的 `qwen3-coder` 模型。当为同一个目标选择多个模型时，`ccproxy` 模块会在每次请求时，对这些模型进行负载均衡轮换。
+> 图中我们为代理目标额外勾选了 `openrouter` 的 `qwen3-coder` 模型。当为同一个目标选择多个模型时，`CCProxy` 模块会在每次请求时，对这些模型进行负载均衡轮换。
 
 ##### 3.2 按上面步骤再添加`claude-sonnet-4-20250514`相关信息设置即可完成
 
@@ -118,7 +118,7 @@ Claude Code 目前使用3个模型，作用如下：
     export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/qwen"
     export ANTHROPIC_AUTH_TOKEN="{You-Proxy-Token}"
 
-    # 现在执行 claude 就可以用 ccproxy 模块接入我们上面设置的模型了
+    # 现在执行 claude 就可以用 CCProxy 模块接入我们上面设置的模型了
     claude
     ```
 
@@ -130,13 +130,13 @@ Claude Code 目前使用3个模型，作用如下：
 
     如果你勾选了多个供应商的相同（或不同）模型，而有些模型不支持原生工具调用，此时便可以启用工具兼容模式，以确保所有模型都能使用工具调用。启用方法很简单，只需在 URL 末尾添加 `/compat_mode` 即可。
 
-    使用以下命令即可启用 `ccproxy` 的工具兼容模式来接入 Claude Code:
+    使用以下命令即可启用 `CCProxy` 的工具兼容模式来接入 Claude Code:
 
     ```sh
     export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/qwen/compat_mode"
     export ANTHROPIC_AUTH_TOKEN="{You-Proxy-Token}"
 
-    # 现在执行 claude 就可以用 ccproxy 模块接入我们上面设置的模型了
+    # 现在执行 claude 就可以用 CCProxy 模块接入我们上面设置的模型了
     claude
     ```
 

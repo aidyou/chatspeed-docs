@@ -41,7 +41,7 @@ export default defineUserConfig({
         selectLanguageName: 'English',
         navbar: [
           { text: 'Guide', link: '/en/guide/' },
-          { text: 'ccproxy', link: '/en/ccproxy/' },
+          { text: 'CCProxy', link: '/en/ccproxy/' },
           { text: 'MCP Proxy', link: '/en/mcp/' },
           { text: 'API', link: '/en/api/' },
           { text: 'Prompts', link: '/en/prompt/' },
@@ -49,7 +49,7 @@ export default defineUserConfig({
         ],
         sidebar: [
           { text: 'Guide', prefix: '/en/guide/', children: 'structure' },
-          { text: 'ccproxy', prefix: '/en/ccproxy/', children: 'structure' },
+          { text: 'CCProxy', prefix: '/en/ccproxy/', children: 'structure' },
           { text: 'MCP Proxy', prefix: '/en/mcp/', children: 'structure' },
           { text: 'API', prefix: '/en/api/', children: 'structure' },
           { text: 'Prompts', prefix: '/en/prompt/', children: 'structure' },
@@ -68,7 +68,7 @@ export default defineUserConfig({
         selectLanguageName: '简体中文',
         navbar: [
           { text: '指南', link: '/zh/guide/' },
-          { text: 'ccproxy', link: '/zh/ccproxy/' },
+          { text: 'CCProxy', link: '/zh/ccproxy/' },
           { text: 'MCP代理', link: '/zh/mcp/' },
           { text: '代理API', link: '/zh/api/' },
           { text: '提示词', link: '/zh/prompt/' },
@@ -76,7 +76,7 @@ export default defineUserConfig({
         ],
         sidebar: [
           { text: '用户指南', prefix: '/zh/guide/', children: 'structure' },
-          { text: 'ccproxy 模块', prefix: '/zh/ccproxy/', children: 'structure' },
+          { text: 'CCProxy 模块', prefix: '/zh/ccproxy/', children: 'structure' },
           { text: 'MCP 代理', prefix: '/zh/mcp/', children: 'structure' },
           { text: 'API 参考', prefix: '/zh/api/', children: 'structure' },
           {

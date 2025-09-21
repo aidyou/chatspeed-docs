@@ -13,7 +13,7 @@
 - **存储空间**：500MB 可用空间
 - **网络**：稳定的互联网连接
 
-> 目前已测试的系统包括：Windows 10、Windows Server 2019、MacOS 12、MacOS 15、Ubuntu 2024。Linux已预编译了 Redhat 系和 Debian 系的二进制文件。
+> 目前已测试的系统包括：Windows 10、Windows Server 2019、MacOS 12、MacOS 15、MacOS 26、Ubuntu 2024。Linux已预编译了 Redhat 系和 Debian 系的二进制文件。
 
 ## 安装方式
 
@@ -78,7 +78,7 @@ yarn tauri build
 安装完成后，您可以：
 
 1. **[快速开始](./quickStart.md)** - 5分钟内熟悉 Chatspeed
-2. **[ccproxy 模块](../ccproxy/)** - 了解核心代理功能
+2. **[CCProxy 模块](../ccproxy/)** - 了解核心代理功能
 3. **[MCP 模块](../mcp/)** - 了解核心代理功能
 
 ## 获取帮助

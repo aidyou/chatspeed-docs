@@ -9,9 +9,9 @@ tag:
 ---
 
 ## Background
-This prompt is primarily used to integrate other general-purpose models into Claude Code via ccproxy. When such a model possesses strong tool-calling capabilities, this prompt enhances its performance within the programming workflow.
+This prompt is primarily used to integrate other general-purpose models into Claude Code via CCProxy. When such a model possesses strong tool-calling capabilities, this prompt enhances its performance within the programming workflow.
 
-If ccproxy's tool compatibility mode is enabled, be sure to use [claude-code-prompt-enhance.md](claude-code-prompt-enhance.md).
+If CCProxy's tool compatibility mode is enabled, be sure to use [claude-code-prompt-enhance.md](claude-code-prompt-enhance.md).
 
 For more background information, please refer to [claude-code-prompt-enhance.md](claude-code-prompt-enhance.md).
 

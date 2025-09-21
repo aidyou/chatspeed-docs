@@ -1,6 +1,6 @@
 # Features Overview
 
-Chatspeed is a feature-rich AI assistant application designed to help you better interact with AI. In addition to its basic chat functionalities, Chatspeed integrates the powerful `ccproxy` module, which provides AI proxy and MCP proxy capabilities. This allows you to flexibly connect various AI models to environments like Claude Code or Gemini CLI and centrally manage all your MCP tools.
+Chatspeed is a feature-rich AI assistant application designed to help you better interact with AI. In addition to its basic chat functionalities, Chatspeed integrates the powerful `CCProxy` module, which provides AI proxy and MCP proxy capabilities. This allows you to flexibly connect various AI models to environments like Claude Code or Gemini CLI and centrally manage all your MCP tools.
 
 ## 🤖 Core Features
 
@@ -33,20 +33,20 @@ Connect to mainstream AI platforms and use a wide range of large models via the 
 - **Parameter Configuration**: Full support for configuring parameters like temperature, top_p, and max_tokens.
 - **Proxy Support**: Supports HTTP network proxy settings.
 
-## 🌐 ccproxy - The Core Proxy Module
+## 🌐 CCProxy - The Core Proxy Module
 
-`ccproxy` is the core module of Chatspeed, providing powerful AI model proxy capabilities.
+`CCProxy` is the core module of Chatspeed, providing powerful AI model proxy capabilities.
 
 ### Protocol Conversion Capability
 
-`ccproxy` supports conversion between mainstream dialogue protocols:
+`CCProxy` supports conversion between mainstream dialogue protocols:
 
 - **OpenAI-Compatible Format**
 - **Claude API**
 - **Gemini API**
 - **Ollama Local Models**
 
-Through protocol conversion, `ccproxy` achieves "Any Claude Code"—connecting any AI model to the Claude Code environment—and "Any Gemini CLI"—connecting any AI model to the Gemini CLI environment.
+Through protocol conversion, `CCProxy` achieves "Any Claude Code"—connecting any AI model to the Claude Code environment—and "Any Gemini CLI"—connecting any AI model to the Gemini CLI environment.
 
 ### Group Management
 
@@ -54,7 +54,7 @@ Create different proxy groups for various scenarios. You can place frequently us
 
 ### Load Balancing
 
-Chatspeed supports setting multiple keys for the same provider, which are automatically rotated with each call. For the `ccproxy` module's proxies, a single model can be configured with multiple different providers, and the rotation rule is global.
+Chatspeed supports setting multiple keys for the same provider, which are automatically rotated with each call. For the `CCProxy` module's proxies, a single model can be configured with multiple different providers, and the rotation rule is global.
 
 **Chatspeed Key Rotation (Single Provider)**
 
@@ -73,7 +73,7 @@ graph TD
 
 ---
 
-**ccproxy Global Rotation (Single Model)**
+**CCProxy Global Rotation (Single Model)**
 
 ```mermaid
 graph TD
@@ -96,7 +96,7 @@ In similar use cases, the same MCP tools are often installed. For example, in a 
 ### Advantages of Using an MCP Proxy
 
 - **Unified Configuration**: Simply install all necessary MCP tools on Chatspeed.
-- **Unified Access**: The `ccproxy` module provides all aggregated MCP tools via `http://localhost:11434/sse`.
+- **Unified Access**: The `CCProxy` module provides all aggregated MCP tools via `http://localhost:11434/sse`.
 - **Simplified Setup**: Configuring MCPs in any IDE or plugin becomes straightforward.
 - **Centralized Management**: Adding, removing, or modifying tools can all be done centrally in the Chatspeed client.
 
@@ -167,5 +167,5 @@ Protecting your data's security:
 Now that you have an overview of Chatspeed's features, you can:
 
 1. **[Quick Start](../../guide/quickStart.md)** - Learn how to get started with Chatspeed quickly.
-2. **[ccproxy Module](../../ccproxy/)** - Explore the core proxy functionalities.
+2. **[CCProxy Module](../../ccproxy/)** - Explore the core proxy functionalities.
 3. **[MCP Proxy](../../mcp/)** - Learn about MCP proxy integration.
