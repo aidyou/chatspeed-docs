@@ -1,3 +1,8 @@
+---
+title: Claude Code 接入指南
+description: 本章主要讲解如何通过 CCProxy 将其他模型接入 Claude Code。内容涵盖前提条件、接入方法以及 zsh 和 bash 环境下的代理分组切换脚本。
+keywords: Claude Code, 接入指南, CCProxy, Chatspeed, 代理模型, zsh, bash, 脚本, AI 模型, 开发环境
+---
 # `Claude Code` 接入指南
 
 > 本章主要讲解如何通过 `CCProxy` 将其他的模型接入 `Claude Code`

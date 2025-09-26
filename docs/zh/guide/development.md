@@ -1,3 +1,8 @@
+---
+title: 开发指南
+description: 本指南概述了 Chatspeed 在 Windows、Linux 和 macOS 上的开发要求、推荐的 IDE 设置和构建流程。内容涵盖系统依赖、开发命令和平台特定先决条件。
+keywords: 开发指南, Chatspeed, 系统依赖, IDE 设置, 构建流程, Windows, Linux, macOS, Rust, Node.js, Yarn, Tauri, VS Code
+---
 # 开发指南
 
 ## 开发要求

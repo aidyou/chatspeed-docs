@@ -1,3 +1,8 @@
+---
+title: CCProxy 配置指南
+description: 本指南详细介绍了 Chatspeed 的 CCProxy 模块配置，涵盖代理分组、代理管理和密钥管理，帮助您优化 Claude Code 的使用。
+keywords: CCProxy, 配置指南, Chatspeed, 代理分组, 代理管理, 密钥管理, Claude Code, 模型配置, AI 代理
+---
 # CCProxy 配置指南
 
 在开始本章节之前，请根据[安装指南](../guide/installation.md)安装好 [Chatspeed](https://chatspeed.aidyou.ai)。

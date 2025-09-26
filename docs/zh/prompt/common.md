@@ -5,6 +5,8 @@ category:
   - 提示词
 tag:
   - 提示词
+description: 本提示词为 AI 开发工具提供统一的工具调用规范，支持工具兼容模式和原生工具模式两种工作模式，通过 Chatspeed 的 CCProxy 模块集成。
+keywords: CCProxy, 通用提示词, AI 开发工具, 工具调用, 工具兼容模式, 原生工具模式, Chatspeed 代理模块, 提示词
 ---
 
 ## 提示词目的

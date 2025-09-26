@@ -1,3 +1,8 @@
+---
+title: API 简介
+description: Chatspeed CCProxy 模块为各类客户端调用提供了灵活强大的 API 访问规则。本节详细说明这些规则，帮助您理解如何通过 CCProxy 访问和组合各种 AI 模型及工具。
+keywords: API 简介, Chatspeed, CCProxy, API 访问规则, AI 模型, 工具, 分组, 工具调用兼容模式
+---
 # API 简介
 
 Chatspeed `CCProxy` 模块为方便各类客户端调用，提供了灵活且强大的 API 访问规则。本节将详细说明这些规则，帮助您理解如何通过 `CCProxy` 访问和组合各种 AI 模型及工具。

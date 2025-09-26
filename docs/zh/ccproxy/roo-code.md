@@ -1,3 +1,8 @@
+---
+title: Roo Code 接入指南
+description: 本指南介绍如何在 Roo Code 中配置 Chatspeed 的 CCProxy 代理模型。Roo Code 是一款优秀的 VS Code AI 插件，能高效处理繁琐任务。内容以添加 gemini2.5-pro 为例，涵盖前置条件和配置步骤。
+keywords: Roo Code, 接入指南, CCProxy, Chatspeed, VS Code, AI 插件, 代理模型, 配置, gemini2.5-pro
+---
 # `Roo Code` 接入指南
 
 [Roo Code](https://github.com/RooCodeInc/Roo-Code) 是 [Cline](https://github.com/cline/cline) 的一个分支，是一款优秀的 `VS Code` **AI 插件**。它能高效处理繁琐任务，例如为 `Chatspeed` 补充缺失的 `i18n` 语言项，或通过安装必要的 `MCP` 工具进行信息校对。

@@ -26,6 +26,9 @@ features:
   - title: 📚 不止是编程利器
     details: ALT+Z 快速呼叫助手，翻译、脑图、流程图、思考样样精通，通过“技能”扩展 AI 能力边界
 footer: MIT 协议 | 版权所有 © 2025 Chatspeed 团队
+title: Chatspeed - AI 代理和桌面助手
+description: 由 Rust 精心打造，Chatspeed 是一款开源、高性能的 AI 助手，是您强大的编程伴侣与智能桌面中枢。它提供多协议转换、全局密钥轮换和统一 MCP 管理。
+keywords: Chatspeed, AI 代理, Rust, 开源, AI 助手, 编程伴侣, 桌面中枢, 多协议转换, OpenAI, Claude, Gemini, Ollama, AI 模型, 开发环境, 全局密钥轮换, 代理池, Claude Code, Gemini CLI, MCP 代理, 智能分组管理, 提示词工程, 技能, 翻译, 脑图, 流程图, 开发工具, CCProxy
 ---
 
 ## 🌟 Chatspeed 能做啥

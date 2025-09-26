@@ -1,3 +1,8 @@
+---
+title: CCProxy 简介
+description: CCProxy (Chat Completion Proxy) 是 Chatspeed 的核心模块，提供通用 AI 模型代理能力。它作为协议适配器，实现了 OpenAI 兼容协议、Claude、Gemini、Ollama 协议之间的任意转换。
+keywords: CCProxy, Chat Completion Proxy, 协议适配器, OpenAI, Claude, Gemini, Ollama, AI 模型代理, Chatspeed, 工具兼容模式, AI IDEs, 插件, 协议转换
+---
 # CCProxy 简介
 
 > CCProxy (Chat Completion Proxy) 是一个协议适配器，它实现了 OpenAI 兼容协议、Claude、Gemini、Ollama 协议之间的任意转换。
@@ -84,7 +89,7 @@ CCProxy 提供多重负载均衡能力：
 
 - [配置指南](./configuration.md)
 - [Claude Code 使用](./claude-code.md)
-- [Gemini CLI 使用](./gemini-cli.md)
+- [Gemini CLI 使用](./gemini.md)
 - [Zed 配置](./zed.md)
 - [Roo Code 配置](./roo-code.md)
 - [Cline 配置](./cline.md)

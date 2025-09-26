@@ -40,27 +40,27 @@ export default defineUserConfig({
       '/': {
         selectLanguageName: 'English',
         navbar: [
-          { text: 'Guide', link: '/en/guide/' },
-          { text: 'CCProxy', link: '/en/ccproxy/' },
-          { text: 'MCP Proxy', link: '/en/mcp/' },
-          { text: 'API', link: '/en/api/' },
-          { text: 'Prompts', link: '/en/prompt/' },
-          { text: 'Blog', link: '/en/posts/' }
+          { text: 'Guide', link: '/guide/' },
+          { text: 'CCProxy', link: '/ccproxy/' },
+          { text: 'MCP Proxy', link: '/mcp/' },
+          { text: 'API', link: '/api/' },
+          { text: 'Prompts', link: '/prompt/' },
+          { text: 'Blog', link: '/posts/' }
         ],
         sidebar: [
-          { text: 'Guide', prefix: '/en/guide/', children: 'structure' },
-          { text: 'CCProxy', prefix: '/en/ccproxy/', children: 'structure' },
-          { text: 'MCP Proxy', prefix: '/en/mcp/', children: 'structure' },
-          { text: 'API', prefix: '/en/api/', children: 'structure' },
-          { text: 'Prompts', prefix: '/en/prompt/', children: 'structure' },
-          { text: 'Posts', prefix: '/en/posts/', children: 'structure' }
+          { text: 'Guide', prefix: '/guide/', children: 'structure' },
+          { text: 'CCProxy', prefix: '/ccproxy/', children: 'structure' },
+          { text: 'MCP Proxy', prefix: '/mcp/', children: 'structure' },
+          { text: 'API', prefix: '/api/', children: 'structure' },
+          { text: 'Prompts', prefix: '/prompt/', children: 'structure' },
+          { text: 'Blog', prefix: '/posts/', children: 'structure' }
         ],
         lastUpdated: 'Last Updated',
         editLinkText: 'Edit this page on GitHub',
         contributorsText: 'Contributors',
         blog: {
           name: 'Blog',
-          path: '/en/posts/',
+          path: '/posts/',
           description: 'Chatspeed Blog'
         }
       },
@@ -79,11 +79,7 @@ export default defineUserConfig({
           { text: 'CCProxy 模块', prefix: '/zh/ccproxy/', children: 'structure' },
           { text: 'MCP 代理', prefix: '/zh/mcp/', children: 'structure' },
           { text: 'API 参考', prefix: '/zh/api/', children: 'structure' },
-          {
-            text: '提示词',
-            prefix: '/zh/prompt/',
-            children: 'structure'
-          },
+          { text: '提示词', prefix: '/zh/prompt/', children: 'structure' },
           { text: '博客', prefix: '/zh/posts/', children: 'structure' }
         ],
         lastUpdated: '最后更新',

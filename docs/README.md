@@ -26,13 +26,16 @@ features:
   - title: 📚 More Than a Programming Tool
     details: Instantly summon the AI assistant (ALT+Z) for translation, mind maps, flowcharts, and brainstorming. Extend its capabilities limitlessly with custom "Skills".
 footer: MIT Licensed | Copyright © 2025 Chatspeed Team
+title: Chatspeed - AI Proxy and Desktop Assistant
+description: Forged in Rust, Chatspeed is an open-source, high-performance AI assistant, programming companion, and smart desktop hub. It offers multi-protocol conversion, global key rotation, and unified MCP management.
+keywords: Chatspeed, AI proxy, Rust, open-source, AI assistant, programming companion, desktop hub, Multi-Protocol Conversion, OpenAI, Claude, Gemini, Ollama, AI models, development environment, Global Key Rotation, proxy pool, Claude Code, Gemini CLI, MCP Entry, Smart Grouping & Routing, Prompt Engineering, Skills, translation, mind maps, flowcharts, dev tool, CCProxy
 ---
 
 ## 🌟 What can Chatspeed do?
 - **💼 Multi-functional Desktop Assistant**: Use it for translation, creating mind maps, flowcharts, daily conversations, and more. Quickly summon it with the shortcut ALT+Z.
-- **🔌 Connect Any Dev Tool**: Beyond just [Claude Code](./en/ccproxy/claude-code.md), you can connect your models to almost any major AI development tool, including [Gemini CLI](./en/ccproxy/gemini.md), [Cline](./en/ccproxy/cline.md), [Roo Code](./en/ccproxy/roo-code.md), and [Zed](./en/ccproxy/zed.md).
+- **🔌 Connect Any Dev Tool**: Beyond just [Claude Code](./ccproxy/claude-code.md), you can connect your models to almost any major AI development tool, including [Gemini CLI](./ccproxy/gemini.md), [Cline](./ccproxy/cline.md), [Roo Code](./ccproxy/roo-code.md), and [Zed](./ccproxy/zed.md).
 - **💰 Use Claude Code for Free**: As a best practice, we provide a detailed tutorial on how to [use Claude Code for free](./posts/claude-code-free/).
-- **🚀 MCP Hub**: Chatspeed's MCP proxy can provide its own `WebSearch` and `WebFetch` tools, along with any `MCP` tools you've installed, to external clients via the `SSE` protocol. Learn how to [centrally manage MCP](./en/mcp/).
+- **🚀 MCP Hub**: Chatspeed's MCP proxy can provide its own `WebSearch` and `WebFetch` tools, along with any `MCP` tools you've installed, to external clients via the `SSE` protocol. Learn how to [centrally manage MCP](/mcp/).
 
 ## 🚀 Universal AI Proxy `CCProxy`
 
@@ -188,7 +191,7 @@ curl http://localhost:11434/compat_mode/v1beta/models/gemma3-12b:streamGenerateC
   ]
 }'
 ```
-> For more `curl` examples, please refer to the [CCProxy Module](./en/ccproxy/) documentation.
+> For more `curl` examples, please refer to the [CCProxy Module](/ccproxy/) documentation.
 
 ## 🌟 More Than Just a Proxy: An All-in-One AI Assistant
 
@@ -221,4 +224,4 @@ Here are two example images:
 
 ---
 
-**Ready to revolutionize your AI development workflow?** [Get started now](/en/guide/) and experience the power of unified AI proxy management!
+**Ready to revolutionize your AI development workflow?** [Get started now](/guide/) and experience the power of unified AI proxy management!

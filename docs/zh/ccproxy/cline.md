@@ -1,3 +1,8 @@
+---
+title: Cline 接入指南
+description: 本指南介绍如何将 Chatspeed 的 CCProxy 中的代理模型接入 Cline，一款优秀的 VS Code AI 编程插件，采用计划 -> 执行的工作模式。内容涵盖前置条件和配置步骤。
+keywords: Cline, 接入指南, CCProxy, Chatspeed, VS Code, AI 编程插件, 代理模型, 计划执行, 配置
+---
 # `Cline` 接入指南
 
 [Cline](https://github.com/cline/cline) 是一款优秀的 `VS Code` AI 编程插件，采用 `计划 -> 执行` 的工作模式。本指南介绍如何将 `CCProxy` 中的代理模型接入 `Cline`。

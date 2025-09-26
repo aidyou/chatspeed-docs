@@ -1,3 +1,8 @@
+---
+title: MCP 代理
+description: 本指南解释了 Chatspeed 的 MCP 代理，这是 CCProxy 模块的核心功能，它将所有可用的大模型上下文协议工具聚合为统一代理入口，解决了在不同 IDE 间重复配置工具的痛点。
+keywords: MCP 代理, Chatspeed, CCProxy, 大模型上下文协议, 工具, 统一代理, IDE 集成, SSE 协议, 配置
+---
 # MCP 代理
 
 > 将 Chatspeed 系统中所有可用的 MCP（大模型上下文协议）工具聚合为统一代理入口，彻底解决在不同 IDE 间重复配置工具的痛点。

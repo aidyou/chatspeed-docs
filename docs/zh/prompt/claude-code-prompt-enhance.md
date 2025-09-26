@@ -6,6 +6,8 @@ category:
 tag:
   - Claude Code
   - 提示词
+description: 本提示词为通过 CCProxy 工具兼容模式接入 Claude Code 的通用模型提供强大的行为框架，将其转变为高效的任务执行代理。
+keywords: Claude Code, 提示词增强, 工具兼容模式, CCProxy, 任务执行代理, 行为框架, AI 模型, 提示词
 ---
 
 ## 设计哲学：为何需要此提示词？

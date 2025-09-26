@@ -1,3 +1,8 @@
+---
+title: Gemini CLI 接入指南
+description: 本指南提供了使用定制版 Gemini CLI (llxprt-code) 接入 Chatspeed 的 CCProxy 的完整教程。它使 Gemini CLI 能够使用 CCProxy 代理的任何模型。
+keywords: Gemini CLI, 接入指南, CCProxy, Chatspeed, llxprt-code, 代理模型, 定制版本, OpenAI 兼容, 工具兼容模式, 配置
+---
 # `Gemini CLI` 接入指南
 
 > 使用定制版 `Gemini CLI` 接入 CCProxy 的完整指南

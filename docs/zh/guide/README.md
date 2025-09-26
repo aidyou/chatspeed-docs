@@ -1,3 +1,8 @@
+---
+title: 用户指南
+description: 欢迎使用 Chatspeed 用户指南！本指南将帮助您快速上手并充分利用 Chatspeed 的各项功能，涵盖 AI 代理、模型分组、CCProxy 和 MCP 工具等核心概念。
+keywords: 用户指南, Chatspeed, AI 代理, 模型分组, CCProxy, MCP 工具, 快速上手, 功能, 安装, 快速开始
+---
 # 用户指南
 
 欢迎使用 Chatspeed 用户指南！本指南将帮助您快速上手并充分利用 Chatspeed 的各项功能。

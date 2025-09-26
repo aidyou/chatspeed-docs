@@ -1,3 +1,8 @@
+---
+title: 功能概览
+description: 探索 Chatspeed 的全面功能，包括其 AI 助手功能、CCProxy 的 AI 代理管理、多模型支持和统一的 MCP 代理管理。将各种 AI 模型连接到 Claude Code 或 Gemini CLI 等环境。
+keywords: 功能概览, Chatspeed, AI 助手, CCProxy, AI 代理, MCP 代理, 多模型聊天, 协议转换, Claude Code, Gemini CLI, 技能管理, 智记, 负载均衡
+---
 # 功能概览
 
 Chatspeed 是一个功能丰富的 AI 助手应用，帮助您更好地与 AI 进行交互。除了基本的聊天功能外，Chatspeed 还集成了强大的 CCProxy 模块，提供 AI 代理能力和 MCP 代理功能，让您能够灵活地将各种 AI 模型接入 Claude Code 或者 Gemini CLI，集中管理各种 MCP 工具。

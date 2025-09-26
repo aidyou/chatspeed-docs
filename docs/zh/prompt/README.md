@@ -1,3 +1,8 @@
+---
+title: 提示词库
+description: 欢迎来到 Chatspeed 提示词库！本库收录了一系列精心设计的提示词模板，旨在优化 Chatspeed 的 CCProxy 模块与各类大语言模型（LLM）的交互效果，从而在您的工作流中发挥出 AI 的最大潜力。
+keywords: 提示词库, Chatspeed, CCProxy, 提示词模板, 大语言模型, LLM, AI 工作流, Claude Code, 工具兼容模式, 原生工具模式
+---
 # 提示词库
 
 欢迎来到 Chatspeed 提示词库！

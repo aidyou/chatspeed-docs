@@ -1,3 +1,8 @@
+---
+title: Zed 接入指南
+description: 本指南主要讲解如何将 Chatspeed 的 CCProxy 配置的模型应用到 Zed 编辑器中。Zed 是一款为高性能人机协作设计的下一代代码编辑器，具有资源占用优势和良好的 AI 支持。
+keywords: Zed, 接入指南, CCProxy, Chatspeed, 代码编辑器, AI 支持, 代理模型, 配置
+---
 # `Zed` 接入指南
 
 Zed 是一款为高性能人机协作而设计的下一代代码编辑器。它在资源占用方面有优势，提供了不错的 AI 支持，并且调试功能也日趋成熟。

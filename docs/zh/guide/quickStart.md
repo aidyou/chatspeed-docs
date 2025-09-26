@@ -1,3 +1,8 @@
+---
+title: 快速开始
+description: 本快速开始指南将帮助您在 5 分钟内熟悉 Chatspeed 的基础功能，涵盖如何与内置的 AI 供应商 Pollinations 开始聊天以及如何添加和管理 AI 助手技能。
+keywords: 快速开始, Chatspeed, AI 助手, Pollinations, 添加模型, 技能, 聊天, 基础功能
+---
 # 快速开始
 
 本指南将帮助您在 5 分钟内熟悉 Chatspeed 的基础功能。

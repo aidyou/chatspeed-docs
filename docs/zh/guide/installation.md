@@ -1,3 +1,8 @@
+---
+title: 安装指南
+description: 本指南提供了 Chatspeed 在 Windows、macOS 和 Linux 上的详细安装说明。内容涵盖系统要求、推荐的预编译二进制文件和从源代码构建。
+keywords: 安装指南, Chatspeed, Windows, macOS, Linux, 系统要求, 预编译二进制文件, 从源代码构建, Rust, Node.js, Yarn, Tauri
+---
 # 安装指南
 
 本指南将引导您完成 Chatspeed 的安装过程。

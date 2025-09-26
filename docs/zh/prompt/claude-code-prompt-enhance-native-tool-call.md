@@ -6,6 +6,8 @@ category:
 tag:
   - Claude Code
   - 提示词
+description: 这份提示词主要用于通过 CCProxy 将其他通用模型接入 Claude Code，并且该模型具有较强的工具调用能力时，增强其在编程工作流中的表现。
+keywords: Claude Code, 提示词增强, 原生工具, CCProxy, 工具调用, 编程工作流, AI 模型, 提示词
 ---
 
 ## 使用背景

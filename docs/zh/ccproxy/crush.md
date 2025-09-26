@@ -1,3 +1,8 @@
+---
+title: Crush 接入指南
+description: 本指南介绍如何将 Chatspeed 的 CCProxy 模型与 Crush 集成，Crush 是一款强大的编程智能体，利用模型的原生工具调用能力。内容涵盖安装、配置和使用测试。
+keywords: Crush, 接入指南, CCProxy, Chatspeed, 编程智能体, 工具调用, 安装, 配置, VS Code, Cline
+---
 # `Crush` 接入指南
 
 Crush 是一款强大的编程智能体，其体验类似于 `VS Code` 的 `Cline` 插件，但值得注意的是，截至目前（2025-09-22），它利用了模型的原生工具调用能力。

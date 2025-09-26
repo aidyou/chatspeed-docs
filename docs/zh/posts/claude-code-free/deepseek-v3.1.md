@@ -7,13 +7,15 @@ tag:
   - Claude Code
   - 免费
   - deepseek
+description: 本文展示如何通过接入 Nvidia 的 deepseek-v3.1 模型免费使用 Claude Code，详细介绍了 Chatspeed 的 CCProxy 模块如何实现协议转换。
+keywords: 免费使用 Claude Code, Nvidia, deepseek-v3.1, Chatspeed, CCProxy, 协议转换, 低成本编程, Claude Code, 免费, deepseek
 ---
 
 ## 📋 开始之前
 
 本篇是“免费使用 Claude Code”系列博客的第二篇，将向你展示如何通过接入 Nvidia 的 [deepseek-v3.1](https://build.nvidia.com/deepseek-ai/deepseek-v3_1) 模型，实现免费使用 Claude Code。
 
-在开始之前，你必须先安装 [Chatspeed](https://github.com/aidyou/chatspeed/releases)。Chatspeed 的代理模块 (`CCProxy`) 实现了在 OpenAI 兼容格式、Claude、Gemini、Ollama 原生协议之间的任意转换，是实现本文目标的关键工具。关于 Chatspeed 的安装，请参考[安装指南](../../guide/installation.md)。
+在开始之前，你必须先安装 [Chatspeed](https://github.com/aidyou/chatspeed/releases)。Chatspeed 的代理模块 [CCProxy](../../ccproxy/) 实现了在 OpenAI 兼容格式、Claude、Gemini、Ollama 原生协议之间的任意转换，是实现本文目标的关键工具。关于 Chatspeed 的安装，请参考[安装指南](../../guide/installation.md)。
 
 ## 🚀 免费使用 Claude Code
 
