@@ -44,7 +44,7 @@ At this point, the OpenRouter account and API key are ready.
 #### ⚙️ Configure Model
 
 1. Please install [Chatspeed](https://chatspeed.aidyou.ai) first according to the [Installation Guide](../../guide/installation.md).
-2. Refer to [Adding Models](../../guide/quickStart.html#添加模型) to add OpenRouter's `grok-4-fast:free` model to Chatspeed. The general steps are:
+2. Refer to [Adding Models](../../guide/quickStart.html#adding-a-model) to add OpenRouter's `grok-4-fast:free` model to Chatspeed. The general steps are:
    - Click the `Chatspeed` menu button in the top right corner and select `AI Engine`.
    - Click the `+` in the top right corner, enter `openrouter` in the search box of the pop-up page, and then click `Import from preset`.
    - `Basic Information`
@@ -75,7 +75,7 @@ At this point, the grok-4-fast:free model on the OpenRouter platform has been ad
 ### ⚙️ Configure Vercel AI Gateway Model
 
 1. Similarly, configure the Vercel AI Gateway model in [Chatspeed](https://chatspeed.aidyou.ai).
-2. Refer to [Adding Models](../../guide/quickStart.html#添加模型) to add the `Vercel AI Gateway` model to Chatspeed. The general steps are:
+2. Refer to [Adding Models](../../guide/quickStart.html#adding-a-model) to add the `Vercel AI Gateway` model to Chatspeed. The general steps are:
    - Click the `Chatspeed` menu button in the top right corner and select `AI Engine`.
    - Click the `+` in the top right corner, enter `vercel` in the search box of the pop-up page, and then click `+Manually Add`.
    - `Basic Information` needs to be filled in:
