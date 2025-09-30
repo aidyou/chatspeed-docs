@@ -56,10 +56,12 @@ After managing groups, we can now add different proxies to the corresponding gro
 
 3.  Fill in the fields as indicated in the image and save.
     - **Group**: In this example, we are configuring qwen3-code as a backup model for `Claude Code`, so select qwen.
-    - **Proxy Alias**: `Claude Code` currently uses `claude-sonnet-4-20250514` as its main programming model, so enter `claude-sonnet-4-20250514` here.
+    - **Proxy Alias**: `Claude Code` currently uses `claude-sonnet-4-5-20250929` as its main programming model, so enter `claude-sonnet-4-5-20250929` here.
     - **Model**: Search for qwen, then select all qwen3-coder or related models.
 
-      > Note: The `Nvidia` `qwen3-235b-a22b` in the image is not actually a code model and is used here for demonstration purposes only.
+      > Note: You can select multiple different models from the same (or different) provider as shown in the example in the image. CCProxy will balance the load across provider to improve model call frequency and reduce the risk of `429` errors.
+
+      > Note: The `claude-sonnet-4-5-20250929` in the example is the current default model for `Claude Code`. You can also use other Claude series models in the proxy model alias configuration, such as `claude-sonnet-4-20250514`. Simply specify it via the `--model` parameter when starting Claude.
 
     ![Add Proxy](/images/en/proxy-setting-2.png)
 

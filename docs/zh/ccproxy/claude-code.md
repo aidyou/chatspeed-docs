@@ -142,7 +142,7 @@ go_claude() {
   # echo "   ANTHROPIC_AUTH_TOKEN = $ANTHROPIC_AUTH_TOKEN"
 
   echo "👉 正在进入 Claude ..."
-  claude
+  claude --model claude-sonnet-4-5-20250929
 }
 ```
 
@@ -261,7 +261,7 @@ go_claude() {
   # echo "   ANTHROPIC_AUTH_TOKEN = $ANTHROPIC_AUTH_TOKEN"
 
   echo "👉 正在进入 Claude ..."
-  claude
+  claude --model claude-sonnet-4-5-20250929
 }
 ```
 
@@ -288,7 +288,7 @@ Testing endpoint: http://127.0.0.1:11434/qwen/compat_mode/v1/models
 │                                                   │
 │   /help for help, /status for your current setup  │
 │                                                   │
-│   cwd: /Volumes/dev/personal/dev/ai/chatspeed     │
+│   cwd: /opt/dev/chatspeed                         │
 │                                                   │
 │   ─────────────────────────────────────────────── │
 │                                                   │

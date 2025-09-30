@@ -3,6 +3,7 @@ title: CCProxy 配置指南
 description: 本指南详细介绍了 Chatspeed 的 CCProxy 模块配置，涵盖代理分组、代理管理和密钥管理，帮助您优化 Claude Code 的使用。
 keywords: CCProxy, 配置指南, Chatspeed, 代理分组, 代理管理, 密钥管理, Claude Code, 模型配置, AI 代理
 ---
+
 # CCProxy 配置指南
 
 在开始本章节之前，请根据[安装指南](../guide/installation.md)安装好 [Chatspeed](https://chatspeed.aidyou.ai)。
@@ -33,7 +34,6 @@ keywords: CCProxy, 配置指南, Chatspeed, 代理分组, 代理管理, 密钥�
 
 **Claude Code** 提示词增强：我们在[提示词](../prompt/)提供了一些提示词，您可以参考使用。
 
-
 #### 分组切换
 
 您可以依据上面的步骤依次添加 kimi 组、gemini 组等。不同分组的模型访问通过 `/{group_name}/` 前缀即可，具体的访问规则请参考 [API 文档](../api/)。
@@ -56,22 +56,22 @@ keywords: CCProxy, 配置指南, Chatspeed, 代理分组, 代理管理, 密钥�
 
 3.  按下图标注分别填写并保存，其中：
     - **分组**：本例以配置 qwen3-code 作为 `Claude Code` 的备用模型，所以选择 qwen。
-    - **代理别名**：`Claude Code` 目前使用 `claude-sonnet-4-20250514` 作为编程的主模型，因此这里填写 `claude-sonnet-4-20250514`。
+    - **代理别名**：`Claude Code` 目前使用 `claude-sonnet-4-5-20250929` 作为编程的主模型，因此这里填写 `claude-sonnet-4-5-20250929`。
     - **模型**：搜索 qwen，然后将所有 qwen3-coder 或相关的模型选中。
 
-      > 注：图中 `Nvidia` 的 `qwen3-235b-a22b` 实际上并非代码模型，此处仅作示例。
+      > 注：你可以如图中示例，选择多个不同的供应商相同（也可以不同）的模型，CCProxy 会通过供应商均衡轮换来提高模型调用频率，减小 `429` 错误风险
+
+      > 示例中的 `claude-sonnet-4-5-20250929` 是当前 `Claude Code` 的默认模型，你也可以在配置代理模型别名时使用其他 Claude 系列模型，如 `claude-sonnet-4-20250514`，只需在启动 Claude 时通过 `--model` 参数指定即可。
 
     ![添加代理](/images/zh/proxy-setting-2.png)
 
-4.  请按步骤 3 再次添加一个 `claude-3-5-haiku-20241022` 代理，这个是目前 `Claude Code` 用于生成会话标题的模型。
+4.  请按步骤 3 再次添加一个 `claude-3-5-haiku-20241022` 代理，这个是目前 `Claude Code` 执行简单任务（比如用于生成会话标题）的模型。
 
     ![添加代理](/images/zh/proxy-setting-3.png)
 
 5.  至此，我们已经具备了 `Claude Code` 代理的基本条件。
 
     ![代理列表](/images/zh/proxy-setting-4.png)
-
-> 截至 `2025-09-21` 我们发现 Claude Code 有时候会调用 `claude-opus-4-1-20250805` 这个模型，所以建议也按上面步骤添加一个
 
 ### 🔑 密钥管理
 
@@ -106,3 +106,7 @@ keywords: CCProxy, 配置指南, Chatspeed, 代理分组, 代理管理, 密钥�
 ### 🎛️ 参数调优
 
 从 `Claude Code` 发送的请求来看，目前主要通过温度参数进行调优，而 `top_k`、`top_p` 等参数则未作设置。各模型的最佳温度建议参考其官方文档。据了解，`qwen3-coder` 的最佳温度是 0.7，而 `kimi-k2` 的最佳温度是 0.6。其他模型请参考您所使用的模型的官方文档。
+
+### 🔌 接入 Claude Code
+
+接入 Claude Code您可以参考[Claude Code 接入指南](claude-code.md)

@@ -142,7 +142,7 @@ go_claude() {
   # echo "   ANTHROPIC_AUTH_TOKEN = $ANTHROPIC_AUTH_TOKEN"
 
   echo "👉 Entering Claude ..."
-  claude
+  claude --model claude-sonnet-4-5-20250929
 }
 ```
 
@@ -261,5 +261,42 @@ go_claude() {
   # echo "   ANTHROPIC_AUTH_TOKEN = $ANTHROPIC_AUTH_TOKEN"
 
   echo "👉 Entering Claude ..."
-  claude
+  claude --model claude-sonnet-4-5-20250929
 }
+```
+
+#### 🔀 Proxy Group Switching
+
+Taking `zsh` as an example, copy the above script to your `~/.zshrc`, then execute `source ~/.zshrc` to make it effective.
+
+Next we can start using `Claude Code`:
+
+1. Execute `source ~/.zshrc`
+2. Execute `go_claude qwen`
+
+Below is my output example:
+
+```zsh
+> go_claude qwen
+Testing endpoint: http://127.0.0.1:11434/qwen/compat_mode/v1/models
+✅ Test successful. Found 3 models.
+✅ Successfully switched to environment: qwen (using 'dev' config)
+👉 ANTHROPIC_BASE_URL = http://127.0.0.1:11434/qwen/compat_mode
+👉 Entering Claude ...
+╭───────────────────────────────────────────────────╮
+│ ✻ Welcome to Claude Code!                         │
+│                                                   │
+│   /help for help, /status for your current setup  │
+│                                                   │
+│   cwd: /opt/dev/chatspeed                         │
+│                                                   │
+│   ─────────────────────────────────────────────── │
+│                                                   │
+│   Overrides (via env):                            │
+│                                                   │
+│   • API Base URL:                                 │
+│   http://127.0.0.1:11434/qwen/compat_mode         │
+╰───────────────────────────────────────────────────╯
+```
+
+Now you can enjoy using the free `Claude Code`!
