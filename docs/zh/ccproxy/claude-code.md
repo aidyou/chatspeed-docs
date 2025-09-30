@@ -17,9 +17,9 @@ keywords: Claude Code, 接入指南, CCProxy, Chatspeed, 代理模型, zsh, bash
 4. 已添加所需的代理模型
 5. 已配置好代理密钥
 
-## 🔌 接入 Claude Code
+## 🔌 接入 `Claude Code`
 
-为了方便快速将 CCProxy 代理分组接入 Claude Code，我们提供了两个脚本，分别用于 `zsh` 和 `bash` 环境。利用它们，您可以快速进入不同的代理分组。根据您使用的 Shell 环境，可以直接将相应脚本拷贝到配置文件中或保存为独立脚本。
+为了方便快速将 `CCProxy` 代理分组接入 `Claude Code`，我们提供了两个脚本，分别用于 `zsh` 和 `bash` 环境。利用它们，您可以快速进入不同的代理分组。根据您使用的 `Shell` 环境，可以直接将相应脚本拷贝到配置文件中或保存为独立脚本。
 
 > **重要**：务必将脚本中的`$DEV_KEY`修改为您在**代理密钥**中设置的密钥，并将`$KIMI_KEY`修改为您的实际密钥。另外，脚本中的`prod`环境使用了 Kimi 官方的 API 接口，如果您使用的是`Claude Code`的官方模型，请将其改为相应的`URL`。
 
@@ -142,7 +142,7 @@ go_claude() {
   # echo "   ANTHROPIC_AUTH_TOKEN = $ANTHROPIC_AUTH_TOKEN"
 
   echo "👉 正在进入 Claude ..."
-  claude --model claude-sonnet-4-5-20250929
+  claude --model sonnet
 }
 ```
 
@@ -261,7 +261,7 @@ go_claude() {
   # echo "   ANTHROPIC_AUTH_TOKEN = $ANTHROPIC_AUTH_TOKEN"
 
   echo "👉 正在进入 Claude ..."
-  claude --model claude-sonnet-4-5-20250929
+  claude --model sonnet
 }
 ```
 

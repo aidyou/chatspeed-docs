@@ -10,11 +10,11 @@ keywords: CCProxy, 配置指南, Chatspeed, 代理分组, 代理管理, 密钥�
 
 ## 🧩 代理分组
 
-代理分组可以让用户根据使用场景隔离不同的模型访问能力，也可以用于根据场景快速切换 Claude Code。
+代理分组可以让用户根据使用场景隔离不同的模型访问能力，也可以用于根据场景快速切换 `Claude Code`。
 
 #### 分组管理
 
-1.  按数字标注的顺序依次点击 Chatspeed 主窗口右上角的下拉菜单，选择“代理”。
+1.  按数字标注的顺序依次点击 `Chatspeed` 主窗口右上角的下拉菜单，选择“代理”。
 
     ![代理管理菜单入口](/images/zh/proxy-group-1.png)
 
@@ -29,8 +29,8 @@ keywords: CCProxy, 配置指南, Chatspeed, 代理分组, 代理管理, 密钥�
     **其中**：
     - **提示词注入**：选择**增强**。
     - **提示词文本**：可以输入您需要的提示词增强（下文会提供示例）。
-    - **工具过滤**：输入 `WebFetch` 和 `WebSearch`，一行一个。由于我们使用的是外部模型，Claude Code 的内部工具 `WebFetch` 和 `WebSearch` 无法使用，因此需要过滤掉。Chatspeed 内置了 `WebFetch` 和 `WebSearch` 两个工具，你可以将它们通过 `MCP` 添加到 `Claude Code`，添加 MCP 请参考[MCP 代理](../mcp/)。
-    - **温度比例**：请根据不同模型的最佳温度来设置。Claude 生成代码时使用的温度是 `1.0`，而根据 `qwen3-code` 的官方文档，其最佳温度是 `0.7`，所以比例应设为 `0.7`。
+    - **工具过滤**：输入 `WebFetch` 和 `WebSearch`，一行一个。由于我们使用的是外部模型，`Claude Code` 的内部工具 `WebFetch` 和 `WebSearch` 无法使用，因此需要过滤掉。`Chatspeed` 内置了 `WebFetch` 和 `WebSearch` 两个工具，你可以将它们通过 `MCP` 将添加到 `Claude Code`，添加 MCP 请参考[MCP 代理](../mcp/)。
+    - **温度比例**：请根据不同模型的最佳温度来设置。`Claude Code` 生成代码时使用的温度是 `1.0`，而根据 `qwen3-code` 的官方文档，其最佳温度是 `0.7`，所以比例应设为 `0.7`。
 
 **Claude Code** 提示词增强：我们在[提示词](../prompt/)提供了一些提示词，您可以参考使用。
 
@@ -46,7 +46,7 @@ keywords: CCProxy, 配置指南, Chatspeed, 代理分组, 代理管理, 密钥�
 
 #### 代理设置
 
-1.  按数字标注的顺序依次点击 Chatspeed 主窗口右上角的下拉菜单，选择“代理”。
+1.  按数字标注的顺序依次点击 `Chatspeed` 主窗口右上角的下拉菜单，选择“代理”。
 
     ![代理管理菜单入口](/images/zh/proxy-group-1.png)
 
@@ -55,17 +55,21 @@ keywords: CCProxy, 配置指南, Chatspeed, 代理分组, 代理管理, 密钥�
     ![代理管理页面](/images/zh/proxy-setting-1.png)
 
 3.  按下图标注分别填写并保存，其中：
-    - **分组**：本例以配置 qwen3-code 作为 `Claude Code` 的备用模型，所以选择 qwen。
-    - **代理别名**：`Claude Code` 目前使用 `claude-sonnet-4-5-20250929` 作为编程的主模型，因此这里填写 `claude-sonnet-4-5-20250929`。
-    - **模型**：搜索 qwen，然后将所有 qwen3-coder 或相关的模型选中。
+    - **分组**：本例以配置 `qwen3-coder` 作为 `Claude Code` 的备用模型，所以选择 `qwen`。
+    - **代理别名**：我们使用 `sonnet` 系列作为 `Claude Code` 编程的主模型，因此这里填写 `claude-sonnet-*`。
+    - **模型**：搜索 `qwen`，然后将所有 `qwen3-coder` 或相关的模型选中。
 
-      > 注：你可以如图中示例，选择多个不同的供应商相同（也可以不同）的模型，CCProxy 会通过供应商均衡轮换来提高模型调用频率，减小 `429` 错误风险
+      > 注：你可以如图中示例，选择多个不同的供应商相同（也可以不同）的模型，`CCProxy` 会通过供应商均衡轮换来提高模型调用频率，减小 `429` 错误风险
 
-      > 示例中的 `claude-sonnet-4-5-20250929` 是当前 `Claude Code` 的默认模型，你也可以在配置代理模型别名时使用其他 Claude 系列模型，如 `claude-sonnet-4-20250514`，只需在启动 Claude 时通过 `--model` 参数指定即可。
+      > **通配符**：在配置代理时，模型别名支持在任意位置使用通配符。其中 `*` 可以匹配零个或者多个任意字符，例如 `claude-sonnet-*` 可以匹配 `claude-sonnet-4-5-20250929`。而 `?` 可以匹配单个任意字符，例如 `model-v1.?` 可以匹配 `model-v1.0` 或 `model-v1.5`。
+
+      > 示例中的代理别名我们使用了通配符 `claude-sonnet-*`，这样可以避免未来 `Claude Code` 升级使用不同模型导致我们配置的模型不可用。在启动 `Claude` 时通过 `--model sonnet` 参数即可使用 `sonnet` 系列。如果您更喜欢 `opus` 这个名字，可以使用 `claude-opus-*` 然后在启动时用 `claude --model opus` 即可，不过这个其实无关紧要，因为真正执行任务的模型都是其所指向的（本例中是`qwen3-coder`）。
+
+      > `Claude code` 快速切换分组并进入可以参考[Claude Code 接入指南](claude-code.md)
 
     ![添加代理](/images/zh/proxy-setting-2.png)
 
-4.  请按步骤 3 再次添加一个 `claude-3-5-haiku-20241022` 代理，这个是目前 `Claude Code` 执行简单任务（比如用于生成会话标题）的模型。
+4.  请按步骤 3 再次添加一个 `claude-3-*` 代理，这个是目前 `Claude Code` 执行简单任务（比如用于生成会话主题）的模型。
 
     ![添加代理](/images/zh/proxy-setting-3.png)
 
@@ -83,7 +87,7 @@ keywords: CCProxy, 配置指南, Chatspeed, 代理分组, 代理管理, 密钥�
 
     ![代理管理菜单入口](/images/zh/proxy-group-1.png)
 
-2.  按数字标注，切换到密钥管理，然后点击 "+”，在 **密钥名称** 中输入 `ClaudeCode`，然后点击保存。密钥的名称可以是您喜欢的任意字符串。
+2.  按数字标注，切换到密钥管理，然后点击 " + "，在 **密钥名称** 中输入 `ClaudeCode`，然后点击保存。密钥的名称可以是您喜欢的任意字符串。
 
     ![密钥管理页面](/images/zh/proxy-key-1.png)
 
@@ -107,6 +111,6 @@ keywords: CCProxy, 配置指南, Chatspeed, 代理分组, 代理管理, 密钥�
 
 从 `Claude Code` 发送的请求来看，目前主要通过温度参数进行调优，而 `top_k`、`top_p` 等参数则未作设置。各模型的最佳温度建议参考其官方文档。据了解，`qwen3-coder` 的最佳温度是 0.7，而 `kimi-k2` 的最佳温度是 0.6。其他模型请参考您所使用的模型的官方文档。
 
-### 🔌 接入 Claude Code
+### 🔌 接入 `Claude Code`
 
-接入 Claude Code您可以参考[Claude Code 接入指南](claude-code.md)
+接入 `Claude Code` 您可以参考[Claude Code 接入指南](claude-code.md)

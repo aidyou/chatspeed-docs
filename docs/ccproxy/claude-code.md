@@ -142,7 +142,7 @@ go_claude() {
   # echo "   ANTHROPIC_AUTH_TOKEN = $ANTHROPIC_AUTH_TOKEN"
 
   echo "👉 Entering Claude ..."
-  claude --model claude-sonnet-4-5-20250929
+  claude --model sonnet
 }
 ```
 
@@ -261,7 +261,7 @@ go_claude() {
   # echo "   ANTHROPIC_AUTH_TOKEN = $ANTHROPIC_AUTH_TOKEN"
 
   echo "👉 Entering Claude ..."
-  claude --model claude-sonnet-4-5-20250929
+  claude --model sonnet
 }
 ```
 

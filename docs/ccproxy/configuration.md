@@ -56,16 +56,20 @@ After managing groups, we can now add different proxies to the corresponding gro
 
 3.  Fill in the fields as indicated in the image and save.
     - **Group**: In this example, we are configuring qwen3-code as a backup model for `Claude Code`, so select qwen.
-    - **Proxy Alias**: `Claude Code` currently uses `claude-sonnet-4-5-20250929` as its main programming model, so enter `claude-sonnet-4-5-20250929` here.
+    - **Proxy Alias**: We use the `sonnet` series as the main programming model for `Claude Code`, so enter `claude-sonnet-*` here.
     - **Model**: Search for qwen, then select all qwen3-coder or related models.
 
       > Note: You can select multiple different models from the same (or different) provider as shown in the example in the image. CCProxy will balance the load across provider to improve model call frequency and reduce the risk of `429` errors.
 
-      > Note: The `claude-sonnet-4-5-20250929` in the example is the current default model for `Claude Code`. You can also use other Claude series models in the proxy model alias configuration, such as `claude-sonnet-4-20250514`. Simply specify it via the `--model` parameter when starting Claude.
+      > **Wildcards**: When configuring proxies, model aliases support the use of wildcards at any position. `*` can match zero or more arbitrary characters, for example, `claude-sonnet-*` can match `claude-sonnet-4-5-20250929`. `?` can match a single arbitrary character, for example, `model-v1.?` can match `model-v1.0` or `model-v1.5`.
+
+      > In the example, we used the wildcard `claude-sonnet-*` for the proxy alias. This avoids the situation where our configured model becomes unavailable if `Claude Code` upgrades to use a different model in the future. When starting `Claude`, you can use the `sonnet` series by passing the `--model sonnet` parameter. If you prefer the name `opus`, you can use `claude-opus-*` and then start with `claude --model opus`, but this is actually irrelevant, as the model that actually performs the task is the one it points to (in this example, `qwen3-coder`).
+
+      > For quick group switching and entry into `Claude Code`, please refer to [Claude Code Integration Guide](claude-code.md)
 
     ![Add Proxy](/images/en/proxy-setting-2.png)
 
-4.  Please follow step 3 again to add a `claude-3-5-haiku-20241022` proxy, which is currently used by `Claude Code` to generate conversation titles.
+4.  Please follow step 3 again to add a `claude-3-*` proxy, which is currently used by `Claude Code` to generate conversation titles.
 
     ![Add Proxy](/images/en/proxy-setting-3.png)
 
@@ -108,3 +112,7 @@ The following prompt enhancement is appended to the `Claude Code` system prompt.
 ### 🎛️ Parameter Tuning
 
 Judging from the requests sent by `Claude Code`, tuning is currently done mainly through the temperature parameter, while parameters like `top_k` and `top_p` are not set. It is recommended to refer to the official documentation for the optimal temperature of each model. It is known that the optimal temperature for `qwen3-coder` is 0.7, and for `kimi-k2` it is 0.6. For other models, please refer to the official documentation of the model you are using.
+
+### 🔌 Integrating with `Claude Code`
+
+To integrate with `Claude Code`, please refer to the [Claude Code Integration Guide](claude-code.md)
