@@ -12,13 +12,17 @@ Chatspeed `CCProxy` 模块为方便各类客户端调用，提供了灵活且强
 
 `CCProxy` 的 API 访问主要基于以下两个核心概念：
 
-1.  **分组 (Group)**
+1. **分组 (Group)**
     您可以为不同的客户端或使用场景设置独立的模型分组。通过在 API 路径中加入分组名称，可以方便地隔离不同客户端对模型的访问能力，并根据需求快速切换模型。
     - **示例**：如果您的分组名称是 `gemini`，要访问 Claude 协议的聊天接口，可以通过 `/gemini/v1/messages` 访问。
 
-2.  **工具调用兼容模式 (Tool Compatibility Mode)**
+2. **工具调用兼容模式 (Tool Compatibility Mode)**
     对于本身不支持工具调用（Function Calling）的模型，`CCProxy` 提供了工具兼容模式，使其也能获得并执行工具调用能力。启用工具兼容模式只需在 API 入口端点前加上 `compat_mode`。
     - **示例**：`/gemini/compat_mode/v1/messages`
+
+3. **动态切换分组 (Dynamic Group Switching)**
+    通过在 API 路径中使用 `/switch` 前缀，您可以访问当前在 Chatspeed 界面中设置为“激活”状态的分组。这允许您在不更改客户端（如 IDE、插件等）配置的情况下，直接在界面上一键切换所使用的后端模型和注入规则。
+    - **示例**：`/switch/v1/chat/completions`
 
 ### API 访问入口
 
@@ -50,10 +54,14 @@ Chatspeed `CCProxy` 模块为方便各类客户端调用，提供了灵活且强
 | Chat     | Openai          | {group} | false    | /{group}/v1/chat/completions                                         | 将 {group} 替换为分组名称                                                    |
 | Chat     | Openai          | {group} | true     | /{group}/compat_mode/v1/chat/completions                             | 将 {group} 替换为分组名称                                                    |
 | Chat     | Openai          |         | true     | /compat_mode/v1/chat/completions                                     |                                                                              |
+| Chat     | Openai          | switch  | false    | /switch/v1/chat/completions                                          | 使用当前“激活”的分组                                                         |
+| Chat     | Openai          | switch  | true     | /switch/compat_mode/v1/chat/completions                              | 使用当前“激活”的分组                                                         |
 | Chat     | Claude          |         | false    | /v1/messages                                                         |                                                                              |
 | Chat     | Claude          | {group} | false    | /{group}/v1/messages                                                 | 将 {group} 替换为分组名称                                                    |
 | Chat     | Claude          | {group} | true     | /{group}/compat_mode/v1/messages                                     | 将 {group} 替换为分组名称                                                    |
 | Chat     | Claude          |         | true     | /compat_mode/v1/messages                                             |                                                                              |
+| Chat     | Claude          | switch  | false    | /switch/v1/messages                                                  | 使用当前“激活”的分组                                                         |
+| Chat     | Claude          | switch  | true     | /switch/compat_mode/v1/messages                                      | 使用当前“激活”的分组                                                         |
 | Chat     | Gemini          |         | false    | /v1beta/models/{model}/generateContent?key={key}                     | 将 {model} 替换为模型名称，将 {key} 替换为API Key                            |
 | Chat     | Gemini          | {group} | false    | /{group}/v1beta/models/{model}/generateContent?key={key}             | 将 {group} 替换为分组名称，将 {model} 替换为模型名称，将 {key} 替换为API Key |
 | Chat     | Gemini          | {group} | true     | /{group}/compat_mode/v1beta/models/{model}/generateContent?key={key} | 将 {group} 替换为分组名称，将 {model} 替换为模型名称，将 {key} 替换为API Key |
