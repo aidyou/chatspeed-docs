@@ -36,7 +36,22 @@ Proxy groups allow users to isolate access to different models based on usage sc
 
 #### Switching Groups
 
-You can follow the steps above to add a kimi group, a gemini group, etc. Access to models in different groups is done via the `/{group_name}/` prefix. For specific access rules, please refer to the [API Documentation](../api/).
+You can follow the steps above to add a kimi group, a gemini group, etc. Access to models in different groups is done via the `/{group_name}/` prefix.
+
+Additionally, you can use the `/switch` prefix to dynamically access the **currently active** proxy group. This is particularly useful for Claude Code integration, as you can configure it once and seamlessly switch between groups without restarting:
+
+```bash
+# Use the currently active group
+export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/switch"
+```
+
+You can switch groups in two ways:
+1. **Quick Switch Panel**: Press `Alt+Shift+P` (customizable) to bring up the lightweight group switching panel for instant switching
+2. **Settings Page**: Go to Proxy settings and manually select the active group
+
+For detailed usage, please refer to [Proxy Group Switching](../posts/claude-code-free/proxy-group-switching.html).
+
+For specific access rules, please refer to the [API Documentation](../api/).
 
 ### 🔀 Proxy Management
 

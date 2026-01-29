@@ -36,7 +36,22 @@ keywords: CCProxy, 配置指南, Chatspeed, 代理分组, 代理管理, 密钥�
 
 #### 分组切换
 
-您可以依据上面的步骤依次添加 kimi 组、gemini 组等。不同分组的模型访问通过 `/{group_name}/` 前缀即可，具体的访问规则请参考 [API 文档](../api/)。
+您可以依据上面的步骤依次添加 kimi 组、gemini 组等。不同分组的模型访问通过 `/{group_name}/` 前缀即可。
+
+此外，您还可以使用 `/switch` 前缀来**动态访问当前激活**的代理分组。这对于 Claude Code 集成特别有用，只需配置一次即可在不同分组间无缝切换，无需重启：
+
+```bash
+# 使用当前激活的分组
+export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/switch"
+```
+
+分组切换有两种方式：
+1. **快速切换面板**：按下 `Alt+Shift+P`（可自定义）呼出轻量级分组切换面板，即时切换
+2. **设置页面**：进入代理设置，手动选择激活的分组
+
+详细使用请参考[代理分组切换](../posts/claude-code-free/proxy-group-switching.html)。
+
+具体的访问规则请参考 [API 文档](../api/)。
 
 ### 🔀 代理管理
 

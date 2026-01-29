@@ -38,6 +38,8 @@ Below are the basic API entry points provided by `CCProxy`:
 - `/api/tags`: Ollama protocol model list interface
 - `/api/chat`: Ollama protocol chat entry
 - `/api/show`: Ollama protocol model details interface
+- `/v1/embeddings`: OpenAI protocol embedding interface
+- `/api/embed`: Ollama protocol embedding interface
 
 ### Combined API Access
 
@@ -67,6 +69,10 @@ By combining **Grouping** and **Tool Compatibility Mode**, you can build more fl
 | Chat | Ollama          | {group} | false  | /{group}/api/chat                                                    | Replace {group} with the group name                                                          |
 | Chat | Ollama          | {group} | true   | /{group}/compat_mode/api/chat                                        | Replace {group} with the group name                                                          |
 | Chat | Ollama          |         | true   | /compat_mode/api/chat                                                |                                                                                              |
+| Embed| Openai          |         | false  | /v1/embeddings                                                       |                                                                                              |
+| Embed| Openai          | {group} | false  | /{group}/v1/embeddings                                               | Replace {group} with the group name                                                          |
+| Embed| Gemini          |         | false  | /v1beta/models/{model}:embedContent?key={key}                        | Replace {model} with the model name and {key} with the API Key                               |
+| Embed| Ollama          |         | false  | /api/embed                                                           |                                                                                              |
 | List | Openai          |         |        | /v1/models                                                           | Supports groups and compatibility mode                                                       |
 | List | Calude          |         |        | /v1/models                                                           | Supports groups and compatibility mode                                                       |
 | List | Gemini          |         |        | /v1beta/models                                                       | Supports groups and compatibility mode                                                       |
