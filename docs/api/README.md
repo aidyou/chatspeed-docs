@@ -39,6 +39,7 @@ Below are the basic API entry points provided by `CCProxy`:
 - `/api/chat`: Ollama protocol chat entry
 - `/api/show`: Ollama protocol model details interface
 - `/v1/embeddings`: OpenAI protocol embedding interface
+- `/v1beta/models/{model}:embedContent`: Gemini protocol embedding interface
 - `/api/embed`: Ollama protocol embedding interface
 
 ### Combined API Access

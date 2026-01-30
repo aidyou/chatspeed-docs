@@ -40,6 +40,7 @@ Chatspeed `CCProxy` 模块为方便各类客户端调用，提供了灵活且强
 - `/api/chat`：Ollama 协议的聊天接口
 - `/api/show`：Ollama 协议的模型详情接口
 - `/v1/embeddings`：OpenAI 协议文本嵌入接口
+- `/v1beta/models/{model}:embedContent`：Gemini 协议文本嵌入接口
 - `/api/embed`：Ollama 协议文本嵌入接口
 
 ### 组合式 API 访问
