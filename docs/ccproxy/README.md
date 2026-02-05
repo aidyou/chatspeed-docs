@@ -15,12 +15,12 @@ CCProxy also has AI model enhancement features. Its **tool compatibility mode** 
 
 ## 🔄 What Protocol Conversions Does CCProxy Support?
 
-CCProxy supports seamless conversion between major AI chat protocols:
+CCProxy supports seamless conversion between major AI chat and embedding protocols:
 
-- **OpenAI-compatible format**
+- **OpenAI-compatible format** (Chat & Embeddings)
 - **Claude API**
-- **Gemini API**
-- **Ollama local models**
+- **Gemini API** (Chat & Embeddings)
+- **Ollama local models** (Chat & Embeddings)
 
 ## ⚙️ How CCProxy Works
 
@@ -63,6 +63,12 @@ CCProxy provides multiple load-balancing capabilities:
 - Each proxy model can be routed to multiple identical or different provider models.
 - Client requests are automatically rotated among all providers and keys.
 - Multiple free channels can be combined into a proxy pool to increase call limits and frequency.
+
+### 🔀 Dynamic Group Switching
+
+- Define separate proxy groups for different usage scenarios (e.g., development, production, specific projects).
+- Use the `/switch` prefix to always route to the currently "Active" group set in the Chatspeed UI.
+- Instantly change backend models and rules across all connected tools without reconfiguring them.
 
 ### 💰 Cost Optimization
 

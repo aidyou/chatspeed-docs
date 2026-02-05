@@ -17,8 +17,8 @@ Chatspeed `CCProxy` 模块为方便各类客户端调用，提供了灵活且强
     - **示例**：如果您的分组名称是 `gemini`，要访问 Claude 协议的聊天接口，可以通过 `/gemini/v1/messages` 访问。
 
 2. **工具调用兼容模式 (Tool Compatibility Mode)**
-    对于本身不支持工具调用（Function Calling）的模型，`CCProxy` 提供了工具兼容模式，使其也能获得并执行工具调用能力。启用工具兼容模式只需在 API 入口端点前加上 `compat_mode`。
-    - **示例**：`/gemini/compat_mode/v1/messages`
+    对于本身不支持工具调用（Function Calling）的模型，`CCProxy` 提供了工具兼容模式，使其也能获得并执行工具调用能力。启用工具兼容模式只需在 API 入口端点前加上 `compat_mode` 或简写 `compat`。
+    - **示例**：`/gemini/compat_mode/v1/messages` 或 `/gemini/compat/v1/messages`
 
 3. **动态切换分组 (Dynamic Group Switching)**
     通过在 API 路径中使用 `/switch` 前缀，您可以访问当前在 Chatspeed 界面中设置为“激活”状态的分组。这允许您在不更改客户端（如 IDE、插件等）配置的情况下，直接在界面上一键切换所使用的后端模型和注入规则。
@@ -55,24 +55,25 @@ Chatspeed `CCProxy` 模块为方便各类客户端调用，提供了灵活且强
 | MCP      | SSE             |         | false    | /mcp/sse                                                             | 不建议                                                                       |
 | Chat     | Openai          |         | false    | /v1/chat/completions                                                 |                                                                              |
 | Chat     | Openai          | {group} | false    | /{group}/v1/chat/completions                                         | 将 {group} 替换为分组名称                                                    |
-| Chat     | Openai          | {group} | true     | /{group}/compat_mode/v1/chat/completions                             | 将 {group} 替换为分组名称                                                    |
-| Chat     | Openai          |         | true     | /compat_mode/v1/chat/completions                                     |                                                                              |
-| Chat     | Openai          | switch  | false    | /switch/v1/chat/completions                                          | 使用当前“激活”的分组                                                         |
-| Chat     | Openai          | switch  | true     | /switch/compat_mode/v1/chat/completions                              | 使用当前“激活”的分组                                                         |
-| Chat     | Claude          |         | false    | /v1/messages                                                         |                                                                              |
-| Chat     | Claude          | {group} | false    | /{group}/v1/messages                                                 | 将 {group} 替换为分组名称                                                    |
-| Chat     | Claude          | {group} | true     | /{group}/compat_mode/v1/messages                                     | 将 {group} 替换为分组名称                                                    |
-| Chat     | Claude          |         | true     | /compat_mode/v1/messages                                             |                                                                              |
-| Chat     | Claude          | switch  | false    | /switch/v1/messages                                                  | 使用当前“激活”的分组                                                         |
-| Chat     | Claude          | switch  | true     | /switch/compat_mode/v1/messages                                      | 使用当前“激活”的分组                                                         |
-| Chat     | Gemini          |         | false    | /v1beta/models/{model}/generateContent?key={key}                     | 将 {model} 替换为模型名称，将 {key} 替换为API Key                            |
-| Chat     | Gemini          | {group} | false    | /{group}/v1beta/models/{model}/generateContent?key={key}             | 将 {group} 替换为分组名称，将 {model} 替换为模型名称，将 {key} 替换为API Key |
-| Chat     | Gemini          | {group} | true     | /{group}/compat_mode/v1beta/models/{model}/generateContent?key={key} | 将 {group} 替换为分组名称，将 {model} 替换为模型名称，将 {key} 替换为API Key |
-| Chat     | Gemini          |         | true     | /compat_mode/v1beta/models/{model}/generateContent?key={key}         | 将 {model} 替换为模型名称，将 {key} 替换为API Key                            |
-| Chat     | Ollama          |         | false    | /api/chat                                                            |                                                                              |
-| Chat     | Ollama          | {group} | false    | /{group}/api/chat                                                    | 将 {group} 替换为分组名称                                                    |
-| Chat     | Ollama          | {group} | true     | /{group}/compat_mode/api/chat                                        | 将 {group} 替换为分组名称                                                    |
-| Chat     | Ollama          |         | true     | /compat_mode/api/chat                                                |                                                                              |
+| Chat | Openai | {group} | true | /{group}/compat_mode/v1/chat/completions | 支持简写 compat                                              |
+| Chat | Openai |        | true | /compat_mode/v1/chat/completions         | 支持简写 compat                                              |
+| Chat | Openai | switch | false | /switch/v1/chat/completions              | 使用当前“激活”的分组                                         |
+| Chat | Openai | switch | true | /switch/compat_mode/v1/chat/completions  | 支持简写 compat                                              |
+| Chat | Claude |        | false | /v1/messages                             |                                                              |
+| Chat | Claude | {group} | false | /{group}/v1/messages                     | 将 {group} 替换为分组名称                                    |
+| Chat | Claude | {group} | true | /{group}/compat_mode/v1/messages         | 支持简写 compat                                              |
+| Chat | Claude |        | true | /compat_mode/v1/messages                 | 支持简写 compat                                              |
+| Chat | Claude | switch | false | /switch/v1/messages                      | 使用当前“激活”的分组                                         |
+| Chat | Claude | switch | true | /switch/compat_mode/v1/messages          | 支持简写 compat                                              |
+| Chat | Gemini |        | false | /v1beta/models/{model}/generateContent?key={key} | 将 {model} 替换为模型名称，将 {key} 替换为API Key |
+| Chat | Gemini | {group} | false | /{group}/v1beta/models/{model}/generateContent?key={key} | 将 {group} 替换为分组名称，将 {model} 替换为模型名称，将 {key} 替换为API Key |
+| Chat | Gemini | {group} | true | /{group}/compat_mode/v1beta/models/{model}/generateContent?key={key} | 支持简写 compat |
+| Chat | Gemini |        | true | /compat_mode/v1beta/models/{model}/generateContent?key={key} | 支持简写 compat |
+| Chat | Ollama |        | false | /api/chat                                | |
+| Chat | Ollama | {group} | false | /{group}/api/chat                        | 将 {group} 替换为分组名称 |
+| Chat | Ollama | {group} | true | /{group}/compat_mode/api/chat            | 支持简写 compat |
+| Chat | Ollama |        | true | /compat_mode/api/chat                    | 支持简写 compat |
+
 | Embed    | Openai          |         | false    | /v1/embeddings                                                       |                                                                              |
 | Embed    | Openai          | {group} | false    | /{group}/v1/embeddings                                               | 将 {group} 替换为分组名称                                                    |
 | Embed    | Gemini          |         | false    | /v1beta/models/{model}:embedContent?key={key}                        | 将 {model} 替换为模型名称，将 {key} 替换为API Key                            |

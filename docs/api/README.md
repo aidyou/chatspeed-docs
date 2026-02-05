@@ -16,8 +16,8 @@ API access in `CCProxy` is primarily based on the following two core concepts:
     - **Example**: If your group name is `gemini`, to access the Claude protocol chat interface, you can use `/gemini/v1/messages`.
 
 2. **Tool Compatibility Mode**
-    For models that do not natively support tool calling (Function Calling), `CCProxy` provides a tool compatibility mode, allowing them to gain and execute tool calling capabilities. To enable tool compatibility mode, simply add `compat_mode` to the API entry endpoint.
-    - **Example**: `/gemini/compat_mode/v1/messages`
+    For models that do not natively support tool calling (Function Calling), `CCProxy` provides a tool compatibility mode, allowing them to gain and execute tool calling capabilities. To enable tool compatibility mode, simply add `compat_mode` or the shorthand `compat` to the API entry endpoint.
+    - **Example**: `/gemini/compat_mode/v1/messages` or `/gemini/compat/v1/messages`
 
 3. **Dynamic Group Switching**
     By using the `/switch` prefix in the API path, you can access the group that is currently set as "Active" in the Chatspeed interface. This allows you to switch between different backend models and injection rules directly from the interface without changing the configuration in your clients (e.g., IDEs, plugins).
@@ -52,24 +52,24 @@ By combining **Grouping** and **Tool Compatibility Mode**, you can build more fl
 | MCP  | SSE             |         | false  | /mcp/sse                                                             | Not recommended                                                                              |
 | Chat | Openai          |         | false  | /v1/chat/completions                                                 |                                                                                              |
 | Chat | Openai          | {group} | false  | /{group}/v1/chat/completions                                         | Replace {group} with the group name                                                          |
-| Chat | Openai          | {group} | true   | /{group}/compat_mode/v1/chat/completions                             | Replace {group} with the group name                                                          |
-| Chat | Openai          |         | true   | /compat_mode/v1/chat/completions                                     |                                                                                              |
+| Chat | Openai          | {group} | true   | /{group}/compat_mode/v1/chat/completions                             | Supports shorthand `compat`                                                                  |
+| Chat | Openai          |         | true   | /compat_mode/v1/chat/completions                                     | Supports shorthand `compat`                                                                  |
 | Chat | Openai          | switch  | false  | /switch/v1/chat/completions                                          | Uses the currently "Active" group                                                            |
-| Chat | Openai          | switch  | true   | /switch/compat_mode/v1/chat/completions                              | Uses the currently "Active" group                                                            |
+| Chat | Openai          | switch  | true   | /switch/compat_mode/v1/chat/completions                              | Supports shorthand `compat`                                                                  |
 | Chat | Claude          |         | false  | /v1/messages                                                         |                                                                                              |
 | Chat | Claude          | {group} | false  | /{group}/v1/messages                                                 | Replace {group} with the group name                                                          |
-| Chat | Claude          | {group} | true   | /{group}/compat_mode/v1/messages                                     | Replace {group} with the group name                                                          |
-| Chat | Claude          |         | true   | /compat_mode/v1/messages                                             |                                                                                              |
+| Chat | Claude          | {group} | true   | /{group}/compat_mode/v1/messages                                     | Supports shorthand `compat`                                                                  |
+| Chat | Claude          |         | true   | /compat_mode/v1/messages                                             | Supports shorthand `compat`                                                                  |
 | Chat | Claude          | switch  | false  | /switch/v1/messages                                                  | Uses the currently "Active" group                                                            |
-| Chat | Claude          | switch  | true   | /switch/compat_mode/v1/messages                                      | Uses the currently "Active" group                                                            |
+| Chat | Claude          | switch  | true   | /switch/compat_mode/v1/messages                                      | Supports shorthand `compat`                                                                  |
 | Chat | Gemini          |         | false  | /v1beta/models/{model}/generateContent?key={key}                     | Replace {model} with the model name and {key} with the API Key                               |
 | Chat | Gemini          | {group} | false  | /{group}/v1beta/models/{model}/generateContent?key={key}             | Replace {group} with the group name, {model} with the model name, and {key} with the API Key |
-| Chat | Gemini          | {group} | true   | /{group}/compat_mode/v1beta/models/{model}/generateContent?key={key} | Replace {group} with the group name, {model} with the model name, and {key} with the API Key |
-| Chat | Gemini          |         | true   | /compat_mode/v1beta/models/{model}/generateContent?key={key}         | Replace {model} with the model name and {key} with the API Key                               |
+| Chat | Gemini          | {group} | true   | /{group}/compat_mode/v1beta/models/{model}/generateContent?key={key} | Supports shorthand `compat` |
+| Chat | Gemini          |         | true   | /compat_mode/v1beta/models/{model}/generateContent?key={key}         | Supports shorthand `compat` |
 | Chat | Ollama          |         | false  | /api/chat                                                            |                                                                                              |
 | Chat | Ollama          | {group} | false  | /{group}/api/chat                                                    | Replace {group} with the group name                                                          |
-| Chat | Ollama          | {group} | true   | /{group}/compat_mode/api/chat                                        | Replace {group} with the group name                                                          |
-| Chat | Ollama          |         | true   | /compat_mode/api/chat                                                |                                                                                              |
+| Chat | Ollama          | {group} | true   | /{group}/compat_mode/api/chat                                        | Supports shorthand `compat` |
+| Chat | Ollama          |         | true   | /compat_mode/api/chat                                                | Supports shorthand `compat` |
 | Embed| Openai          |         | false  | /v1/embeddings                                                       |                                                                                              |
 | Embed| Openai          | {group} | false  | /{group}/v1/embeddings                                               | Replace {group} with the group name                                                          |
 | Embed| Gemini          |         | false  | /v1beta/models/{model}:embedContent?key={key}                        | Replace {model} with the model name and {key} with the API Key                               |
