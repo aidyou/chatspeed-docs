@@ -175,7 +175,7 @@ ccproxy的工具兼容模式不仅不需要模型本身支持原生工具调用�
 而 `Claude Code` 的 `Grep` 工具中，恰好定义了 `-A`, `-B`, `-C` 等参数。如果直接通过标准模式将这些工具定义发给 Gemini，API 会立即返回 `MALFORMED_FUNCTION_CALL` 错误，导致工具调用完全失败。这正是工具兼容模式要解决的完美场景。
 
 ### 解决方案
-通过ccproxy的工具兼容模式将`Gemini`模型接入`Claude Code`，就能完美避开**参数类型限制**。要启用工具兼容模式很简单，只要在 URL 地址中增加`/compat_mode`即可，完整的代理地址类似`http://localhost:11434/gemini/compat_mode`,其中`gemini`是分组名称，这个你可以自己任意修改,`compat_mode`表示启用工具兼容模式
+通过ccproxy的工具兼容模式将`Gemini`模型接入`Claude Code`，就能完美避开**参数类型限制**。要启用工具兼容模式很简单，只要在 URL 地址中增加`/compat_mode`即可，完整的代理地址类似`http://localhost:11435/gemini/compat_mode`,其中`gemini`是分组名称，这个你可以自己任意修改,`compat_mode`表示启用工具兼容模式
 
 下面这张图是我将`gemini-flash-2.5`在工具兼容模式下接入`Claude Code`，用来修复Chatspeed AI 模块bug 的截图：
 

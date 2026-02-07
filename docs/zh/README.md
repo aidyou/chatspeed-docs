@@ -56,7 +56,7 @@ keywords: Chatspeed, AI 代理, Rust, 开源, AI 助手, 编程伴侣, 桌面中
 
 ![MCP proxy](/images/zh/mcp-proxy.png)
 
-> 你可以通过 `http://localhost:11434/sse` 访问 `CCProxy` 的 SSE 协议的 MCP
+> 你可以通过 `http://localhost:11435/sse` 访问 `CCProxy` 的 SSE 协议的 MCP
 
 ### 核心优势
 
@@ -72,13 +72,13 @@ keywords: Chatspeed, AI 代理, Rust, 开源, AI 助手, 编程伴侣, 桌面中
 ```bash
 
 # 使用 Claude Code 协议访问 kimi 分组下的模型列表, {proxy-key} 可以在软件设置中进行配置
-curl  -H "x-api-key: {proxy-key}" http://127.0.0.1:11434/kimi/v1/models
+curl  -H "x-api-key: {proxy-key}" http://127.0.0.1:11435/kimi/v1/models
 
 # 使用 Gemini 协议访问 qwen 分组下的模型列表
-curl http://127.0.0.1:11434/qwen/v1beta/models?key={proxy-key}
+curl http://127.0.0.1:11435/qwen/v1beta/models?key={proxy-key}
 
 # 通过 ollama 协议访问代理中配置的`gemma3-12b`（代理别名）
-curl http://localhost:11434/api/chat -d '{
+curl http://localhost:11435/api/chat -d '{
   "model": "gemma3-12b",
   "messages": [
     {
@@ -91,7 +91,7 @@ curl http://localhost:11434/api/chat -d '{
 
 
 # 通过工具兼容模式访问 ollama 协议的聊天接口，其中`gemma3-12b`是软件中配置的“代理别名”
-curl http://localhost:11434/compat_mode/api/chat -d '{
+curl http://localhost:11435/compat_mode/api/chat -d '{
   "model": "gemma3-12b",
   "messages": [
     {
@@ -123,7 +123,7 @@ curl http://localhost:11434/compat_mode/api/chat -d '{
 
 # 通过 claude 协议访问大理服务器的聊天接口，并且开启了工具兼容模式
 # 其中：代理密钥和代理别名都是软件中配置的，示例中的是我本机测试，无法直接运行
-curl http://localhost:11434/compat_mode/v1/messages \
+curl http://localhost:11435/compat_mode/v1/messages \
   -H "x-api-key: cs-TosCz7A29R74yNnShYQKskxXPx9OSYd1RMQV5YzVdHvqL7ehNNoOhCVg7UTp6" \
   -H "Content-Type: application/json" \
   -H "anthropic-version: 2023-06-01" \
@@ -148,7 +148,7 @@ curl http://localhost:11434/compat_mode/v1/messages \
 
 # 通过工具兼容模式和 openai 兼容协议访问代理服务器的聊天接口
 # 测试时注意修改模型id 为软件配置中的代理别名，密钥改为自己配置的
-curl http://localhost:11434/compat_mode/v1/chat/completions \
+curl http://localhost:11435/compat_mode/v1/chat/completions \
   -H "Authorization: Bearer cs-TosCz7A29R74yNnShYQKskxXPx9OSYd1RMQV5YzVdHvqL7ehNNoOhCVg7UTp6" \
   -H "Content-Type: application/json" \
   -d '{
@@ -165,7 +165,7 @@ curl http://localhost:11434/compat_mode/v1/chat/completions \
 }'
 
 # 通过 gemini 协议，在工具兼容模式下访问代理服务器的聊天接口
-curl http://localhost:11434/compat_mode/v1beta/models/gemma3-12b:streamGenerateContent?alt=sse&key=cs-TosCz7A29R74yNnShYQKskxXPx9OSYd1RMQV5YzVdHvqL7ehNNoOhCVg7UTp6 \
+curl http://localhost:11435/compat_mode/v1beta/models/gemma3-12b:streamGenerateContent?alt=sse&key=cs-TosCz7A29R74yNnShYQKskxXPx9OSYd1RMQV5YzVdHvqL7ehNNoOhCVg7UTp6 \
   -H "Content-Type: application/json" -d '{
   "contents": [
     {

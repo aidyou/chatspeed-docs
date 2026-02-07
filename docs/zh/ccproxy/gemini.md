@@ -48,13 +48,13 @@ npx https://github.com/acoliver/llxprt-code
 1. 在命令行切换到您的项目目录，执行 `llxprt` 进入
 2. 进入`llxprt`后按下面顺序执行配置：
    - `/provider openai`
-   - `/baseurl http://127.0.0.1:11434/compat_mode/v1`
+   - `/baseurl http://127.0.0.1:11435/compat_mode/v1`
    - `/key {ProxyKey}`
    - `/model {ModelName}`
 
 **其中：**
 
-- `/baseurl http://127.0.0.1:11434/compat_mode/v1` 我们设置为工具兼容模式，在这个模式下可以更好地拓展模型的能力，如果您想使用原生工具调用，将地址设置为 `http://127.0.0.1:11434/v1`
+- `/baseurl http://127.0.0.1:11435/compat_mode/v1` 我们设置为工具兼容模式，在这个模式下可以更好地拓展模型的能力，如果您想使用原生工具调用，将地址设置为 `http://127.0.0.1:11435/v1`
 - `/model {ModelName}`：指定要使用的模型名称，例如 `qwen3-coder`。模型可以从 [Chatspeed](https://chatspeed.aidyou.ai) 的设置中获取，按顺序点击菜单：`代理 -> 代理服务`，找到你喜欢的模型拷贝即可。
 - `/key {ProxyKey}`：代理密钥可以从 [Chatspeed](https://chatspeed.aidyou.ai) 的设置中获取，按顺序点击菜单：`代理 -> 代理访问密钥`，您可以单独创建一个 `llxprt` 专用的密钥也可以用之前已存在的其他密钥。
 

@@ -42,7 +42,7 @@ keywords: CCProxy, 配置指南, Chatspeed, 代理分组, 代理管理, 密钥�
 
 ```bash
 # 使用当前激活的分组
-export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/switch"
+export ANTHROPIC_BASE_URL="http://127.0.0.1:11435/switch"
 ```
 
 分组切换有两种方式：

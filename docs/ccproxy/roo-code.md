@@ -29,7 +29,7 @@ Before you begin, ensure you have completed the following steps:
 
 2.  Click in the order indicated by the numbers, enter the relevant information, and then click the `Save` button marked as **number 6** to save the information.
     - **API Provider**: Select `OpenAI Compatible`.
-    - **Base URL**: Enter `http://127.0.0.1:11434/v1`.
+    - **Base URL**: Enter `http://127.0.0.1:11435/v1`.
     - **API Key**: Copy the proxy key from the CCProxy settings interface and paste it here.
     - **Model**: Select `gemini2.5-pro`.
     - `gemini2.5-pro` supports image input and tool calling, so you can check the corresponding options or ignore them.

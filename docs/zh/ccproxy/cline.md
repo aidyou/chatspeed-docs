@@ -23,7 +23,7 @@ keywords: Cline, 接入指南, CCProxy, Chatspeed, VS Code, AI 编程插件, 代
 
 1. **设置执行模型**
    - **API Provider**：选择 `OpenAI Compatible`。
-   - **Base URL**：输入 `http://127.0.0.1:11434/v1`。
+   - **Base URL**：输入 `http://127.0.0.1:11435/v1`。
    - **API Key**：从 `CCProxy` 设置界面拷贝代理密钥并粘贴。
    - **Model ID**：输入 `gemini2.5-flash`。
    - `gemini2.5-flash` 支持图片输入和工具调用，可以将对应的选项打勾，也可以忽略。

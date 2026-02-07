@@ -31,7 +31,7 @@ Zed 是一款为高性能人机协作而设计的下一代代码编辑器。它�
   "language_models": {
     "openai_compatible": {
       "Chatspeed": {
-        "api_url": "http://127.0.0.1:11434/v1",
+        "api_url": "http://127.0.0.1:11435/v1",
         "available_models": [
           {
             "name": "gemini2.5-pro",

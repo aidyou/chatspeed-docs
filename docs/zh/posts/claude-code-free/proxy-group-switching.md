@@ -39,14 +39,14 @@ Chatspeed 的 CCProxy 模块支持 `/switch` 端点前缀。当客户端请求�
 ```bash
 # Claude 协议（Claude Code 原生使用）
 # 访问激活分组的模型
-curl -X POST http://127.0.0.1:11434/switch/v1/messages \
+curl -X POST http://127.0.0.1:11435/switch/v1/messages \
   -H "x-api-key: {proxy-key}" \
   -H "anthropic-version: 2023-06-01" \
   -H "Content-Type: application/json" \
   -d '{"model": "claude-sonnet-4-20250514", "messages": [{"role": "user", "content": "hello"}], "max_tokens": 100}'
 
 # Claude Code 配置示例
-export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/switch"
+export ANTHROPIC_BASE_URL="http://127.0.0.1:11435/switch"
 export ANTHROPIC_AUTH_TOKEN="{proxy-key}"
 
 # 现在启动 Claude Code，所有请求都会走当前激活的分组配置
@@ -115,11 +115,11 @@ claude
 
 ```bash
 # 方式一：使用 /switch 动态路由（推荐）
-export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/switch"
+export ANTHROPIC_BASE_URL="http://127.0.0.1:11435/switch"
 export ANTHROPIC_AUTH_TOKEN="cs-xxxxx"
 
 # 方式二：直接使用分组名称
-export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/ds"
+export ANTHROPIC_BASE_URL="http://127.0.0.1:11435/ds"
 export ANTHROPIC_AUTH_TOKEN="cs-xxxxx"
 ```
 

@@ -32,15 +32,15 @@ keywords: Claude Code, 接入指南, CCProxy, Chatspeed, 代理模型, zsh, bash
 ```zsh
 # Format: [environment_name]="BASE_URL AUTH_TOKEN"
 declare -A CLAUDE_ENV_MAP=(
-  [dev]="http://127.0.0.1:11434 $DEV_KEY"
+  [dev]="http://127.0.0.1:11435 $DEV_KEY"
   [prod]="https://api.moonshot.cn/anthropic $KIMI_KEY"
 )
 
 # 设置 Claude 环境变量的函数
 # 使用示例:
 # source ~/.zshrc
-# go_claude dev      # 使用 dev 配置，URL 会变成 http://127.0.0.1:11434/dev
-# go_claude test     # 同样使用 dev 配置，URL 也是 http://127.0.0.1:11434/test
+# go_claude dev      # 使用 dev 配置，URL 会变成 http://127.0.0.1:11435/dev
+# go_claude test     # 同样使用 dev 配置，URL 也是 http://127.0.0.1:11435/test
 # go_claude prod     # 使用 prod 配置
 go_claude() {
   local group_name="$1"     # 用户输入的原始环境名
@@ -151,15 +151,15 @@ go_claude() {
 ```sh
 # Format: [environment_name]="BASE_URL AUTH_TOKEN"
 declare -A CLAUDE_ENV_MAP=(
-  [dev]="http://127.0.0.1:11434 $DEV_KEY"
+  [dev]="http://127.0.0.1:11435 $DEV_KEY"
   [prod]="https://api.moonshot.cn/anthropic $KIMI_KEY"
 )
 
 # 设置 Claude 环境变量的函数
 # 使用示例:
 # source ~/.bashrc
-# go_claude dev      # 使用 dev 配置，URL 会变成 http://127.0.0.1:11434/dev
-# go_claude test     # 同样使用 dev 配置，URL 也是 http://127.0.0.1:11434/test
+# go_claude dev      # 使用 dev 配置，URL 会变成 http://127.0.0.1:11435/dev
+# go_claude test     # 同样使用 dev 配置，URL 也是 http://127.0.0.1:11435/test
 # go_claude prod     # 使用 prod 配置
 go_claude() {
   local group_name="$1"     # 用户输入的原始环境名
@@ -278,10 +278,10 @@ go_claude() {
 
 ```zsh
 > go_claude qwen
-Testing endpoint: http://127.0.0.1:11434/qwen/compat_mode/v1/models
+Testing endpoint: http://127.0.0.1:11435/qwen/compat_mode/v1/models
 ✅ Test successful. Found 3 models.
 ✅ 成功切换到环境: qwen (使用 'dev' 配置)
-👉 ANTHROPIC_BASE_URL = http://127.0.0.1:11434/qwen/compat_mode
+👉 ANTHROPIC_BASE_URL = http://127.0.0.1:11435/qwen/compat_mode
 👉 正在进入 Claude ...
 ╭───────────────────────────────────────────────────╮
 │ ✻ Welcome to Claude Code!                         │
@@ -295,7 +295,7 @@ Testing endpoint: http://127.0.0.1:11434/qwen/compat_mode/v1/models
 │   Overrides (via env):                            │
 │                                                   │
 │   • API Base URL:                                 │
-│   http://127.0.0.1:11434/qwen/compat_mode         │
+│   http://127.0.0.1:11435/qwen/compat_mode         │
 ╰───────────────────────────────────────────────────╯
 ```
 

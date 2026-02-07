@@ -10,10 +10,10 @@ keywords: MCP Proxy, Chatspeed, CCProxy, Model Context Protocol, tools, unified 
 
 Chatspeed's [CCProxy](../ccproxy/) module provides the **MCP Proxy** as a solution to the aforementioned fragmented MCP management. It aggregates all MCP tools installed in Chatspeed into a flattened structure and provides unified access entry points via multiple protocols. This means you only need to install your MCP tools in Chatspeed once, disable the ones you don't need, and then you can access all your MCP tools via any of the following protocols:
 
-- Streamable HTTP Protocol: `http://localhost:11434/mcp/http` (Recommended)
-- SSE Protocol: `http://localhost:11434/mcp/sse`
+- Streamable HTTP Protocol: `http://localhost:11435/mcp/http` (Recommended)
+- SSE Protocol: `http://localhost:11435/mcp/sse`
 
-> Please note that the port `11434` used in the MCP URLs in this chapter is the default port of the [CCProxy](../ccproxy/) module. If you have modified the default port, please update the port configuration in your configuration files accordingly.
+> Please note that the port `11435` used in the MCP URLs in this chapter is the default port of the [CCProxy](../ccproxy/) module. If you have modified the default port, please update the port configuration in your configuration files accordingly.
 
 ## 🔧 Why You Need an MCP Proxy
 
@@ -30,7 +30,7 @@ Developers often use multiple AI IDEs or AI plugins, and each AI IDE or AI plugi
 ### After Using the CCProxy Module's MCP Proxy
 
 - Simply install all necessary MCP tools on `Chatspeed` ✅
-- The CCProxy module provides all aggregated MCP tools via SSE protocol (`http://localhost:11434/mcp/sse`) ✅ or `Streamable HTTP` protocol (`http://localhost:11434/mcp/http`) ✅
+- The CCProxy module provides all aggregated MCP tools via SSE protocol (`http://localhost:11435/mcp/sse`) ✅ or `Streamable HTTP` protocol (`http://localhost:11435/mcp/http`) ✅
 - Configuring MCPs in all IDEs or plugins becomes very simple: just select the appropriate protocol, and configure it to the corresponding URL ✅
 - Adding, removing, and modifying tools can all be completed centrally in the `Chatspeed` client ✅
 
@@ -100,7 +100,7 @@ Usually, the configuration formats of different MCP clients vary slightly, but g
   "mcpServers": {
     "ccproxy": {
       "type": "http",
-      "url": "http://localhost:11434/mcp/http"
+      "url": "http://localhost:11435/mcp/http"
     }
   }
 }
@@ -113,7 +113,7 @@ Usually, the configuration formats of different MCP clients vary slightly, but g
   "mcpServers": {
     "ccproxy": {
       "type": "sse",
-      "url": "http://localhost:11434/mcp/sse"
+      "url": "http://localhost:11435/mcp/sse"
     }
   }
 }
@@ -126,13 +126,13 @@ Usually, the configuration formats of different MCP clients vary slightly, but g
 1. The following will install to the user scope, making it available in all projects:
 
 ```bash
-claude mcp add -t http -s user ccproxy http://localhost:11434/mcp/http
+claude mcp add -t http -s user ccproxy http://localhost:11435/mcp/http
 ```
 
 2. If you only want to install for the current project, enter the project directory, then use the following command to install:
 
 ```bash
-claude mcp add -t http ccproxy http://localhost:11434/mcp/http
+claude mcp add -t http ccproxy http://localhost:11435/mcp/http
 ```
 
 3. After installation, verify using `claude mcp get ccproxy`. If the output is as follows, the installation was successful:
@@ -143,7 +143,7 @@ ccproxy:
   Scope: User config (available in all your projects)
   Status: ✓ Connected
   Type: http
-  URL: http://localhost:11434/mcp/http
+  URL: http://localhost:11435/mcp/http
 ```
 
 ### Gemini CLI
@@ -153,13 +153,13 @@ The MCP configuration for `Gemini CLI` is exactly the same as the `Claude Code` 
 1. Global installation
 
 ```bash
-gemini mcp add -t http -s user ccproxy http://localhost:11434/mcp/http
+gemini mcp add -t http -s user ccproxy http://localhost:11435/mcp/http
 ```
 
 2. Project installation, please enter the project directory first and then execute the following command:
 
 ```bash
-gemini mcp add -t http ccproxy http://localhost:11434/mcp/http
+gemini mcp add -t http ccproxy http://localhost:11435/mcp/http
 ```
 
 3. After configuration, verify using `gemini mcp list`. Output similar to the following information indicates successful installation:
@@ -168,7 +168,7 @@ gemini mcp add -t http ccproxy http://localhost:11434/mcp/http
 > gemini mcp list
 Configured MCP servers:
 
-✓ ccproxy: http://localhost:11434/mcp/http (http) - Connected
+✓ ccproxy: http://localhost:11435/mcp/http (http) - Connected
 ```
 
 For more configuration information, please refer to this [guide](https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md#configure-the-mcp-server-in-settingsjson).
@@ -180,13 +180,13 @@ For more configuration information, please refer to this [guide](https://github.
 1. Global installation
 
 ```bash
-qwen mcp add -t http -s user ccproxy http://localhost:11434/mcp/http
+qwen mcp add -t http -s user ccproxy http://localhost:11435/mcp/http
 ```
 
 2. Project installation, please enter the project directory first and then execute the following command:
 
 ```bash
-qwen mcp add -t http ccproxy http://localhost:11434/mcp/http
+qwen mcp add -t http ccproxy http://localhost:11435/mcp/http
 ```
 
 3. After configuration, verify using `qwen mcp list`. Output similar to the following information indicates successful installation:
@@ -195,7 +195,7 @@ qwen mcp add -t http ccproxy http://localhost:11434/mcp/http
 > qwen mcp list
 Configured MCP servers:
 
-✓ ccproxy: http://localhost:11434/mcp/http (http) - Connected
+✓ ccproxy: http://localhost:11435/mcp/http (http) - Connected
 ```
 
 ### VS Code
@@ -216,7 +216,7 @@ You can follow the MCP [installation guide](https://code.visualstudio.com/docs/c
 
 ![Select to add remote MCP server](/images/common/vscode-mcp-3.png)
 
-4. Enter `http://localhost:11434/mcp/http` and press Enter
+4. Enter `http://localhost:11435/mcp/http` and press Enter
 
 ![Enter MCP address](/images/common/vscode-mcp-4.png)
 
@@ -231,7 +231,7 @@ You can follow the MCP [installation guide](https://code.visualstudio.com/docs/c
 #### Command Line Installation
 
 ```sh
-code --add-mcp '{"name":"ccproxy","type":"http","url":"http://localhost:11434/mcp/http"}'
+code --add-mcp '{"name":"ccproxy","type":"http","url":"http://localhost:11435/mcp/http"}'
 ```
 
 ### Cursor
@@ -242,7 +242,7 @@ Go to `Cursor Settings` -> Tools & Integrations -> MCP Tools -> Add new MCP Serv
 {
   "mcpServers": {
     "ccproxy": {
-      "url": "http://localhost:11434/mcp/http"
+      "url": "http://localhost:11435/mcp/http"
     }
   }
 }
@@ -256,7 +256,7 @@ Go to `Trae CN`'s AI Function Management -> MCP -> Add -> Manual Add. Add the fo
 {
   "mcpServers": {
     "ccproxy": {
-      "url": "http://localhost:11434/mcp/http"
+      "url": "http://localhost:11435/mcp/http"
     }
   }
 }
@@ -272,7 +272,7 @@ You can open `~/.codeium/windsurf/mcp_config.json` and add the following content
 {
   "mcpServers": {
     "ccproxy": {
-      "serverUrl": "http://localhost:11434/mcp/http"
+      "serverUrl": "http://localhost:11435/mcp/http"
     }
   }
 }
@@ -282,7 +282,7 @@ You can open `~/.codeium/windsurf/mcp_config.json` and add the following content
 
 ```json
     "ccproxy":{
-      "serverUrl": "http://localhost:11434/mcp/http"
+      "serverUrl": "http://localhost:11435/mcp/http"
     }
 ```
 
@@ -295,7 +295,7 @@ You can open `~/.codeium/windsurf/mcp_config.json` and add the following content
   "mcpServers": {
     "ccproxy": {
       "type": "streamableHttp",
-      "url": "http://127.0.0.1:11434/mcp/http"
+      "url": "http://127.0.0.1:11435/mcp/http"
     }
   }
 }
@@ -328,7 +328,7 @@ You can open `~/.codeium/windsurf/mcp_config.json` and add the following content
   "mcpServers": {
     "ccproxy": {
       "type": "streamable-http",
-      "url": "http://localhost:11434/mcp/http"
+      "url": "http://localhost:11435/mcp/http"
     }
   }
 }
@@ -348,7 +348,7 @@ This article takes `macos` as an example, please edit `$HOME/.config/crush/crush
 {
   "ccproxy": {
     "type": "http",
-    "url": "http://localhost:11434/mcp/http"
+    "url": "http://localhost:11435/mcp/http"
   }
 }
 ```
@@ -361,13 +361,13 @@ A complete configuration example is as follows:
   "mcp": {
     "ccproxy": {
       "type": "http",
-      "url": "http://localhost:11434/mcp/http"
+      "url": "http://localhost:11435/mcp/http"
     }
   },
   "providers": {
     "Chatspeed": {
       "name": "Chatspeed",
-      "base_url": "http://localhost:11434/compat_mode/v1",
+      "base_url": "http://localhost:11435/compat_mode/v1",
       "type": "openai",
       "api_key": "your_api_key",
       "models": [

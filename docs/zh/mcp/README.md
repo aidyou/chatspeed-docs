@@ -10,10 +10,10 @@ keywords: MCP 代理, Chatspeed, CCProxy, 大模型上下文协议, 工具, 统�
 
 [Chatspeed](https://chatspeed.aidyou.ai) 的 [CCProxy](../ccproxy/) 模块提供的 **MCP 代理** 是 `Chatspeed` 针对上述碎片化 MCP 管理提供的解决方案。它将所有安装在 `Chatspeed` 上的 MCP 工具整合为一个扁平化结构，并通过多种协议提供统一的访问入口。也就是说，您只需在 `Chatspeed` 中安装好 MCP 工具，并禁用不需要的工具后，就可以通过以下任一协议来访问您所有的 MCP 工具：
 
-- Streamable HTTP 协议: `http://localhost:11434/mcp/http` (推荐)
-- SSE 协议: `http://localhost:11434/mcp/sse`
+- Streamable HTTP 协议: `http://localhost:11435/mcp/http` (推荐)
+- SSE 协议: `http://localhost:11435/mcp/sse`
 
-> 请注意，本章节 MCP URL 中使用的端口 `11434` 是 [CCProxy](../ccproxy/) 模块的默认端口。若您修改了默认端口，请同步更新配置文件中的端口配置。
+> 请注意，本章节 MCP URL 中使用的端口 `11435` 是 [CCProxy](../ccproxy/) 模块的默认端口。若您修改了默认端口，请同步更新配置文件中的端口配置。
 
 ## 🔧 为何需要 MCP 代理
 
@@ -30,7 +30,7 @@ keywords: MCP 代理, Chatspeed, CCProxy, 大模型上下文协议, 工具, 统�
 ### 在使用 `CCProxy` 模块的 MCP 代理之后
 
 - 只需将所有必要的 MCP 工具安装在 `Chatspeed` 上 ✅
-- `CCProxy` 模块通过 SSE 协议提供聚合后的所有 MCP 工具 (`http://localhost:11434/mcp/sse`) ✅ 或 `Streamable HTTP` 协议 (`http://localhost:11434/mcp/http`) ✅
+- `CCProxy` 模块通过 SSE 协议提供聚合后的所有 MCP 工具 (`http://localhost:11435/mcp/sse`) ✅ 或 `Streamable HTTP` 协议 (`http://localhost:11435/mcp/http`) ✅
 - 所有 IDE 或插件配置 MCP 都变得非常简单，只需选择合适的协议，并配置为对应的 URL 即可 ✅
 - 工具的增删改查都可以在 `Chatspeed` 客户端中统一完成 ✅
 
@@ -100,7 +100,7 @@ graph TD
   "mcpServers": {
     "ccproxy": {
       "type": "http",
-      "url": "http://localhost:11434/mcp/http"
+      "url": "http://localhost:11435/mcp/http"
     }
   }
 }
@@ -113,7 +113,7 @@ graph TD
   "mcpServers": {
     "ccproxy": {
       "type": "sse",
-      "url": "http://localhost:11434/mcp/sse"
+      "url": "http://localhost:11435/mcp/sse"
     }
   }
 }
@@ -126,13 +126,13 @@ graph TD
 1. 下面将安装到用户范围内，也就是所有项目都可用
 
 ```bash
-claude mcp add -t http -s user ccproxy http://localhost:11434/mcp/http
+claude mcp add -t http -s user ccproxy http://localhost:11435/mcp/http
 ```
 
 2. 如果您只想为当前项目安装，进入项目目录，然后使用以下命令安装
 
 ```bash
-claude mcp add -t http ccproxy http://localhost:11434/mcp/http
+claude mcp add -t http ccproxy http://localhost:11435/mcp/http
 ```
 
 3. 安装后通过 `claude mcp get ccproxy` 进行验证，如果输出如下表示安装成功。
@@ -143,7 +143,7 @@ ccproxy:
   Scope: User config (available in all your projects)
   Status: ✓ Connected
   Type: http
-  URL: http://localhost:11434/mcp/http
+  URL: http://localhost:11435/mcp/http
 ```
 
 ### Gemini CLI
@@ -153,13 +153,13 @@ ccproxy:
 1. 全局安装
 
 ```bash
-gemini mcp add -t http -s user ccproxy http://localhost:11434/mcp/http
+gemini mcp add -t http -s user ccproxy http://localhost:11435/mcp/http
 ```
 
 2. 项目安装，请先进入项目目录然后执行下面命令
 
 ```bash
-gemini mcp add -t http ccproxy http://localhost:11434/mcp/http
+gemini mcp add -t http ccproxy http://localhost:11435/mcp/http
 ```
 
 3. 配置完成后，通过 `gemini mcp list` 进行验证，输出类似下面信息说明安装成功。
@@ -168,7 +168,7 @@ gemini mcp add -t http ccproxy http://localhost:11434/mcp/http
 > gemini mcp list
 Configured MCP servers:
 
-✓ ccproxy: http://localhost:11434/mcp/http (http) - Connected
+✓ ccproxy: http://localhost:11435/mcp/http (http) - Connected
 ```
 
 更多配置信息，请参考这个[指引](https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md#configure-the-mcp-server-in-settingsjson)。
@@ -180,13 +180,13 @@ Configured MCP servers:
 1. 全局安装
 
 ```bash
-qwen mcp add -t http -s user ccproxy http://localhost:11434/mcp/http
+qwen mcp add -t http -s user ccproxy http://localhost:11435/mcp/http
 ```
 
 2. 项目安装，请先进入项目目录然后执行下面命令
 
 ```bash
-qwen mcp add -t http ccproxy http://localhost:11434/mcp/http
+qwen mcp add -t http ccproxy http://localhost:11435/mcp/http
 ```
 
 3. 配置完成后，通过 `qwen mcp list` 进行验证，输出类似下面信息说明安装成功。
@@ -195,7 +195,7 @@ qwen mcp add -t http ccproxy http://localhost:11434/mcp/http
 > qwen mcp list
 Configured MCP servers:
 
-✓ ccproxy: http://localhost:11434/mcp/http (http) - Connected
+✓ ccproxy: http://localhost:11435/mcp/http (http) - Connected
 ```
 
 ### VS Code
@@ -216,7 +216,7 @@ Configured MCP servers:
 
 ![选择添加远程 MCP 服务器](/images/common/vscode-mcp-3.png)
 
-4. 输入 `http://localhost:11434/mcp/http` 并回车
+4. 输入 `http://localhost:11435/mcp/http` 并回车
 
 ![输入 MCP 地址](/images/common/vscode-mcp-4.png)
 
@@ -231,7 +231,7 @@ Configured MCP servers:
 #### 命令行安装
 
 ```sh
-code --add-mcp '{"name":"ccproxy","type":"http","url":"http://localhost:11434/mcp/http"}'
+code --add-mcp '{"name":"ccproxy","type":"http","url":"http://localhost:11435/mcp/http"}'
 ```
 
 ### Cursor
@@ -242,7 +242,7 @@ code --add-mcp '{"name":"ccproxy","type":"http","url":"http://localhost:11434/mc
 {
   "mcpServers": {
     "ccproxy": {
-      "url": "http://localhost:11434/mcp/http"
+      "url": "http://localhost:11435/mcp/http"
     }
   }
 }
@@ -256,7 +256,7 @@ code --add-mcp '{"name":"ccproxy","type":"http","url":"http://localhost:11434/mc
 {
   "mcpServers": {
     "ccproxy": {
-      "url": "http://localhost:11434/mcp/http"
+      "url": "http://localhost:11435/mcp/http"
     }
   }
 }
@@ -272,7 +272,7 @@ code --add-mcp '{"name":"ccproxy","type":"http","url":"http://localhost:11434/mc
 {
   "mcpServers": {
     "ccproxy": {
-      "serverUrl": "http://localhost:11434/mcp/http"
+      "serverUrl": "http://localhost:11435/mcp/http"
     }
   }
 }
@@ -282,7 +282,7 @@ code --add-mcp '{"name":"ccproxy","type":"http","url":"http://localhost:11434/mc
 
 ```json
     "ccproxy":{
-      "serverUrl": "http://localhost:11434/mcp/http"
+      "serverUrl": "http://localhost:11435/mcp/http"
     }
 ```
 
@@ -295,7 +295,7 @@ code --add-mcp '{"name":"ccproxy","type":"http","url":"http://localhost:11434/mc
   "mcpServers": {
     "ccproxy": {
       "type": "streamableHttp",
-      "url": "http://127.0.0.1:11434/mcp/http"
+      "url": "http://127.0.0.1:11435/mcp/http"
     }
   }
 }
@@ -328,7 +328,7 @@ code --add-mcp '{"name":"ccproxy","type":"http","url":"http://localhost:11434/mc
   "mcpServers": {
     "ccproxy": {
       "type": "streamable-http",
-      "url": "http://localhost:11434/mcp/http"
+      "url": "http://localhost:11435/mcp/http"
     }
   }
 }
@@ -348,7 +348,7 @@ code --add-mcp '{"name":"ccproxy","type":"http","url":"http://localhost:11434/mc
 {
   "ccproxy": {
     "type": "http",
-    "url": "http://localhost:11434/mcp/http"
+    "url": "http://localhost:11435/mcp/http"
   }
 }
 ```
@@ -361,13 +361,13 @@ code --add-mcp '{"name":"ccproxy","type":"http","url":"http://localhost:11434/mc
   "mcp": {
     "ccproxy": {
       "type": "http",
-      "url": "http://localhost:11434/mcp/http"
+      "url": "http://localhost:11435/mcp/http"
     }
   },
   "providers": {
     "Chatspeed": {
       "name": "Chatspeed",
-      "base_url": "http://localhost:11434/compat_mode/v1",
+      "base_url": "http://localhost:11435/compat_mode/v1",
       "type": "openai",
       "api_key": "your_api_key",
       "models": [

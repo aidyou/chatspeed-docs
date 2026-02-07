@@ -101,7 +101,7 @@ graph TD
 ### 使用 MCP 代理的优势
 
 - **统一配置**：只需将所有必要的 MCP 工具安装到 Chatspeed 上
-- **统一访问**：CCProxy 模块通过 `http://localhost:11434/sse` 提供聚合后的所有 MCP 工具
+- **统一访问**：CCProxy 模块通过 `http://localhost:11435/sse` 提供聚合后的所有 MCP 工具
 - **简化配置**：所有 IDE 或插件配置 MCP 都变得简单
 - **集中管理**：工具的增删改查都可以在 Chatspeed 客户端中统一完成
 

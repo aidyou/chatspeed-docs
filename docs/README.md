@@ -53,7 +53,7 @@ It aggregates all MCP tools (e.g., web browsing, file operations) installed on C
 
 ![MCP proxy](/images/en/mcp-proxy.png)
 
-> You can access `CCProxy`'s SSE protocol MCP via `http://localhost:11434/sse`
+> You can access `CCProxy`'s SSE protocol MCP via `http://localhost:11435/sse`
 
 ### Key Benefits
 
@@ -68,13 +68,13 @@ It aggregates all MCP tools (e.g., web browsing, file operations) installed on C
 
 ```bash
 # Access the model list under the kimi group using the Claude Code protocol, {proxy-key} can be configured in the software settings
-curl  -H "x-api-key: {proxy-key}" http://127.0.0.1:11434/kimi/v1/models
+curl  -H "x-api-key: {proxy-key}" http://127.0.0.1:11435/kimi/v1/models
 
 # Access the model list under the qwen group using the Gemini protocol
-curl http://127.0.0.1:11434/qwen/v1beta/models?key={proxy-key}
+curl http://127.0.0.1:11435/qwen/v1beta/models?key={proxy-key}
 
 # Access the 'gemma3-12b' model (proxy alias) configured in the proxy via the Ollama protocol
-curl http://localhost:11434/api/chat -d '{
+curl http://localhost:11435/api/chat -d '{
   "model": "gemma3-12b",
   "messages": [
     {
@@ -87,7 +87,7 @@ curl http://localhost:11434/api/chat -d '{
 
 
 # Access the chat interface of the Ollama protocol via tool compatibility mode, where 'gemma3-12b' is the "proxy alias" configured in the software
-curl http://localhost:11434/compat_mode/api/chat -d '{
+curl http://localhost:11435/compat_mode/api/chat -d '{
   "model": "gemma3-12b",
   "messages": [
     {
@@ -119,7 +119,7 @@ curl http://localhost:11434/compat_mode/api/chat -d '{
 
 # Access the chat interface of the Dali server via the Claude protocol, with tool compatibility mode enabled
 # Note: The proxy key and proxy alias are configured in the software. The example here is for my local testing and cannot be run directly.
-curl http://localhost:11434/compat_mode/v1/messages \
+curl http://localhost:11435/compat_mode/v1/messages \
   -H "x-api-key: cs-TosCz7A29R74yNnShYQKskxXPx9OSYd1RMQV5YzVdHvqL7ehNNoOhCVg7UTp6" \
   -H "Content-Type: application/json" \
   -H "anthropic-version: 2023-06-01" \
@@ -144,7 +144,7 @@ curl http://localhost:11434/compat_mode/v1/messages \
 
 # Access the chat interface of the proxy server via tool compatibility mode and OpenAI compatible protocol
 # When testing, remember to change the model ID to the proxy alias configured in the software, and the key to your own configured key.
-curl http://localhost:11434/compat_mode/v1/chat/completions \
+curl http://localhost:11435/compat_mode/v1/chat/completions \
   -H "Authorization: Bearer cs-TosCz7A29R74yNnShYQKskxXPx9OSYd1RMQV5YzVdHvqL7ehNNoOhCVg7UTp6" \
   -H "Content-Type: application/json" \
   -d '{
@@ -161,7 +161,7 @@ curl http://localhost:11434/compat_mode/v1/chat/completions \
 }'
 
 # Access the chat interface of the proxy server via the Gemini protocol in tool compatibility mode
-curl http://localhost:11434/compat_mode/v1beta/models/gemma3-12b:streamGenerateContent?alt=sse&key=cs-TosCz7A29R74yNnShYQKskxXPx9OSYd1RMQV5YzVdHvqL7ehNNoOhCVg7UTp6 \
+curl http://localhost:11435/compat_mode/v1beta/models/gemma3-12b:streamGenerateContent?alt=sse&key=cs-TosCz7A29R74yNnShYQKskxXPx9OSYd1RMQV5YzVdHvqL7ehNNoOhCVg7UTp6 \
   -H "Content-Type: application/json" -d '{
   "contents": [
     {

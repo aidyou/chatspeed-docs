@@ -48,13 +48,13 @@ Before you begin, ensure you have completed the following steps:
 1. In your command line, switch to your project directory and run `llxprt` to enter.
 2. After entering `llxprt`, execute the following configuration commands in order:
    - `/provider openai`
-   - `/baseurl http://127.0.0.1:11434/compat_mode/v1`
+   - `/baseurl http://127.0.0.1:11435/compat_mode/v1`
    - `/key {ProxyKey}`
    - `/model {ModelName}`
 
 **Where:**
 
-- `/baseurl http://127.0.0.1:11434/compat_mode/v1`: We set this to tool compatibility mode, which can better extend the model's capabilities. If you want to use native tool calling, set the address to `http://127.0.0.1:11434/v1`.
+- `/baseurl http://127.0.0.1:11435/compat_mode/v1`: We set this to tool compatibility mode, which can better extend the model's capabilities. If you want to use native tool calling, set the address to `http://127.0.0.1:11435/v1`.
 - `/model {ModelName}`: Specifies the model name to use, for example `qwen3-coder`. You can get the model name from the [Chatspeed](https://chatspeed.aidyou.ai) settings by clicking through the menu: `Proxy -> Proxy Services`, then find and copy the name of your preferred model.
 - `/key {ProxyKey}`: You can get the proxy key from the [Chatspeed](https://chatspeed.aidyou.ai) settings by clicking through the menu: `Proxy -> Proxy Access Keys`. You can create a dedicated key for `llxprt` or use an existing one.
 

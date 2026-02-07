@@ -118,7 +118,7 @@ Two methods are provided below to connect to Claude Code:
     Since ModelScope''s `qwen3-coder` model has good support for tool calls, you can connect it directly without needing to enable tool compatibility mode. The connection method is simple; just execute the following commands:
 
     ```sh
-    export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/qwen"
+    export ANTHROPIC_BASE_URL="http://127.0.0.1:11435/qwen"
     export ANTHROPIC_AUTH_TOKEN="{You-Proxy-Token}"
 
     # Now, running claude will connect to the models we set up above via the CCProxy module
@@ -136,7 +136,7 @@ Two methods are provided below to connect to Claude Code:
     Use the following commands to enable `CCProxy`''s tool compatibility mode to connect to Claude Code:
 
     ```sh
-    export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/qwen/compat_mode"
+    export ANTHROPIC_BASE_URL="http://127.0.0.1:11435/qwen/compat_mode"
     export ANTHROPIC_AUTH_TOKEN="{You-Proxy-Token}"
 
     # Now, running claude will connect to the models we set up above via the CCProxy module
@@ -159,6 +159,6 @@ Two methods are provided below to connect to Claude Code:
     │   Overrides (via env):                            │
     │                                                   │
     │   • API Base URL:                                 │
-    │   http://127.0.0.1:11434/qwen/compat_mode         │
+    │   http://127.0.0.1:11435/qwen/compat_mode         │
     ╰───────────────────────────────────────────────────╯
     ```

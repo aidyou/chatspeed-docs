@@ -42,7 +42,7 @@ Additionally, you can use the `/switch` prefix to dynamically access the **curre
 
 ```bash
 # Use the currently active group
-export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/switch"
+export ANTHROPIC_BASE_URL="http://127.0.0.1:11435/switch"
 ```
 
 You can switch groups in two ways:

@@ -32,15 +32,15 @@ To quickly connect CCProxy proxy groups to Claude Code, we provide two scripts f
 ```zsh
 # Format: [environment_name]="BASE_URL AUTH_TOKEN"
 declare -A CLAUDE_ENV_MAP=(
-  [dev]="http://127.0.0.1:11434 $DEV_KEY"
+  [dev]="http://127.0.0.1:11435 $DEV_KEY"
   [prod]="https://api.moonshot.cn/anthropic $KIMI_KEY"
 )
 
 # Function to set Claude environment variables
 # Usage example:
 # source ~/.zshrc
-# go_claude dev      # Use dev config, URL becomes http://127.0.0.1:11434/dev
-# go_claude test     # Also uses dev config, URL is also http://127.0.0.1:11434/test
+# go_claude dev      # Use dev config, URL becomes http://127.0.0.1:11435/dev
+# go_claude test     # Also uses dev config, URL is also http://127.0.0.1:11435/test
 # go_claude prod     # Use prod config
 go_claude() {
   local group_name="$1"     # Original environment name entered by the user
@@ -151,15 +151,15 @@ go_claude() {
 ```sh
 # Format: [environment_name]="BASE_URL AUTH_TOKEN"
 declare -A CLAUDE_ENV_MAP=(
-  [dev]="http://127.0.0.1:11434 $DEV_KEY"
+  [dev]="http://127.0.0.1:11435 $DEV_KEY"
   [prod]="https://api.moonshot.cn/anthropic $KIMI_KEY"
 )
 
 # Function to set Claude environment variables
 # Usage example:
 # source ~/.bashrc
-# go_claude dev      # Use dev config, URL becomes http://127.0.0.1:11434/dev
-# go_claude test     # Also uses dev config, URL is also http://127.0.0.1:11434/test
+# go_claude dev      # Use dev config, URL becomes http://127.0.0.1:11435/dev
+# go_claude test     # Also uses dev config, URL is also http://127.0.0.1:11435/test
 # go_claude prod     # Use prod config
 go_claude() {
   local group_name="$1"     # Original environment name entered by the user
@@ -278,10 +278,10 @@ Below is my output example:
 
 ```zsh
 > go_claude qwen
-Testing endpoint: http://127.0.0.1:11434/qwen/compat_mode/v1/models
+Testing endpoint: http://127.0.0.1:11435/qwen/compat_mode/v1/models
 ✅ Test successful. Found 3 models.
 ✅ Successfully switched to environment: qwen (using 'dev' config)
-👉 ANTHROPIC_BASE_URL = http://127.0.0.1:11434/qwen/compat_mode
+👉 ANTHROPIC_BASE_URL = http://127.0.0.1:11435/qwen/compat_mode
 👉 Entering Claude ...
 ╭───────────────────────────────────────────────────╮
 │ ✻ Welcome to Claude Code!                         │
@@ -295,7 +295,7 @@ Testing endpoint: http://127.0.0.1:11434/qwen/compat_mode/v1/models
 │   Overrides (via env):                            │
 │                                                   │
 │   • API Base URL:                                 │
-│   http://127.0.0.1:11434/qwen/compat_mode         │
+│   http://127.0.0.1:11435/qwen/compat_mode         │
 ╰───────────────────────────────────────────────────╯
 ```
 

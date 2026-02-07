@@ -118,7 +118,7 @@ Claude Code 目前使用3个模型，作用如下：
     由于魔塔的 `qwen3-coder` 模型对工具调用有良好的支持，因此可以直接接入，无需启用工具兼容模式。接入方法很简单，执行下面的命令即可：
 
     ```sh
-    export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/qwen"
+    export ANTHROPIC_BASE_URL="http://127.0.0.1:11435/qwen"
     export ANTHROPIC_AUTH_TOKEN="{You-Proxy-Token}"
 
     # 现在执行 claude 就可以用 CCProxy 模块接入我们上面设置的模型了
@@ -136,7 +136,7 @@ Claude Code 目前使用3个模型，作用如下：
     使用以下命令即可启用 `CCProxy` 的工具兼容模式来接入 Claude Code:
 
     ```sh
-    export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/qwen/compat_mode"
+    export ANTHROPIC_BASE_URL="http://127.0.0.1:11435/qwen/compat_mode"
     export ANTHROPIC_AUTH_TOKEN="{You-Proxy-Token}"
 
     # 现在执行 claude 就可以用 CCProxy 模块接入我们上面设置的模型了
@@ -159,6 +159,6 @@ Claude Code 目前使用3个模型，作用如下：
     │   Overrides (via env):                            │
     │                                                   │
     │   • API Base URL:                                 │
-    │   http://127.0.0.1:11434/qwen/compat_mode         │
+    │   http://127.0.0.1:11435/qwen/compat_mode         │
     ╰───────────────────────────────────────────────────╯
     ```

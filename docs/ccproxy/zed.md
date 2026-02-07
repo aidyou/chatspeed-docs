@@ -31,7 +31,7 @@ Before you begin, ensure you have completed the following steps:
   "language_models": {
     "openai_compatible": {
       "Chatspeed": {
-        "api_url": "http://127.0.0.1:11434/v1",
+        "api_url": "http://127.0.0.1:11435/v1",
         "available_models": [
           {
             "name": "gemini2.5-pro",

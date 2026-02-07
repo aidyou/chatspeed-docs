@@ -101,7 +101,7 @@ In similar use cases, the same MCP tools are often installed. For example, in a 
 ### Advantages of Using an MCP Proxy
 
 - **Unified Configuration**: Simply install all necessary MCP tools on Chatspeed.
-- **Unified Access**: The `CCProxy` module provides all aggregated MCP tools via `http://localhost:11434/sse`.
+- **Unified Access**: The `CCProxy` module provides all aggregated MCP tools via `http://localhost:11435/sse`.
 - **Simplified Setup**: Configuring MCPs in any IDE or plugin becomes straightforward.
 - **Centralized Management**: Adding, removing, or modifying tools can all be done centrally in the Chatspeed client.
 

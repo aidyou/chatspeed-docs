@@ -23,7 +23,7 @@ Before you begin, ensure you have completed the following steps:
 
 1. **Set the Execution Model**
    - **API Provider**: Select `OpenAI Compatible`.
-   - **Base URL**: Enter `http://127.0.0.1:11434/v1`.
+   - **Base URL**: Enter `http://127.0.0.1:11435/v1`.
    - **API Key**: Copy the proxy key from the `CCProxy` settings interface and paste it here.
    - **Model ID**: Enter `gemini2.5-flash`.
    - `gemini2.5-flash` supports image input and tool calling, so you can check the corresponding options or ignore them.

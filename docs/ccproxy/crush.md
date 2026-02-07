@@ -65,7 +65,7 @@ For model configuration, I recommend using the global approach so you can use it
   "providers": {
     "Chatspeed": {
       "name": "Chatspeed",
-      "base_url": "http://localhost:11434/compat_mode/v1",
+      "base_url": "http://localhost:11435/compat_mode/v1",
       "type": "openai",
       "api_key": "{API_KEY}",
       "models": [

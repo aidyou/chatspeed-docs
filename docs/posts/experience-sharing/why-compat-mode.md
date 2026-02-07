@@ -173,7 +173,7 @@ However, the `Grep` tool in `Claude Code` defines parameters such as `-A`, `-B`,
 
 ### Solution
 
-By integrating the `Gemini` model with `Claude Code` through CCProxy's Tool Compatibility Mode, you can perfectly bypass **parameter type restrictions**. Enabling Tool Compatibility Mode is simple: just add `/compat_mode` to the URL address. A complete proxy address would look like `http://localhost:11434/gemini/compat_mode`, where `gemini` is the group name (which you can modify as needed), and `compat_mode` indicates that Tool Compatibility Mode is enabled.
+By integrating the `Gemini` model with `Claude Code` through CCProxy's Tool Compatibility Mode, you can perfectly bypass **parameter type restrictions**. Enabling Tool Compatibility Mode is simple: just add `/compat_mode` to the URL address. A complete proxy address would look like `http://localhost:11435/gemini/compat_mode`, where `gemini` is the group name (which you can modify as needed), and `compat_mode` indicates that Tool Compatibility Mode is enabled.
 
 The image below is a screenshot of `gemini-flash-2.5` integrated with `Claude Code` in Tool Compatibility Mode, used to fix a bug in the Chatspeed AI module:
 

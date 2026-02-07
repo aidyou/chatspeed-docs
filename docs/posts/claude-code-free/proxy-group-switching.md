@@ -38,14 +38,14 @@ Chatspeed's CCProxy module supports the `/switch` endpoint prefix. When a client
 ```bash
 # Claude Protocol (Native to Claude Code)
 # Access the model in the active group
-curl -X POST http://127.0.0.1:11434/switch/v1/messages \
+curl -X POST http://127.0.0.1:11435/switch/v1/messages \
   -H "x-api-key: {proxy-key}" \
   -H "anthropic-version: 2023-06-01" \
   -H "Content-Type: application/json" \
   -d '{"model": "claude-sonnet-4-20250514", "messages": [{"role": "user", "content": "hello"}], "max_tokens": 100}'
 
 # Claude Code Configuration Example
-export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/switch"
+export ANTHROPIC_BASE_URL="http://127.0.0.1:11435/switch"
 export ANTHROPIC_AUTH_TOKEN="{proxy-key}"
 
 # Now start Claude Code, all requests will use the currently active group configuration
@@ -114,11 +114,11 @@ Proxy Models:
 
 ```bash
 # Method 1: Use /switch dynamic route (recommended)
-export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/switch"
+export ANTHROPIC_BASE_URL="http://127.0.0.1:11435/switch"
 export ANTHROPIC_AUTH_TOKEN="cs-xxxxx"
 
 # Method 2: Use group name directly
-export ANTHROPIC_BASE_URL="http://127.0.0.1:11434/ds"
+export ANTHROPIC_BASE_URL="http://127.0.0.1:11435/ds"
 export ANTHROPIC_AUTH_TOKEN="cs-xxxxx"
 ```
 
