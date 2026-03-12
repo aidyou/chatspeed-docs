@@ -36,7 +36,7 @@ keywords: Chatspeed, AI 代理, Rust, 开源, AI 助手, 编程伴侣, 桌面中
 - **💼 多功能桌面助手**：你可以用它翻译、制作脑图、制作流程图、日常对话等，通过快捷键 ALT+Z 快速呼叫
 - **🔌 连接任何开发工具**：不仅是 [Claude Code](./ccproxy/claude-code.md)，你还可以将模型接入 [Gemini CLI](./ccproxy/gemini.md)、[Cline](./ccproxy/cline.md)、[Roo Code](./ccproxy/roo-code.md)、[Zed](./ccproxy/zed.md) 等几乎所有主流 AI 开发工具。
 - **💰 免费使用 Claude Code**：作为最佳实践，我们提供了详细的[免费使用 Claude Code](./posts/claude-code-free/)教程。
-- **🚀 MCP Hub**：Chatspeed 的 MCP 代理可以将自身的`WebSearch`和`WebFetch`工具连同您安装的 `MCP` 工具通过 `SSE` 协议提供给外部其他客户端使用，了解如何[集中管理 MCP](./mcp/)
+- **🚀 MCP Hub**：Chatspeed 的 MCP 代理可以将自身的`WebSearch`和`WebFetch`工具连同您安装的 `MCP` 工具通过 Streamable HTTP 协议提供给外部其他客户端使用，了解如何[集中管理 MCP](./mcp/)
 
 ## 🚀 万能 AI 代理 `CCProxy`
 
@@ -56,7 +56,7 @@ keywords: Chatspeed, AI 代理, Rust, 开源, AI 助手, 编程伴侣, 桌面中
 
 ![MCP proxy](/images/zh/mcp-proxy.png)
 
-> 你可以通过 `http://localhost:11435/sse` 访问 `CCProxy` 的 SSE 协议的 MCP
+> 你可以通过 `http://localhost:11435/mcp/http` 访问 `CCProxy` 的 MCP (Streamable HTTP 协议)
 
 ### 核心优势
 

@@ -1,7 +1,7 @@
 ---
 title: MCP Proxy
 description: This guide explains Chatspeed's MCP Proxy, a core feature of the CCProxy module that aggregates all available Model Context Protocol tools into a unified proxy entry point, solving the pain of repeatedly configuring tools across different IDEs.
-keywords: MCP Proxy, Chatspeed, CCProxy, Model Context Protocol, tools, unified proxy, IDE integration, SSE protocol, configuration
+keywords: MCP Proxy, Chatspeed, CCProxy, Model Context Protocol, tools, unified proxy, IDE integration, configuration
 ---
 
 # MCP Proxy
@@ -11,7 +11,6 @@ keywords: MCP Proxy, Chatspeed, CCProxy, Model Context Protocol, tools, unified 
 Chatspeed's [CCProxy](../ccproxy/) module provides the **MCP Proxy** as a solution to the aforementioned fragmented MCP management. It aggregates all MCP tools installed in Chatspeed into a flattened structure and provides unified access entry points via multiple protocols. This means you only need to install your MCP tools in Chatspeed once, disable the ones you don't need, and then you can access all your MCP tools via any of the following protocols:
 
 - Streamable HTTP Protocol: `http://localhost:11435/mcp/http` (Recommended)
-- SSE Protocol: `http://localhost:11435/mcp/sse`
 
 > Please note that the port `11435` used in the MCP URLs in this chapter is the default port of the [CCProxy](../ccproxy/) module. If you have modified the default port, please update the port configuration in your configuration files accordingly.
 
@@ -30,7 +29,7 @@ Developers often use multiple AI IDEs or AI plugins, and each AI IDE or AI plugi
 ### After Using the CCProxy Module's MCP Proxy
 
 - Simply install all necessary MCP tools on `Chatspeed` ✅
-- The CCProxy module provides all aggregated MCP tools via SSE protocol (`http://localhost:11435/mcp/sse`) ✅ or `Streamable HTTP` protocol (`http://localhost:11435/mcp/http`) ✅
+- The CCProxy module provides all aggregated MCP tools via `Streamable HTTP` protocol (`http://localhost:11435/mcp/http`) ✅
 - Configuring MCPs in all IDEs or plugins becomes very simple: just select the appropriate protocol, and configure it to the corresponding URL ✅
 - Adding, removing, and modifying tools can all be completed centrally in the `Chatspeed` client ✅
 
@@ -46,7 +45,7 @@ graph TD
 
     P(Chatspeed CCProxy)
 
-    subgraph "Exposed via Unified SSE Proxy"
+    subgraph "Exposed via Unified MCP Proxy"
         D[WebSearch]
         E[WebFetch]
         F[tavily-search]
@@ -101,19 +100,6 @@ Usually, the configuration formats of different MCP clients vary slightly, but g
     "ccproxy": {
       "type": "http",
       "url": "http://localhost:11435/mcp/http"
-    }
-  }
-}
-```
-
-**SSE Protocol Configuration:**
-
-```json
-{
-  "mcpServers": {
-    "ccproxy": {
-      "type": "sse",
-      "url": "http://localhost:11435/mcp/sse"
     }
   }
 }

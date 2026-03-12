@@ -33,7 +33,6 @@ Chatspeed `CCProxy` 模块为方便各类客户端调用，提供了灵活且强
 
 以下是 `CCProxy` 提供的各类 API 基础入口。代理默认运行在 `11435` 端口，您可以在应用的**代理设置**中自定义该端口。
 
-- `/mcp/sse`：MCP 代理入口 (Server-Sent Events 协议)
 - `/mcp/http`：MCP 代理入口 (Streamable HTTP 协议)
 - `/v1/models`：OpenAI 兼容接口和 Claude 格式的模型列表接口
 - `/v1/chat/completions`：OpenAI 兼容接口的聊天入口
@@ -57,7 +56,6 @@ Chatspeed `CCProxy` 模块为方便各类客户端调用，提供了灵活且强
 | 接口类型 | 协议            | 分组    | 兼容格式 | API地址                                                              | 备注                                                                         |
 | -------- | --------------- | ------- | -------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | MCP      | Streamable HTTP |         | false    | /mcp/http                                                            | 推荐                                                                         |
-| MCP      | SSE             |         | false    | /mcp/sse                                                             | 不建议                                                                       |
 | Chat     | Openai          |         | false    | /v1/chat/completions                                                 |                                                                              |
 | Chat     | Openai          | {group} | false    | /{group}/v1/chat/completions                                         | 将 {group} 替换为分组名称                                                    |
 | Chat | Openai | {group} | true | /{group}/compat_mode/v1/chat/completions | 支持简写 compat                                              |

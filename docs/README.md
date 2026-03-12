@@ -35,7 +35,7 @@ keywords: Chatspeed, AI proxy, Rust, open-source, AI assistant, programming comp
 - **💼 Multi-functional Desktop Assistant**: Use it for translation, creating mind maps, flowcharts, daily conversations, and more. Quickly summon it with the shortcut ALT+Z.
 - **🔌 Connect Any Dev Tool**: Beyond just [Claude Code](./ccproxy/claude-code.md), you can connect your models to almost any major AI development tool, including [Gemini CLI](./ccproxy/gemini.md), [Cline](./ccproxy/cline.md), [Roo Code](./ccproxy/roo-code.md), and [Zed](./ccproxy/zed.md).
 - **💰 Use Claude Code for Free**: As a best practice, we provide a detailed tutorial on how to [use Claude Code for free](./posts/claude-code-free/).
-- **🚀 MCP Hub**: Chatspeed's MCP proxy can provide its own `WebSearch` and `WebFetch` tools, along with any `MCP` tools you've installed, to external clients via the `SSE` protocol. Learn how to [centrally manage MCP](/mcp/).
+- **🚀 MCP Hub**: Chatspeed's MCP proxy can provide its own `WebSearch` and `WebFetch` tools, along with any `MCP` tools you've installed, to external clients via the Streamable HTTP protocol. Learn how to [centrally manage MCP](/mcp/).
 
 ## 🚀 Universal AI Proxy `CCProxy`
 
@@ -53,7 +53,7 @@ It aggregates all MCP tools (e.g., web browsing, file operations) installed on C
 
 ![MCP proxy](/images/en/mcp-proxy.png)
 
-> You can access `CCProxy`'s SSE protocol MCP via `http://localhost:11435/sse`
+> You can access `CCProxy`'s MCP via Streamable HTTP at `http://localhost:11435/mcp/http`
 
 ### Key Benefits
 

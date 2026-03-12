@@ -32,7 +32,6 @@ API access in `CCProxy` is primarily based on the following two core concepts:
 
 Below are the basic API entry points provided by `CCProxy`. By default, the proxy runs on port `11435`, but this can be customized in the **Proxy Settings** section of the application.
 
-- `/mcp/sse`: MCP Proxy Entry (Server-Sent Events Protocol)
 - `/mcp/http`: MCP Proxy Entry (Streamable HTTP Protocol)
 - `/v1/models`: OpenAI compatible interface and Claude format model list interface
 - `/v1/chat/completions`: OpenAI compatible interface chat entry
@@ -54,7 +53,6 @@ By combining **Grouping** and **Tool Compatibility Mode**, you can build more fl
 | Type | Protocol        | Group   | Compat | API Address                                                          | Note                                                                                         |
 | ---- | --------------- | ------- | ------ | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | MCP  | Streamable HTTP |         | false  | /mcp/http                                                            | Recommended                                                                                  |
-| MCP  | SSE             |         | false  | /mcp/sse                                                             | Not recommended                                                                              |
 | Chat | Openai          |         | false  | /v1/chat/completions                                                 |                                                                                              |
 | Chat | Openai          | {group} | false  | /{group}/v1/chat/completions                                         | Replace {group} with the group name                                                          |
 | Chat | Openai          | {group} | true   | /{group}/compat_mode/v1/chat/completions                             | Supports shorthand `compat`                                                                  |
