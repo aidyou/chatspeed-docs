@@ -1,7 +1,7 @@
 ---
 title: Installation Guide
 description: This guide provides detailed instructions for installing Chatspeed on Windows, macOS, and Linux. It covers system requirements, recommended pre-compiled binaries, and building from source.
-keywords: Installation Guide, Chatspeed, Windows, macOS, Linux, system requirements, pre-compiled binaries, build from source, Rust, Node.js, Yarn, Tauri
+keywords: Installation Guide, Chatspeed, Windows, macOS, Linux, system requirements, pre-compiled binaries, build from source, Rust, Node.js, pnpm, Tauri
 ---
 # Installation Guide
 
@@ -63,7 +63,7 @@ If you need the latest development version or want to customize the build, first
 
 - **Rust**: 2021 edition
 - **Node.js**: 18.0.0 or later
-- **Yarn**: 1.22.0 or later
+- **pnpm**: 8.0.0 or later
 
 ```bash
 # Clone the repository
@@ -71,10 +71,10 @@ git clone https://github.com/aidyou/chatspeed.git
 cd chatspeed
 
 # Install dependencies
-yarn install
+pnpm install
 
 # Build the project
-yarn tauri build
+pnpm tauri build
 
 ```
 

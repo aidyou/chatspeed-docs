@@ -8,13 +8,13 @@ This is the official documentation for Chatspeed - the AI proxy and MCP manageme
 
 ```bash
 # Install dependencies
-yarn install
+pnpm install
 
 # Start development server
-yarn docs:dev
+pnpm docs:dev
 
 # Build for production
-yarn docs:build
+pnpm docs:build
 ```
 
 ### Project Structure
@@ -57,17 +57,17 @@ docs/
 
 ### Prerequisites
 - Node.js 18+
-- Yarn package manager
+- pnpm package manager
 
 ### Local Development
 1. Clone the repository
-2. Install dependencies: `yarn install`
-3. Start dev server: `yarn docs:dev`
+2. Install dependencies: `pnpm install`
+3. Start dev server: `pnpm docs:dev`
 4. Open http://localhost:8080
 
 ### Building
 ```bash
-yarn docs:build
+pnpm docs:build
 ```
 
 The built files will be in `docs/.vuepress/dist/`.
@@ -79,7 +79,7 @@ We welcome contributions to improve the documentation!
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Test locally with `yarn docs:dev`
+4. Test locally with `pnpm docs:dev`
 5. Submit a pull request
 
 ### Writing Guidelines

@@ -19,7 +19,6 @@
     "vuepress": "^2.0.0-rc.15",
     "vuepress-theme-hope": "^2.0.0-rc.24"
   },
-  "packageManager": "yarn@4.9.3",
   "dependencies": {
     "@vuepress/plugin-markdown-chart": "^2.0.0-rc.112",
     "mermaid": "^11.9.0"

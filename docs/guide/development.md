@@ -1,7 +1,7 @@
 ---
 title: Development Guide
 description: This guide outlines the development requirements, recommended IDE setup, and build processes for Chatspeed on Windows, Linux, and macOS. It covers system dependencies, development commands, and platform-specific prerequisites.
-keywords: Development Guide, Chatspeed, system dependencies, IDE setup, build process, Windows, Linux, macOS, Rust, Node.js, Yarn, Tauri, VS Code
+keywords: Development Guide, Chatspeed, system dependencies, IDE setup, build process, Windows, Linux, macOS, Rust, Node.js, pnpm, Tauri, VS Code
 ---
 # Development Guide
 
@@ -19,8 +19,8 @@ keywords: Development Guide, Chatspeed, system dependencies, IDE setup, build pr
 ## Development
 
 ```sh
-yarn install
-yarn tauri dev
+pnpm install
+pnpm tauri dev
 ```
 
 ## Build
@@ -35,11 +35,11 @@ yarn tauri dev
    - MSVC v143 - VS 2022 C++ x64/x86 build tools
    - For ARM64 builds: "MSVC v143 - VS 2022 C++ ARM64 build tools"
 
-2. Install Node.js and Yarn
+2. Install Node.js and pnpm
 
    ```sh
-   # Install yarn if not already installed
-   npm install -g yarn
+   # Install pnpm if not already installed
+   npm install -g pnpm
    ```
 
 3. Install Rust
@@ -54,7 +54,7 @@ yarn tauri dev
 
    ```sh
    # Install project dependencies
-   yarn install
+   pnpm install
    ```
 
 5. Install and Configure vcpkg
@@ -93,7 +93,7 @@ Option 2: Manual build
 .\setup-env.bat  # Batch script (For compatibility)
 
 # Then build
-yarn tauri build
+pnpm tauri build
 ```
 
 The build output will be located in `src-tauri/target/release/`.
@@ -119,10 +119,10 @@ sudo apt-get install -y \
   libbz2-dev \
   libsqlite3-dev
 
-# Install Node.js and Yarn
+# Install Node.js and pnpm
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 sudo apt-get install -y nodejs
-npm install -g yarn
+npm install -g pnpm
 
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -132,10 +132,10 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 ```sh
 # Install dependencies
-yarn install
+pnpm install
 
 # Build
-yarn tauri build
+pnpm tauri build
 ```
 
 ### macOS
@@ -148,7 +148,7 @@ yarn tauri build
 
 # Install system dependencies
 brew install node
-brew install yarn
+brew install pnpm
 brew install sqlite3
 
 # Install Rust
@@ -159,11 +159,11 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 ```sh
 # Install dependencies
-yarn install
+pnpm install
 
 # Build without bundle
-yarn tauri build --no-bundle
+pnpm tauri build --no-bundle
 
 # Bundle for distribution outside the macOS App Store
-yarn tauri bundle --bundles app,dmg
+pnpm tauri bundle --bundles app,dmg
 ```

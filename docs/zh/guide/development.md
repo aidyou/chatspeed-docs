@@ -1,7 +1,7 @@
 ---
 title: 开发指南
 description: 本指南概述了 Chatspeed 在 Windows、Linux 和 macOS 上的开发要求、推荐的 IDE 设置和构建流程。内容涵盖系统依赖、开发命令和平台特定先决条件。
-keywords: 开发指南, Chatspeed, 系统依赖, IDE 设置, 构建流程, Windows, Linux, macOS, Rust, Node.js, Yarn, Tauri, VS Code
+keywords: 开发指南, Chatspeed, 系统依赖, IDE 设置, 构建流程, Windows, Linux, macOS, Rust, Node.js, pnpm, Tauri, VS Code
 ---
 # 开发指南
 
@@ -19,8 +19,8 @@ keywords: 开发指南, Chatspeed, 系统依赖, IDE 设置, 构建流程, Windo
 ## 开发
 
 ```sh
-yarn install
-yarn tauri dev
+pnpm install
+pnpm tauri dev
 ```
 
 ## 构建
@@ -35,11 +35,11 @@ yarn tauri dev
    - MSVC v143 - VS 2022 C++ x64/x86 构建工具
    - 对于 ARM64 构建："MSVC v143 - VS 2022 C++ ARM64 构建工具"
 
-2. 安装 Node.js 和 Yarn
+2. 安装 Node.js 和 pnpm
 
    ```sh
-   # 如果尚未安装，则安装 yarn
-   npm install -g yarn
+   # 如果尚未安装，则安装 pnpm
+   npm install -g pnpm
    ```
 
 3. 安装 Rust
@@ -54,7 +54,7 @@ yarn tauri dev
 
    ```sh
    # 安装项目依赖
-   yarn install
+   pnpm install
    ```
 
 5. 安装和配置 vcpkg
@@ -93,7 +93,7 @@ yarn tauri dev
 .\setup-env.bat  # 批处理脚本（用于兼容性）
 
 # 然后构建
-yarn tauri build
+pnpm tauri build
 ```
 
 构建输出将位于 `src-tauri/target/release/`。
@@ -119,10 +119,10 @@ sudo apt-get install -y \
   libbz2-dev \
   libsqlite3-dev
 
-# 安装 Node.js 和 Yarn
+# 安装 Node.js 和 pnpm
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 sudo apt-get install -y nodejs
-npm install -g yarn
+npm install -g pnpm
 
 # 安装 Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -132,10 +132,10 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 ```sh
 # 安装依赖
-yarn install
+pnpm install
 
 # 构建
-yarn tauri build
+pnpm tauri build
 ```
 
 ### macOS
@@ -148,7 +148,7 @@ yarn tauri build
 
 # 安装系统依赖
 brew install node
-brew install yarn
+brew install pnpm
 brew install sqlite3
 
 # 安装 Rust
@@ -159,11 +159,11 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 ```sh
 # 安装依赖
-yarn install
+pnpm install
 
 # 不打包构建
-yarn tauri build --no-bundle
+pnpm tauri build --no-bundle
 
 # 为 macOS App Store 之外的分发打包
-yarn tauri bundle --bundles app,dmg
+pnpm tauri bundle --bundles app,dmg
 ```
