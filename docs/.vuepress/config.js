@@ -42,6 +42,7 @@ export default defineUserConfig({
         navbar: [
           { text: 'Guide', link: '/guide/' },
           { text: 'CCProxy', link: '/ccproxy/' },
+          { text: 'Workflow', link: '/workflow/' },
           { text: 'MCP Proxy', link: '/mcp/' },
           { text: 'API', link: '/api/' },
           { text: 'Prompts', link: '/prompt/' },
@@ -50,6 +51,7 @@ export default defineUserConfig({
         sidebar: [
           { text: 'Guide', prefix: '/guide/', children: 'structure' },
           { text: 'CCProxy', prefix: '/ccproxy/', children: 'structure' },
+          { text: 'Workflow', prefix: '/workflow/', children: 'structure' },
           { text: 'MCP Proxy', prefix: '/mcp/', children: 'structure' },
           { text: 'API', prefix: '/api/', children: 'structure' },
           { text: 'Prompts', prefix: '/prompt/', children: 'structure' },
@@ -69,6 +71,7 @@ export default defineUserConfig({
         navbar: [
           { text: '指南', link: '/zh/guide/' },
           { text: 'CCProxy', link: '/zh/ccproxy/' },
+          { text: '工作流', link: '/zh/workflow/' },
           { text: 'MCP代理', link: '/zh/mcp/' },
           { text: '代理API', link: '/zh/api/' },
           { text: '提示词', link: '/zh/prompt/' },
@@ -77,6 +80,7 @@ export default defineUserConfig({
         sidebar: [
           { text: '用户指南', prefix: '/zh/guide/', children: 'structure' },
           { text: 'CCProxy 模块', prefix: '/zh/ccproxy/', children: 'structure' },
+          { text: '工作流', prefix: '/zh/workflow/', children: 'structure' },
           { text: 'MCP 代理', prefix: '/zh/mcp/', children: 'structure' },
           { text: 'API 参考', prefix: '/zh/api/', children: 'structure' },
           { text: '提示词', prefix: '/zh/prompt/', children: 'structure' },
@@ -117,8 +121,14 @@ export default defineUserConfig({
     viteOptions: {
       css: {
         preprocessorOptions: {
+          sass: {
+            quietDeps: true,
+            silenceDeprecations: ['if-function']
+          },
           scss: {
-            charset: false
+            charset: false,
+            quietDeps: true,
+            silenceDeprecations: ['if-function']
           }
         }
       }

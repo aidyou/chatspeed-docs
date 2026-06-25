@@ -23,6 +23,8 @@ features:
     details: 创建不同的 AI 代理分组，通过 /kimi、/qwen 等端点一键切换模型，灵活高效。
   - title: ⚙️ 高级提示词工程
     details: 每个代理分组支持独立的提示词注入、修改、替换，并可调节温度比例，用于适配开发环境，提高模型性能。
+  - title: ⚡ 工作流引擎
+    details: 工具驱动的任务执行引擎，支持 ReAct 循环、规划/执行分离、审批、子智能体、上下文压缩与记忆系统，专为编程和复杂多步骤任务设计。
   - title: 📚 不止是编程利器
     details: ALT+Z 快速呼叫助手，翻译、脑图、流程图、思考样样精通，通过“技能”扩展 AI 能力边界
 footer: MIT 协议 | 版权所有 © 2025 Chatspeed 团队
@@ -34,6 +36,7 @@ keywords: Chatspeed, AI 代理, Rust, 开源, AI 助手, 编程伴侣, 桌面中
 ## 🌟 Chatspeed 能做啥
 
 - **💼 多功能桌面助手**：你可以用它翻译、制作脑图、制作流程图、日常对话等，通过快捷键 ALT+Z 快速呼叫
+- **⚡ 工作流引擎**：一个专用的工具驱动任务执行引擎，专为编程和复杂多步骤任务设计。支持规划/执行模型分离、审批、子智能体编排、上下文压缩、记忆系统和完整的生命周期管理。[了解更多](./workflow/)
 - **🔌 连接任何开发工具**：不仅是 [Claude Code](./ccproxy/claude-code.md)，你还可以将模型接入 [Gemini CLI](./ccproxy/gemini.md)、[Cline](./ccproxy/cline.md)、[Roo Code](./ccproxy/roo-code.md)、[Zed](./ccproxy/zed.md) 等几乎所有主流 AI 开发工具。
 - **💰 免费使用 Claude Code**：作为最佳实践，我们提供了详细的[免费使用 Claude Code](./posts/claude-code-free/)教程。
 - **🚀 MCP Hub**：Chatspeed 的 MCP 代理可以将自身的`WebSearch`和`WebFetch`工具连同您安装的 `MCP` 工具通过 Streamable HTTP 协议提供给外部其他客户端使用，了解如何[集中管理 MCP](./mcp/)
@@ -61,9 +64,11 @@ keywords: Chatspeed, AI 代理, Rust, 开源, AI 助手, 编程伴侣, 桌面中
 ### 核心优势
 
 - **🔀 协议无缝转换**: ccproxy可以在`Openai兼容格式`、`Gemini`、`Claude`、`Ollama`之间进行高效地转换，基本达到`万能`适配的效果
+- **🧠 OpenAI Responses 支持**: 支持 OpenAI 兼容的 `/v1/responses` 接口；上游支持时可直通，不支持时也可回退到统一适配链路
 - **💰 极致成本控制**: 使用免费和高性价比模型，开发成本降低 80% 以上，让免费使用 Claude Code 成为可能
 - **🔄 一次配置，处处可用**: 消除在多个 IDE 中重复配置 MCP 工具的繁琐
 - **🎯 灵活的分组切换**: 通过不同的模型分组可以高效的在不同场景下使用 claude code
+- **🖥️ 服务器级切换与统计**: 代理切换窗口支持按服务器切换后端模型目标，并查看按服务器聚合的 token 统计与趋势
 - **🔑 安全**: CCProxy 提供的代理密钥可以有效隔离客户端接触真实的密钥，确保你AI的账户安全
 - **🚀 高效性能**: rust 实现的高效适配器
 
@@ -217,6 +222,7 @@ Chatspeed 不仅仅是 **AI 代理和 MCP 管理平台**，更是一个 **全面
 
 - **[快速开始](/zh/guide/)** - 安装、配置和快速入门
 - **[CCProxy 模块](/zh/ccproxy/)** - 详细的 CCProxy 设置和使用
+- **[工作流引擎](/zh/workflow/)** - 工具驱动的任务执行引擎
 - **[MCP 集成](/zh/mcp/)** - 模型上下文协议代理配置
 - **[API 参考](/zh/api/)** - 完整的 API 文档
 

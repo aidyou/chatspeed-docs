@@ -15,9 +15,10 @@ CCProxy also has AI model enhancement features. Its **tool compatibility mode** 
 
 ## 🔄 What Protocol Conversions Does CCProxy Support?
 
-CCProxy supports seamless conversion between major AI chat and embedding protocols:
+CCProxy supports seamless conversion between major AI chat, Responses, and embedding protocols:
 
 - **OpenAI-compatible format** (Chat & Embeddings)
+- **OpenAI-compatible Responses API** (`/v1/responses`)
 - **Claude API**
 - **Gemini API** (Chat & Embeddings)
 - **Ollama local models** (Chat & Embeddings)
@@ -64,11 +65,22 @@ CCProxy provides multiple load-balancing capabilities:
 - Client requests are automatically rotated among all providers and keys.
 - Multiple free channels can be combined into a proxy pool to increase call limits and frequency.
 
+### 🧠 OpenAI Responses Support
+
+- Supports the OpenAI-compatible `POST /v1/responses` API.
+- If the upstream provider declares `supports_responses_api` or `supportsResponsesApi`, CCProxy can directly forward requests to the upstream `/responses` endpoint.
+- If the upstream provider does not support Responses natively, CCProxy can still convert Responses requests into the unified chat pipeline and serialize the result back into Responses-compatible output.
+
 ### 🔀 Dynamic Group Switching
 
 - Define separate proxy groups for different usage scenarios (e.g., development, production, specific projects).
 - Use the `/switch` prefix to always route to the currently "Active" group set in the Chatspeed UI.
 - Instantly change backend models and rules across all connected tools without reconfiguring them.
+
+### 🖥️ Server-Level Switching and Stats
+
+- In addition to group-level switching, Chatspeed also supports **server-level switching** for proxy aliases, allowing you to directly adjust backend model targets for each proxy server.
+- The Proxy Switcher provides **per-server token stats and trend views**, including input tokens, output tokens, cache tokens, cache hit rate, and recent daily trends.
 
 ### 💰 Cost Optimization
 
@@ -99,8 +111,10 @@ CCProxy provides multiple load-balancing capabilities:
 - [Zed Configuration](./zed.md)
 - [Roo Code Configuration](./roo-code.md)
 - [Cline Configuration](./cline.md)
+- [Workflow Engine](../workflow/)
 
 ## 📚 Next Steps
 
+- [Workflow Engine](../workflow/)
 - [MCP Proxy Integration](../mcp/)
 - [API Reference](../api/)

@@ -90,6 +90,27 @@ graph TD
   K -- "... Request n" --> O["Use Provider A, Key a (Global Loop)"];
 ```
 
+## ⚡ Workflow Engine
+
+A purpose-built, tool-driven task execution engine for coding and complex multi-step tasks. The Workflow engine is not an extended chat session — it is a first-class execution kernel designed around a ReAct loop.
+
+### Core Capabilities
+
+- **Tool-Driven Execution**: Workflows advance through structured tool calls, observations, approval checkpoints, and explicit completion submission.
+- **Plan/Act Model Separation**: Use different models for planning and execution to balance cost and quality.
+- **Child-Agent Orchestration**: Spawn sub-agents for parallel subtasks with call-mode and background-mode execution.
+- **Approval System**: Supports auto-approve lists, smart AI review, full user confirmation, and final audit mode.
+- **Context Compression**: Intelligent tiered compression around task boundaries preserves relevant context while reducing token usage, achieving roughly 96% cache hit rate in real coding tests.
+- **Memory System**: Persistent project-level and global memory across sessions, stored outside project directories to avoid git tracking.
+- **Security Layers**: PathGuard filesystem controls, tool whitelisting, shell policies, and allowed-path validation.
+- **State Machine**: Complete lifecycle with 13 states including waiting states for user input, approval, child-agent, and recovery.
+
+### Integration
+
+- **Skills**: Load skill packages from user-installed (`~/.chatspeed/skills`), built-in, and workflow-managed sources.
+- **MCP**: Direct integration with MCP proxy for web search/fetch and installed MCP tools.
+- **AGENTS.md**: Per-project agent configuration via `AGENTS.md` files.
+
 ## 🔧 Unified MCP Proxy Management
 
 Aggregate all available MCP (Model Context Protocol) tools in the Chatspeed system into a unified proxy entry point, solving the problem of repeatedly configuring tools across different IDEs.
@@ -173,4 +194,5 @@ Now that you have an overview of Chatspeed's features, you can:
 
 1. **[Quick Start](../../guide/quickStart.md)** - Learn how to get started with Chatspeed quickly.
 2. **[CCProxy Module](../../ccproxy/)** - Explore the core proxy functionalities.
-3. **[MCP Proxy](../../mcp/)** - Learn about MCP proxy integration.
+3. **[Workflow Engine](../../workflow/)** - Discover the tool-driven task execution engine.
+4. **[MCP Proxy](../../mcp/)** - Learn about MCP proxy integration.

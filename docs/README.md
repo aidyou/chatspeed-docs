@@ -17,6 +17,8 @@ features:
     details: Integrate free or cost-effective models (e.g., OpenRouter, Kimi, Qwen, GLM) into Claude Code, slashing development costs by over 80%.
   - title: 💻 Any Gemini CLI
     details: Not just Claude, Gemini CLI can also integrate most models. Whether it's Claude 3 or various free/open-source models, they can all become part of your CLI workflow.
+  - title: ⚡ Workflow Engine
+    details: A tool-driven task execution engine with ReAct loop, planning/act separation, approvals, child agents, context compression, and memory — purpose-built for coding and complex multi-step tasks.
   - title: 🔗 Unified MCP Entry
     details: Aggregate all MCP (Model Context Protocol) tools into a unified proxy entry, eliminating the pain of repeatedly configuring tools across IDEs like VS Code and Cursor.
   - title: 🎛️ Smart Grouping & Routing
@@ -33,6 +35,7 @@ keywords: Chatspeed, AI proxy, Rust, open-source, AI assistant, programming comp
 
 ## 🌟 What can Chatspeed do?
 - **💼 Multi-functional Desktop Assistant**: Use it for translation, creating mind maps, flowcharts, daily conversations, and more. Quickly summon it with the shortcut ALT+Z.
+- **⚡ Workflow Engine**: A purpose-built tool-driven task execution engine for coding and complex multi-step tasks. Supports Plan/Act separation, approvals, child-agent orchestration, context compression, memory, and full lifecycle management. [Learn more](./workflow/).
 - **🔌 Connect Any Dev Tool**: Beyond just [Claude Code](./ccproxy/claude-code.md), you can connect your models to almost any major AI development tool, including [Gemini CLI](./ccproxy/gemini.md), [Cline](./ccproxy/cline.md), [Roo Code](./ccproxy/roo-code.md), and [Zed](./ccproxy/zed.md).
 - **💰 Use Claude Code for Free**: As a best practice, we provide a detailed tutorial on how to [use Claude Code for free](./posts/claude-code-free/).
 - **🚀 MCP Hub**: Chatspeed's MCP proxy can provide its own `WebSearch` and `WebFetch` tools, along with any `MCP` tools you've installed, to external clients via the Streamable HTTP protocol. Learn how to [centrally manage MCP](/mcp/).
@@ -58,9 +61,11 @@ It aggregates all MCP tools (e.g., web browsing, file operations) installed on C
 ### Key Benefits
 
 - **🔀 Seamless Protocol Conversion**: Efficiently convert between mainstream AI protocols, achieving a "universal" adaptation effect.
+- **🧠 OpenAI Responses Support**: Supports the OpenAI-compatible `/v1/responses` API, with direct forwarding when available and unified fallback adaptation when not.
 - **💰 Ultimate Cost Control**: Flexibly use free and cost-effective models, making "using Claude Code for free" a reality.
 - **🔄 Configure Once, Use Everywhere**: Eliminate the tedious, repetitive configuration of MCP tools across multiple IDEs, boosting development efficiency.
 - **🎯 Flexible Group Switching**: Efficiently use AI-assisted programming in different scenarios through various model groups.
+- **🖥️ Server-Level Switching & Stats**: Supports per-server backend target switching and per-server token stats/trend inspection in the Proxy Switcher window.
 - **🔑 Enhanced Security**: Use `CCProxy`'s proxy key to effectively isolate clients from real keys, ensuring your AI account security.
 - **🚀 High Performance**: A high-performance adapter implemented in Rust, ensuring stability and reliability.
 
@@ -213,6 +218,7 @@ Here are two example images:
 
 - **[Getting Started](/en/guide/)** - Installation, configuration, and quick start
 - **[CCProxy Module](/en/ccproxy/)** - Detailed CCProxy setup and usage
+- **[Workflow Engine](/en/workflow/)** - Tool-driven task execution engine
 - **[MCP Integration](/en/mcp/)** - Model Context Protocol proxy configuration
 - **[API Reference](/en/api/)** - Complete API documentation
 

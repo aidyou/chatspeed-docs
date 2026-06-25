@@ -1,7 +1,7 @@
 ---
 title: API 简介
 description: Chatspeed CCProxy 模块为各类客户端调用提供了灵活强大的 API 访问规则。本节详细说明这些规则，帮助您理解如何通过 CCProxy 访问和组合各种 AI 模型及工具。
-keywords: API 简介, Chatspeed, CCProxy, API 访问规则, AI 模型, 工具, 分组, 工具调用兼容模式
+keywords: API 简介, Chatspeed, CCProxy, API 访问规则, AI 模型, 工具, 分组, 工具调用兼容模式, Responses API
 ---
 
 # API 简介
@@ -36,6 +36,7 @@ Chatspeed `CCProxy` 模块为方便各类客户端调用，提供了灵活且强
 - `/mcp/http`：MCP 代理入口 (Streamable HTTP 协议)
 - `/v1/models`：OpenAI 兼容接口和 Claude 格式的模型列表接口
 - `/v1/chat/completions`：OpenAI 兼容接口的聊天入口
+- `/v1/responses`：OpenAI 兼容 Responses API 入口
 - `/v1/messages`：Claude 原生协议的消息接口
 - `/v1beta/models`：Gemini 聊天的模型列表接口
 - `/v1beta/models/{model}/generateContent`：Gemini 聊天的同步访问接口
@@ -76,7 +77,12 @@ Chatspeed `CCProxy` 模块为方便各类客户端调用，提供了灵活且强
 | Chat | Ollama | {group} | false | /{group}/api/chat                        | 将 {group} 替换为分组名称 |
 | Chat | Ollama | {group} | true | /{group}/compat_mode/api/chat            | 支持简写 compat |
 | Chat | Ollama |        | true | /compat_mode/api/chat                    | 支持简写 compat |
-
+| Responses | Openai |        | false | /v1/responses                            | OpenAI 兼容 Responses API                                   |
+| Responses | Openai | {group} | false | /{group}/v1/responses                    | 将 {group} 替换为分组名称                                    |
+| Responses | Openai | {group} | true | /{group}/compat_mode/v1/responses        | 支持简写 compat                                              |
+| Responses | Openai |        | true | /compat_mode/v1/responses                | 支持简写 compat                                              |
+| Responses | Openai | switch | false | /switch/v1/responses                     | 使用当前“激活”的分组                                         |
+| Responses | Openai | switch | true | /switch/compat_mode/v1/responses         | 支持简写 compat                                              |
 | Embed    | Openai          |         | false    | /v1/embeddings                                                       |                                                                              |
 | Embed    | Openai          | {group} | false    | /{group}/v1/embeddings                                               | 将 {group} 替换为分组名称                                                    |
 | Embed    | Gemini          |         | false    | /v1beta/models/{model}:embedContent?key={key}                        | 将 {model} 替换为模型名称，将 {key} 替换为API Key                            |

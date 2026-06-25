@@ -1,6 +1,6 @@
 ---
 title: API Introduction
-description: Explore Chatspeed's CCProxy API access rules. Learn about grouping, tool compatibility mode, and various API endpoints for OpenAI, Claude, Gemini, and Ollama protocols.
+description: Explore Chatspeed's CCProxy API access rules. Learn about grouping, tool compatibility mode, OpenAI Responses support, and various API endpoints for OpenAI, Claude, Gemini, and Ollama protocols.
 ---
 
 # API Introduction
@@ -35,6 +35,7 @@ Below are the basic API entry points provided by `CCProxy`. By default, the prox
 - `/mcp/http`: MCP Proxy Entry (Streamable HTTP Protocol)
 - `/v1/models`: OpenAI compatible interface and Claude format model list interface
 - `/v1/chat/completions`: OpenAI compatible interface chat entry
+- `/v1/responses`: OpenAI-compatible Responses API entry
 - `/v1/messages`: Claude native protocol message interface
 - `/v1beta/models`: Gemini chat model list interface
 - `/v1beta/models/{model}/generateContent`: Gemini chat synchronous access interface
@@ -73,6 +74,12 @@ By combining **Grouping** and **Tool Compatibility Mode**, you can build more fl
 | Chat | Ollama          | {group} | false  | /{group}/api/chat                                                    | Replace {group} with the group name                                                          |
 | Chat | Ollama          | {group} | true   | /{group}/compat_mode/api/chat                                        | Supports shorthand `compat` |
 | Chat | Ollama          |         | true   | /compat_mode/api/chat                                                | Supports shorthand `compat` |
+| Responses | Openai      |         | false  | /v1/responses                                                        | OpenAI-compatible Responses API                                                              |
+| Responses | Openai      | {group} | false  | /{group}/v1/responses                                                | Replace {group} with the group name                                                          |
+| Responses | Openai      | {group} | true   | /{group}/compat_mode/v1/responses                                    | Supports shorthand `compat`                                                                  |
+| Responses | Openai      |         | true   | /compat_mode/v1/responses                                            | Supports shorthand `compat`                                                                  |
+| Responses | Openai      | switch  | false  | /switch/v1/responses                                                 | Uses the currently "Active" group                                                            |
+| Responses | Openai      | switch  | true   | /switch/compat_mode/v1/responses                                     | Supports shorthand `compat`                                                                  |
 | Embed| Openai          |         | false  | /v1/embeddings                                                       |                                                                                              |
 | Embed| Openai          | {group} | false  | /{group}/v1/embeddings                                               | Replace {group} with the group name                                                          |
 | Embed| Gemini          |         | false  | /v1beta/models/{model}:embedContent?key={key}                        | Replace {model} with the model name and {key} with the API Key                               |

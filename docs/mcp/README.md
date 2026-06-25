@@ -198,7 +198,7 @@ You can follow the MCP [installation guide](https://code.visualstudio.com/docs/c
 
 ![MCP Configuration button](/images/common/vscode-mcp-2.png)
 
-3. Select "HTTP(HTTP or Server-Sent Events) Connect to a remote HTTP server that implements the MCP protocol"
+3. Select "HTTP Connect to a remote HTTP server that implements the MCP protocol"
 
 ![Select to add remote MCP server](/images/common/vscode-mcp-3.png)
 

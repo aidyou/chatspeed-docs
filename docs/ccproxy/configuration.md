@@ -46,8 +46,12 @@ export ANTHROPIC_BASE_URL="http://127.0.0.1:11435/switch"
 ```
 
 You can switch groups in two ways:
-1. **Quick Switch Panel**: Press `Alt+Shift+P` (customizable) to bring up the lightweight group switching panel for instant switching
+1. **Quick Switch Panel**: Press `Alt+Shift+P` (customizable) to bring up the lightweight switching panel for instant group switching
 2. **Settings Page**: Go to Proxy settings and manually select the active group
+
+The same lightweight window also supports **server-level switching**. In the `servers` tab, you can directly adjust backend targets for each proxy alias without leaving the switcher.
+
+In addition, the Proxy Switcher includes **per-server token stats and trend views**, allowing you to inspect input tokens, output tokens, cache tokens, cache hit rate, and recent daily trends for each configured proxy server.
 
 For detailed usage, please refer to [Proxy Group Switching](../posts/claude-code-free/proxy-group-switching.html).
 

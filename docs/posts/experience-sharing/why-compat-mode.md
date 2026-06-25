@@ -161,7 +161,7 @@ This approach combines the model's language understanding capabilities with the 
 
 ## Practical Case: Gemini Integration with Claude Code
 
-Let's look at CCProxy's practical effect through a specific case. Before starting, please refer to this blog post to configure the proxy model: [Free Use of Claude Code: Integrating MoTa Qwen3-Code](../claude-code-free/post-1.md)
+Let's look at CCProxy's practical effect through a specific case. Before starting, please refer to this blog post to configure the proxy model: [Free Use of Claude Code: Integrating ModelScope's qwen3-coder](../claude-code-free/qwen3-coder.md)
 
 ### Challenge
 
