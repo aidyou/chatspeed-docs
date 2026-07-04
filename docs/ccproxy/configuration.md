@@ -52,6 +52,7 @@ You can switch groups in two ways:
 The same lightweight window also supports **server-level switching**. In the `servers` tab, you can directly adjust backend targets for each proxy alias without leaving the switcher.
 
 In addition, the Proxy Switcher includes **per-server token stats and trend views**, allowing you to inspect input tokens, output tokens, cache tokens, cache hit rate, and recent daily trends for each configured proxy server.
+To keep pricing and usage attribution stable over time, proxy stats are stored with both the provider name and the underlying `provider_id`. This lets Chatspeed prefer the stable provider ID during later statistics aggregation, even if the provider display name is renamed afterwards.
 
 For detailed usage, please refer to [Proxy Group Switching](../posts/claude-code-free/proxy-group-switching.html).
 

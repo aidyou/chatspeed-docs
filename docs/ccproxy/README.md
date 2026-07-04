@@ -81,6 +81,7 @@ CCProxy provides multiple load-balancing capabilities:
 
 - In addition to group-level switching, Chatspeed also supports **server-level switching** for proxy aliases, allowing you to directly adjust backend model targets for each proxy server.
 - The Proxy Switcher provides **per-server token stats and trend views**, including input tokens, output tokens, cache tokens, cache hit rate, and recent daily trends.
+- Proxy stats persist both the provider name and the stable `provider_id`, so pricing and server-level statistics continue to resolve correctly even if you later rename a provider in the model settings.
 
 ### 💰 Cost Optimization
 
