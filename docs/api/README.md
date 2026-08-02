@@ -85,6 +85,6 @@ By combining **Grouping** and **Tool Compatibility Mode**, you can build more fl
 | Embed| Gemini          |         | false  | /v1beta/models/{model}:embedContent?key={key}                        | Replace {model} with the model name and {key} with the API Key                               |
 | Embed| Ollama          |         | false  | /api/embed                                                           |                                                                                              |
 | List | Openai          |         |        | /v1/models                                                           | Supports groups and compatibility mode                                                       |
-| List | Calude          |         |        | /v1/models                                                           | Supports groups and compatibility mode                                                       |
+| List | Claude          |         |        | /v1/models                                                           | Supports groups and compatibility mode                                                       |
 | List | Gemini          |         |        | /v1beta/models                                                       | Supports groups and compatibility mode                                                       |
 | List | Ollama          |         |        | /api/tags                                                            | Supports groups and compatibility mode                                                       |

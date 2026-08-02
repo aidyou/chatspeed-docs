@@ -101,7 +101,6 @@ A purpose-built, tool-driven task execution engine for coding and complex multi-
 - **Child-Agent Orchestration**: Spawn sub-agents for parallel subtasks with call-mode and background-mode execution.
 - **Approval System**: Supports auto-approve lists, smart AI review, full user confirmation, and final audit mode.
 - **Context Compression**: Intelligent tiered compression around task boundaries preserves relevant context while reducing token usage, achieving roughly 96% cache hit rate in real coding tests.
-- **Memory System**: Persistent project-level and global memory across sessions, stored outside project directories to avoid git tracking.
 - **Security Layers**: PathGuard filesystem controls, tool whitelisting, shell policies, and allowed-path validation.
 - **State Machine**: Complete lifecycle with 13 states including waiting states for user input, approval, child-agent, and recovery.
 

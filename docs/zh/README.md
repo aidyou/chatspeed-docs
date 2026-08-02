@@ -24,7 +24,7 @@ features:
   - title: ⚙️ 高级提示词工程
     details: 每个代理分组支持独立的提示词注入、修改、替换，并可调节温度比例，用于适配开发环境，提高模型性能。
   - title: ⚡ 工作流引擎
-    details: 工具驱动的任务执行引擎，支持 ReAct 循环、规划/执行分离、审批、子智能体、上下文压缩与记忆系统，专为编程和复杂多步骤任务设计。
+    details: 工具驱动的任务执行引擎，支持 ReAct 循环、规划/执行分离、审批、子智能体、上下文压缩，专为编程和复杂多步骤任务设计。
   - title: 📚 不止是编程利器
     details: ALT+Z 快速呼叫助手，翻译、脑图、流程图、思考样样精通，通过“技能”扩展 AI 能力边界
 footer: MIT 协议 | 版权所有 © 2025 Chatspeed 团队
@@ -36,7 +36,7 @@ keywords: Chatspeed, AI 代理, Rust, 开源, AI 助手, 编程伴侣, 桌面中
 ## 🌟 Chatspeed 能做啥
 
 - **💼 多功能桌面助手**：你可以用它翻译、制作脑图、制作流程图、日常对话等，通过快捷键 ALT+Z 快速呼叫
-- **⚡ 工作流引擎**：一个专用的工具驱动任务执行引擎，专为编程和复杂多步骤任务设计。支持规划/执行模型分离、审批、子智能体编排、上下文压缩、记忆系统和完整的生命周期管理。[了解更多](./workflow/)
+- **⚡ 工作流引擎**：一个专用的工具驱动任务执行引擎，专为编程和复杂多步骤任务设计。支持规划/执行模型分离、审批、子智能体编排、上下文压缩和完整的生命周期管理。[了解更多](./workflow/)
 - **🔌 连接任何开发工具**：不仅是 [Claude Code](./ccproxy/claude-code.md)，你还可以将模型接入 [Gemini CLI](./ccproxy/gemini.md)、[Cline](./ccproxy/cline.md)、[Roo Code](./ccproxy/roo-code.md)、[Zed](./ccproxy/zed.md) 等几乎所有主流 AI 开发工具。
 - **💰 免费使用 Claude Code**：作为最佳实践，我们提供了详细的[免费使用 Claude Code](./posts/claude-code-free/)教程。
 - **🚀 MCP Hub**：Chatspeed 的 MCP 代理可以将自身的`WebSearch`和`WebFetch`工具连同您安装的 `MCP` 工具通过 Streamable HTTP 协议提供给外部其他客户端使用，了解如何[集中管理 MCP](./mcp/)

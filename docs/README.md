@@ -18,7 +18,7 @@ features:
   - title: 💻 Any Gemini CLI
     details: Not just Claude, Gemini CLI can also integrate most models. Whether it's Claude 3 or various free/open-source models, they can all become part of your CLI workflow.
   - title: ⚡ Workflow Engine
-    details: A tool-driven task execution engine with ReAct loop, planning/act separation, approvals, child agents, context compression, and memory — purpose-built for coding and complex multi-step tasks.
+    details: A tool-driven task execution engine with ReAct loop, planning/act separation, approvals, child agents, and context compression — purpose-built for coding and complex multi-step tasks.
   - title: 🔗 Unified MCP Entry
     details: Aggregate all MCP (Model Context Protocol) tools into a unified proxy entry, eliminating the pain of repeatedly configuring tools across IDEs like VS Code and Cursor.
   - title: 🎛️ Smart Grouping & Routing
@@ -35,7 +35,7 @@ keywords: Chatspeed, AI proxy, Rust, open-source, AI assistant, programming comp
 
 ## 🌟 What can Chatspeed do?
 - **💼 Multi-functional Desktop Assistant**: Use it for translation, creating mind maps, flowcharts, daily conversations, and more. Quickly summon it with the shortcut ALT+Z.
-- **⚡ Workflow Engine**: A purpose-built tool-driven task execution engine for coding and complex multi-step tasks. Supports Plan/Act separation, approvals, child-agent orchestration, context compression, memory, and full lifecycle management. [Learn more](./workflow/).
+- **⚡ Workflow Engine**: A purpose-built tool-driven task execution engine for coding and complex multi-step tasks. Supports Plan/Act separation, approvals, child-agent orchestration, context compression, and full lifecycle management. [Learn more](./workflow/).
 - **🔌 Connect Any Dev Tool**: Beyond just [Claude Code](./ccproxy/claude-code.md), you can connect your models to almost any major AI development tool, including [Gemini CLI](./ccproxy/gemini.md), [Cline](./ccproxy/cline.md), [Roo Code](./ccproxy/roo-code.md), and [Zed](./ccproxy/zed.md).
 - **💰 Use Claude Code for Free**: As a best practice, we provide a detailed tutorial on how to [use Claude Code for free](./posts/claude-code-free/).
 - **🚀 MCP Hub**: Chatspeed's MCP proxy can provide its own `WebSearch` and `WebFetch` tools, along with any `MCP` tools you've installed, to external clients via the Streamable HTTP protocol. Learn how to [centrally manage MCP](/mcp/).

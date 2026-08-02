@@ -88,6 +88,6 @@ Chatspeed `CCProxy` 模块为方便各类客户端调用，提供了灵活且强
 | Embed    | Gemini          |         | false    | /v1beta/models/{model}:embedContent?key={key}                        | 将 {model} 替换为模型名称，将 {key} 替换为API Key                            |
 | Embed    | Ollama          |         | false    | /api/embed                                                           |                                                                              |
 | List     | Openai          |         |          | /v1/models                                                           | 支持分组和兼容模式                                                           |
-| List     | Calude          |         |          | /v1/models                                                           | 支持分组和兼容模式                                                           |
+| List     | Claude          |         |          | /v1/models                                                           | 支持分组和兼容模式                                                           |
 | List     | Gemini          |         |          | /v1beta/models                                                       | 支持分组和兼容模式                                                           |
 | List     | Ollama          |         |          | /api/tags                                                            | 支持分组和兼容模式                                                           |

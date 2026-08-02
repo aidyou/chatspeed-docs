@@ -32,7 +32,6 @@ The Workflow engine is built around several key runtime modules:
 | **IntelligenceManager** | AI-powered summarization, quality audits, and tool approval reviews |
 | **ContextManager** | Builds and rebuilds transcript and model-facing context projections |
 | **ContextCompressor** | Intelligent tiered context compression to reduce token usage |
-| **MemoryManager** | Persistent memory across sessions (project-level and global) |
 | **PathGuard** | Filesystem access control that blocks sensitive system paths |
 | **SkillScanner** | Discovers and integrates reusable skill packages |
 | **LoopDetector** | Sliding-window loop detection to prevent infinite execution |
@@ -49,7 +48,7 @@ The workflow does not behave like an extended chat thread. Instead, it advances 
 2. **Tool Calling** — The AI invokes tools (file edit, web fetch, shell, etc.)
 3. **Observation** — The system returns structured tool results
 4. **Approval** — Potentially risky tool calls wait for user confirmation
-5. **Submission** — Explicit task completion via `complete_workflow_with_summary`
+5. **Submission** — Explicit task completion via `complete_workflow`
 
 Tool use is not an optional add-on in this model. It is the main path for real progress. Brief reasoning is allowed, but the workflow is expected to resolve quickly into the next concrete tool action whenever work remains.
 
@@ -144,17 +143,6 @@ Compression rules:
 - Deeper integration = Long-running task stamina
 
 > In real coding tests with `deepseek-v4`, context compression achieves roughly **96% cache hit rate**.
-
-### 💾 Memory System
-
-Two scopes of persistent memory:
-
-| Scope | Path | Purpose |
-|-------|------|---------|
-| **Global** | `~/.chatspeed/memory.md` | Cross-project AI knowledge |
-| **Project** | `~/.chatspeed/project/{transformed_path}/memory.md` | Per-project context |
-
-Memory is kept outside project directories to avoid git tracking and to remain reusable across workflow sessions.
 
 ### 🔒 Security
 
